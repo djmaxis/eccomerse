@@ -1,0 +1,6 @@
+# Desactiva el analizador de ortografía SPELL en todo el código C#/VB
+[*.{cs,vb}]
+dotnet_diagnostic.SPELL.severity = none
+
+[*.cs]
+dotnet_diagnostic.IDE0028.severity = silent

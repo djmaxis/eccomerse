@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrarse - EEV Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/registrarse.css" />
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <div class="brand">
+                <i class="fas fa-microchip"></i>
+                <a href="index.html">EEV Store</a>
+            </div>
+            <div class="nav-right">
+                <!-- Botón Carrito -->
+                <button class="cart-btn" id="cart-btn" aria-label="Carrito">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <!-- Grupo NO autenticado -->
+                <div class="user-unauthenticated" id="user-unauthenticated">
+                    <a href="login.html" class="auth-link login-link" id="btnLogin2">Iniciar sesión</a>
+                </div>
+                <!-- Grupo autenticado -->
+                <div class="user-authenticated" id="user-authenticated" style="display: none;">
+                    <div class="user-info">
+                        <span class="user-avatar">JD</span>
+                        <span class="user-name">Juan Díaz</span>
+                    </div>
+                    <a href="#" class="logout-btn" id="btnLogout">Cerrar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Modal -->
+    <div class="overlay" id="overlay"></div>
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-header">
+            <h3 class="cart-title">Tu Carrito</h3>
+            <button class="close-cart" id="close-cart" aria-label="Cerrar carrito">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items">
+            <div class="empty-cart">Tu carrito está vacío</div>
+        </div>
+<div class="cart-total">
+  <div class="total-row">
+    <strong>Total:</strong>
+    <span id="total-amount">$0.00</span>
+  </div>
+
+  <div id="checkout-message" class="checkout-message" aria-live="polite"></div>
+  <button class="checkout-btn">Confirmar Compra</button>
+</div>
+
+    </div>
+
+    <!-- Register Section -->
+    <section class="register-section">
+        <div class="container">
+            <div class="register-box">
+                <h2 class="register-title">Crear Cuenta</h2>
+                <p class="register-subtitle">Regístrate para comprar en EEV Store</p>
+                <form id="register-form" class="register-form">
+                    <div class="form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password-repeat">Repetir contraseña</label>
+                        <input type="password" id="password-repeat" name="password-repeat" required>
+                    </div>
+                    <!-- Aquí saldrán los errores -->
+                    <div id="register-error" class="error" style="display: none;"></div>
+                    <button type="submit" class="register-btn">Crear cliente</button>
+                </form>
+                <div class="login-link-container">
+                    <span>¿Ya tienes una cuenta? </span>
+                    <a href="login.html">Inicia sesión aquí</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/registrarse.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\css\\index.css",
+      "PackagePath": "staticwebassets\\css\\index.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\css\\registrarse.css",
+      "PackagePath": "staticwebassets\\css\\registrarse.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\img\\1.jpg",
+      "PackagePath": "staticwebassets\\img\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\img\\10.jpg",
+      "PackagePath": "staticwebassets\\img\\10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\img\\11.jpg",
+      "PackagePath": "staticwebassets\\img\\11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\img\\12.jpg",
+      "PackagePath": "staticwebassets\\img\\12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\img\\13.jpg",
+      "PackagePath": "staticwebassets\\img\\13.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\img\\2.jpg",
+      "PackagePath": "staticwebassets\\img\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\img\\3.jpg",
+      "PackagePath": "staticwebassets\\img\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\img\\4.jpg",
+      "PackagePath": "staticwebassets\\img\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\img\\5.jpg",
+      "PackagePath": "staticwebassets\\img\\5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\img\\6.jpg",
+      "PackagePath": "staticwebassets\\img\\6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\img\\7.jpg",
+      "PackagePath": "staticwebassets\\img\\7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\img\\8.jpg",
+      "PackagePath": "staticwebassets\\img\\8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\img\\9.jpg",
+      "PackagePath": "staticwebassets\\img\\9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\index.js",
+      "PackagePath": "staticwebassets\\js\\index.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\index\\cart.js",
+      "PackagePath": "staticwebassets\\js\\index\\cart.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\index\\main.js",
+      "PackagePath": "staticwebassets\\js\\index\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\index\\products.js",
+      "PackagePath": "staticwebassets\\js\\index\\products.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\index\\utils.js",
+      "PackagePath": "staticwebassets\\js\\index\\utils.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\login.js",
+      "PackagePath": "staticwebassets\\js\\login.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\registrarse.js",
+      "PackagePath": "staticwebassets\\js\\registrarse.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\login.html",
+      "PackagePath": "staticwebassets\\login.html"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\registrarse.html",
+      "PackagePath": "staticwebassets\\registrarse.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.EcommerceWebAPI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.EcommerceWebAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.EcommerceWebAPI.props",
+      "PackagePath": "build\\EcommerceWebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.EcommerceWebAPI.props",
+      "PackagePath": "buildMultiTargeting\\EcommerceWebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.EcommerceWebAPI.props",
+      "PackagePath": "buildTransitive\\EcommerceWebAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

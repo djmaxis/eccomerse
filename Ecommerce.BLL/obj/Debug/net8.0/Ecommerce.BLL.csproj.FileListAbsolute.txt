@@ -1,0 +1,15 @@
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.BLL\bin\Debug\net8.0\Ecommerce.BLL.deps.json
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.BLL\bin\Debug\net8.0\Ecommerce.BLL.dll
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.BLL\bin\Debug\net8.0\Ecommerce.BLL.pdb
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.BLL\bin\Debug\net8.0\Ecommerce.DAL.dll
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.BLL\bin\Debug\net8.0\Ecommerce.DAL.pdb
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.BLL\obj\Debug\net8.0\Ecommerce.BLL.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.BLL\obj\Debug\net8.0\Ecommerce.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.BLL\obj\Debug\net8.0\Ecommerce.BLL.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.BLL\obj\Debug\net8.0\Ecommerce.BLL.AssemblyInfo.cs
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.BLL\obj\Debug\net8.0\Ecommerce.BLL.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.BLL\obj\Debug\net8.0\Ecommerc.B8F18BEB.Up2Date
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.BLL\obj\Debug\net8.0\Ecommerce.BLL.dll
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.BLL\obj\Debug\net8.0\refint\Ecommerce.BLL.dll
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.BLL\obj\Debug\net8.0\Ecommerce.BLL.pdb
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.BLL\obj\Debug\net8.0\ref\Ecommerce.BLL.dll

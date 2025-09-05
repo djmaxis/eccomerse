@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EEV Store - Electrónicos y Celulares</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="#" class="logo">
+        <i class="fas fa-microchip"></i>
+        <span>EEV Store</span>
+      </a>
+
+      <!-- Links centrales -->
+      <div class="nav-links" id="nav-links">
+        <a href="#" data-auth="true">Órdenes</a>
+        <a href="#" data-auth="true">Facturas</a>
+        <a href="#" data-auth="true">Mi Perfil</a>
+      </div>
+
+      <!-- Lado derecho -->
+      <div class="nav-right">
+        <!-- Botón Carrito SIEMPRE visible -->
+        <button class="cart-btn" id="cart-btn" aria-label="Carrito">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
+        </button>
+
+        <!-- Grupo autenticado -->
+        <div class="auth-group" id="user-authenticated" style="display:none;">
+          <div class="user-info" id="user-info">
+            <span class="user-name" id="user-name">Juan Díaz</span>
+          </div>
+
+          <!-- (Opcional) Estos quedan ocultos cuando hay sesión -->
+          <a href="login.html" class="auth-link login-link" id="btnLogin" hidden>Iniciar sesión</a>
+          <a href="registrarse.html" class="auth-link register-link" id="btnRegister" hidden>Registrarse</a>
+
+          <!-- Cerrar sesión -->
+          <a href="#" class="logout-btn" id="btnLogout">Cerrar Sesión</a>
+        </div>
+
+        <!-- Grupo NO autenticado -->
+        <div class="auth-group" id="user-unauthenticated" style="display:flex;">
+          <a href="login.html" class="auth-link login-link" id="btnLogin2">Iniciar sesión</a>
+          <a href="registrarse.html" class="auth-link register-link" id="btnRegister2">Registrarse</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">Celulares y Electrónicos en Oferta</h1>
+      <p class="hero-subtitle">
+        Equipos reacondicionados, originales y garantizados con hasta 30% de descuento. Envío gratis en compras superiores a $100.
+      </p>
+    </div>
+  </section>
+
+  <!-- Productos -->
+  <section class="products-section">
+    <div class="container">
+      <h2 class="section-title">Nuestros Productos</h2>
+      <p class="section-subtitle">
+        Descubre nuestra selección de electrónicos de alta calidad con garantía y precios competitivos
+      </p>
+
+      <!-- Buscador + switch -->
+      <div class="search-container">
+        <input type="text" id="product-search" placeholder="Buscar por nombre o ID..." />
+        <label class="switch">
+          <input type="checkbox" id="stock-only" />
+          <span class="slider round"></span>
+        </label>
+        <span class="switch-text">Mostrar solo existencias</span>
+      </div>
+
+      <!-- Grid dinámico -->
+      <div class="products-grid" id="products-grid"></div>
+    </div>
+  </section>
+
+  <!-- Overlay + Carrito -->
+  <div class="overlay" id="overlay"></div>
+
+  <div class="cart-modal" id="cart-modal">
+    <div class="cart-header">
+      <h3 class="cart-title">Tu Carrito</h3>
+      <button class="close-cart" id="close-cart" aria-label="Cerrar carrito">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div class="cart-items">
+      <div class="empty-cart">Tu carrito está vacío</div>
+    </div>
+    <div class="cart-total">
+      <div class="total-row">
+        <strong>Total:</strong>
+        <span id="total-amount">$0.00</span>
+      </div>
+      <div id="checkout-message" class="checkout-message" aria-live="polite"></div>
+      <button class="checkout-btn">Confirmar Compra</button>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script type="module" src="js/index/utils.js"></script>
+  <script type="module" src="js/index/cart.js"></script>
+  <script type="module" src="js/index/products.js"></script>
+  <script type="module" src="js/index/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.DAL\bin\Debug\net8.0\Ecommerce.DAL.deps.json
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.DAL\bin\Debug\net8.0\Ecommerce.DAL.dll
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.DAL\bin\Debug\net8.0\Ecommerce.DAL.pdb
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.DAL\obj\Debug\net8.0\Ecommerce.DAL.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.DAL\obj\Debug\net8.0\Ecommerce.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.DAL\obj\Debug\net8.0\Ecommerce.DAL.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.DAL\obj\Debug\net8.0\Ecommerce.DAL.AssemblyInfo.cs
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.DAL\obj\Debug\net8.0\Ecommerce.DAL.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.DAL\obj\Debug\net8.0\Ecommerce.DAL.dll
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.DAL\obj\Debug\net8.0\refint\Ecommerce.DAL.dll
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.DAL\obj\Debug\net8.0\Ecommerce.DAL.pdb
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.DAL\obj\Debug\net8.0\ref\Ecommerce.DAL.dll

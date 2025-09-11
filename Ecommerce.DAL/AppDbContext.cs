@@ -1,4 +1,5 @@
-﻿using Ecommerce.DAL.Entities;
+﻿// Ecommerce.DAL/AppDbContext.cs
+using Ecommerce.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce.DAL;
@@ -10,9 +11,13 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
     public DbSet<Producto> Productos => Set<Producto>();
     public DbSet<Carrito> Carritos => Set<Carrito>();
     public DbSet<CarritoItem> CarritoItems => Set<CarritoItem>();
+
+    // Ambos disponibles: usa el que prefieras en controladores/servicios
     public DbSet<OrdenCompra> Ordenes => Set<OrdenCompra>();
+    public DbSet<OrdenCompra> OrdenesCompra => Set<OrdenCompra>(); // ⬅️ alias para compatibilidad
+
     public DbSet<OrdenItem> OrdenItems => Set<OrdenItem>();
-    public DbSet<MetodoPago> MetodosPago => Set<MetodoPago>();
+    public DbSet<ClienteMetodoPago> ClienteMetodosPago => Set<ClienteMetodoPago>();
     public DbSet<Pago> Pagos => Set<Pago>();
     public DbSet<Factura> Facturas => Set<Factura>();
     public DbSet<FacturaItem> FacturaItems => Set<FacturaItem>();
@@ -31,10 +36,8 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
 
             e.HasIndex(x => x.Correo).IsUnique();
 
-            // Si Activo es bool en la entidad, lo mapeamos a 0/1 en SQLite
+            // bool -> 0/1 en SQLite
             e.Property(x => x.Activo).HasConversion<int>();
-
-            // Relaciones (se completan desde Direccion/Carrito)
         });
 
         // ====================== Direccion ======================
@@ -48,7 +51,6 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
             e.Property(x => x.Pais).IsRequired();
             e.Property(x => x.Ciudad).IsRequired();
 
-            // bool -> 0/1
             e.Property(x => x.EsPrincipal).HasConversion<int>();
 
             e.HasOne(x => x.Cliente)
@@ -63,16 +65,10 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
             e.HasKey(x => x.IdProducto);
 
             e.Property(x => x.Nombre).IsRequired();
-
-            // decimal -> REAL en SQLite
             e.Property(x => x.Precio).HasConversion<double>();
-
             e.Property(x => x.Stock);
-
-            // bool -> 0/1
             e.Property(x => x.Activo).HasConversion<int>();
 
-            // CHECK constraints
             e.ToTable(tb =>
             {
                 tb.HasCheckConstraint("CK_Producto_Precio", "Precio >= 0");
@@ -99,7 +95,6 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
             e.ToTable("CarritoItem");
             e.HasKey(x => x.IdCarritoItem);
 
-            // decimal -> REAL
             e.Property(x => x.PrecioUnitario).HasConversion<double>();
 
             e.HasOne(x => x.Carrito)
@@ -111,10 +106,9 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
              .WithMany(p => p.CarritoItems)
              .HasForeignKey(x => x.IdProducto);
 
-            // Un producto único por carrito
+            // Evita duplicados del mismo producto en el mismo carrito
             e.HasIndex(x => new { x.IdCarrito, x.IdProducto }).IsUnique();
 
-            // CHECKs
             e.HasCheckConstraint("CK_CI_Cantidad", "Cantidad > 0");
             e.HasCheckConstraint("CK_CI_Precio", "PrecioUnitario >= 0");
         });
@@ -153,18 +147,21 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
              .WithMany(p => p.OrdenItems)
              .HasForeignKey(x => x.IdProducto);
 
-            // CHECKs
             e.HasCheckConstraint("CK_OI_Cantidad", "Cantidad > 0");
             e.HasCheckConstraint("CK_OI_Precio", "PrecioUnitario >= 0");
         });
 
-        // ===================== MetodoPago ======================
-        modelBuilder.Entity<MetodoPago>(e =>
+        // ============== ClienteMetodoPago (REAL) ===============
+        modelBuilder.Entity<ClienteMetodoPago>(e =>
         {
-            e.ToTable("MetodoPago");
-            e.HasKey(x => x.IdMetodoPago);
+            e.ToTable("ClienteMetodoPago");
+            e.HasKey(x => x.IdClienteMetodoPago);
 
-            e.HasIndex(x => x.Codigo).IsUnique();
+            e.Property(x => x.EsPrincipal).HasConversion<int>();
+
+            e.HasOne(x => x.Cliente)
+             .WithMany(c => c.MetodosPago)
+             .HasForeignKey(x => x.IdCliente);
         });
 
         // ========================= Pago ========================
@@ -179,9 +176,10 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
              .WithMany(o => o.Pagos)
              .HasForeignKey(x => x.IdOrden);
 
-            e.HasOne(x => x.MetodoPago)
+            // FK real a ClienteMetodoPago
+            e.HasOne(x => x.ClienteMetodoPago)
              .WithMany(m => m.Pagos)
-             .HasForeignKey(x => x.IdMetodoPago);
+             .HasForeignKey(x => x.IdClienteMetodoPago);
 
             e.HasCheckConstraint("CK_Pago_Monto", "Monto >= 0");
         });

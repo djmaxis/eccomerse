@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EEV Store - Electrónicos y Celulares</title>
+
+  <!-- Fuentes & Iconos -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- CSS base existentes -->
+  <link rel="stylesheet" href="css/orders/orders.css" />
+  <link rel="stylesheet" href="css/orders/menu.css" />
+  <!-- CSS NUEVO: solo lo específico de Mis Pedidos -->
+  <link rel="stylesheet" href="css/orders/mispedidos.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-microchip"></i>
+        <span>EEV Store</span>
+      </a>
+
+      <div class="nav-right">
+        <!-- Carrito -->
+        <button class="cart-btn" id="cart-btn" aria-label="Carrito">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
+        </button>
+
+        <!-- Grupo autenticado -->
+        <div class="auth-group" id="user-authenticated" style="display:none;">
+          <div class="user-info" id="user-info">
+            <span class="user-name" id="user-name">Juan Díaz</span>
+          </div>
+          <a href="login.html" class="auth-link login-link" id="btnLogin" hidden>Iniciar sesión</a>
+          <a href="registrarse.html" class="auth-link register-link" id="btnRegister" hidden>Registrarse</a>
+          <a href="#" class="logout-btn" id="btnLogout">Cerrar Sesión</a>
+        </div>
+
+        <!-- Grupo NO autenticado -->
+        <div class="auth-group" id="user-unauthenticated" style="display:flex;">
+          <a href="login.html" class="auth-link login-link" id="btnLogin2">Iniciar sesión</a>
+          <a href="registrarse.html" class="auth-link register-link" id="btnRegister2">Registrarse</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Layout Perfil -->
+  <div class="container profile-layout" id="profile-layout">
+    <!-- Sidebar -->
+    <aside id="profile-sidebar" aria-label="Menú de perfil">
+      <nav class="sidebar-nav" aria-labelledby="sidebar-title">
+        <div class="sidebar-header">
+          <h2 id="sidebar-title">Mi Panel</h2>
+          <button type="button" id="sidebar-collapse" aria-expanded="false" aria-controls="sidebar-groups">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+
+        <div id="sidebar-groups">
+          <!-- Mi Perfil -->
+          <section class="sidebar-group">
+            <button class="sidebar-toggle" type="button" data-target="grp-perfil" aria-expanded="false" aria-controls="grp-perfil">
+              <i class="fa-solid fa-user"></i><span>Mi Perfil</span>
+              <i class="fa-solid fa-chevron-down caret"></i>
+            </button>
+            <ul id="grp-perfil" class="sidebar-list" hidden>
+              <li><a href="mi_perfil.html"><i class="fa-regular fa-id-card"></i>Datos personales</a></li>
+              <li><a href="Direcciones.html"><i class="fa-solid fa-location-dot"></i>Direcciones</a></li>
+              <li><a href="metodo_pago.html"><i class="fa-regular fa-credit-card"></i>Métodos de pago</a></li>
+              <li><a href="#"><i class="fa-solid fa-sliders"></i>Preferencias de cuenta</a></li>
+              <li><a href="#"><i class="fa-solid fa-shield-halved"></i>Configuración de privacidad</a></li>
+              <li><a href="#"><i class="fa-solid fa-key"></i>Cambiar contraseña</a></li>
+            </ul>
+          </section>
+
+          <!-- Pedidos -->
+          <section class="sidebar-group">
+            <button class="sidebar-toggle" type="button" data-target="grp-pedidos" aria-expanded="true" aria-controls="grp-pedidos">
+              <i class="fa-solid fa-bag-shopping"></i><span>Pedidos</span>
+              <i class="fa-solid fa-chevron-down caret"></i>
+            </button>
+            <ul id="grp-pedidos" class="sidebar-list" hidden>
+              <li><a href="#"><i class="fa-solid fa-file-invoice-dollar"></i>Órdenes de compra</a></li>
+              <li><a href="#"><i class="fa-solid fa-file-invoice"></i>Facturas</a></li>
+              <li><a href="#"><i class="fa-solid fa-truck"></i>Seguimiento de envíos</a></li>
+              <li><a href="#"><i class="fa-solid fa-clock-rotate-left"></i>Historial de pedidos</a></li>
+              <li><a href="#"><i class="fa-regular fa-hourglass-half"></i>Pedidos pendientes</a></li>
+              <li><a href="#"><i class="fa-solid fa-rotate-left"></i>Devoluciones y reembolsos</a></li>
+            </ul>
+          </section>
+
+          <!-- Compras -->
+          <section class="sidebar-group">
+            <button class="sidebar-toggle" type="button" data-target="grp-compras" aria-expanded="false" aria-controls="grp-compras">
+              <i class="fa-solid fa-cart-plus"></i><span>Compras</span>
+              <i class="fa-solid fa-chevron-down caret"></i>
+            </button>
+            <ul id="grp-compras" class="sidebar-list" hidden>
+              <li><a href="#"><i class="fa-solid fa-cart-shopping"></i>Carrito de compras</a></li>
+              <li><a href="#"><i class="fa-regular fa-heart"></i>Lista de deseos</a></li>
+              <li><a href="#"><i class="fa-regular fa-star"></i>Favoritos</a></li>
+              <li><a href="#"><i class="fa-solid fa-code-compare"></i>Comparar productos</a></li>
+              <li><a href="#"><i class="fa-regular fa-eye"></i>Productos vistos recientemente</a></li>
+              <li><a href="#"><i class="fa-solid fa-wand-magic-sparkles"></i>Recomendaciones personalizadas</a></li>
+            </ul>
+          </section>
+
+          <!-- (Restante del menú igual que tu versión actual) -->
+          <section class="sidebar-group">
+            <button class="sidebar-toggle" type="button" data-target="grp-categorias" aria-expanded="false" aria-controls="grp-categorias">
+              <i class="fa-solid fa-layer-group"></i><span>Categorías</span>
+              <i class="fa-solid fa-chevron-down caret"></i>
+            </button>
+            <ul id="grp-categorias" class="sidebar-list" hidden>
+              <li><a href="#"><i class="fa-solid fa-plug"></i>Electrónicos</a></li>
+              <li><a href="#"><i class="fa-solid fa-mobile-screen"></i>Smartphones</a></li>
+              <li><a href="#"><i class="fa-solid fa-laptop"></i>Laptops y computadoras</a></li>
+              <li><a href="#"><i class="fa-solid fa-headphones"></i>Audio y video</a></li>
+              <li><a href="#"><i class="fa-solid fa-gamepad"></i>Gaming</a></li>
+              <li><a href="#"><i class="fa-solid fa-keyboard"></i>Accesorios</a></li>
+            </ul>
+          </section>
+
+          <section class="sidebar-group">
+            <button class="sidebar-toggle" type="button" data-target="grp-soporte" aria-expanded="false" aria-controls="grp-soporte">
+              <i class="fa-regular fa-life-ring"></i><span>Soporte</span>
+              <i class="fa-solid fa-chevron-down caret"></i>
+            </button>
+            <ul id="grp-soporte" class="sidebar-list" hidden>
+              <li><a href="#"><i class="fa-solid fa-circle-info"></i>Centro de ayuda</a></li>
+              <li><a href="#"><i class="fa-regular fa-circle-question"></i>Preguntas frecuentes</a></li>
+              <li><a href="#"><i class="fa-regular fa-envelope"></i>Contactar soporte</a></li>
+              <li><a href="#"><i class="fa-regular fa-comments"></i>Chat en vivo</a></li>
+              <li><a href="#"><i class="fa-solid fa-clipboard-check"></i>Política de devoluciones</a></li>
+              <li><a href="#"><i class="fa-solid fa-file-contract"></i>Términos y condiciones</a></li>
+              <li><a href="#"><i class="fa-solid fa-ruler-combined"></i>Guía de tallas</a></li>
+            </ul>
+          </section>
+
+          <section class="sidebar-group">
+            <button class="sidebar-toggle" type="button" data-target="grp-config" aria-expanded="false" aria-controls="grp-config">
+              <i class="fa-solid fa-gear"></i><span>Configuración</span>
+              <i class="fa-solid fa-chevron-down caret"></i>
+            </button>
+            <ul id="grp-config" class="sidebar-list" hidden>
+              <li><a href="#"><i class="fa-solid fa-language"></i>Idioma</a></li>
+              <li><a href="#"><i class="fa-solid fa-coins"></i>Moneda</a></li>
+              <li><a href="#"><i class="fa-solid fa-globe"></i>Región</a></li>
+              <li><a href="#"><i class="fa-regular fa-bell"></i>Notificaciones</a></li>
+            </ul>
+          </section>
+
+          <section class="sidebar-group">
+            <button class="sidebar-toggle" type="button" data-target="grp-suscripciones" aria-expanded="false" aria-controls="grp-suscripciones">
+              <i class="fa-regular fa-bell"></i><span>Suscripciones</span>
+              <i class="fa-solid fa-chevron-down caret"></i>
+            </button>
+            <ul id="grp-suscripciones" class="sidebar-list" hidden>
+              <li><a href="#"><i class="fa-regular fa-newspaper"></i>Newsletter</a></li>
+              <li><a href="#"><i class="fa-solid fa-tags"></i>Ofertas especiales</a></li>
+              <li><a href="#"><i class="fa-regular fa-bell"></i>Alertas de stock</a></li>
+            </ul>
+          </section>
+
+          <section class="sidebar-group">
+            <button class="sidebar-toggle" type="button" data-target="grp-promos" aria-expanded="false" aria-controls="grp-promos">
+              <i class="fa-solid fa-gift"></i><span>🎁 Promociones</span>
+              <i class="fa-solid fa-chevron-down caret"></i>
+            </button>
+            <ul id="grp-promos" class="sidebar-list" hidden>
+              <li><a href="#"><i class="fa-solid fa-bolt"></i>Ofertas del día</a></li>
+              <li><a href="#"><i class="fa-solid fa-ticket"></i>Cupones activos</a></li>
+              <li><a href="#"><i class="fa-solid fa-hand-holding-heart"></i>Programa de lealtad</a></li>
+              <li><a href="#"><i class="fa-solid fa-coins"></i>Puntos de recompensa</a></li>
+              <li><a href="#"><i class="fa-solid fa-user-group"></i>Referir amigos</a></li>
+              <li><a href="#"><i class="fa-solid fa-percent"></i>Descuentos especiales</a></li>
+            </ul>
+          </section>
+        </div>
+      </nav>
+    </aside>
+
+<button id="open-sidebar-btn" class="open-sidebar-btn" aria-controls="profile-sidebar" aria-expanded="false">
+  <i class="fa-solid fa-bars"></i> Menú
+</button>
+
+<h2 class="mp-title">Mis Pedidos</h2>
+
+<section class="perfil-section">
+
+  <!-- ========== Pedido 1 ========== -->
+  <article class="order-card order--compact">
+    <header class="order-header">
+      <div class="order-id">ORD-2025-02-29#00000001</div>
+      <a class="order-link" href="#">Ver detalles del pedido <i class="fa-solid fa-chevron-right"></i></a>
+    </header>
+
+    <!-- Meta línea superior -->
+    <div class="order-meta">
+      <span class="badge-dot status in-transit">En tránsito</span>
+      <span class="meta-sep">|</span>
+      <span>Centro de almacenes SDQ</span>
+      <span class="meta-dot"></span>
+    </div>
+
+    <!-- Línea de entrega + garantía -->
+    <div class="delivery-row">
+      <div class="delivery-text">
+        <strong class="delivery-title">Entrega: 3-7 días hábiles</strong>
+      </div>
+      <span class="warranty-chip">30 dias garantia / devoluciones</span>
+    </div>
+
+    <!-- Tira de artículos (3) con scroll horizontal -->
+    <div class="order-article">
+      <div class="items-strip" role="list">
+        <a class="item" role="listitem" href="#">
+          <img src="img/ejemplo1a.jpg" alt="Kit ganchos blancos 20pcs">
+          <span class="item-title">Ganchos blancos x20</span>
+          <span class="item-extra">Cantidad: 1</span>
+        </a>
+                <a class="item" role="listitem" href="#">
+          <img src="img/ejemplo1a.jpg" alt="Kit ganchos blancos 20pcs">
+          <span class="item-title">Ganchos blancos x20</span>
+          <span class="item-extra">Cantidad: 1</span>
+        </a>
+                <a class="item" role="listitem" href="#">
+          <img src="img/ejemplo1a.jpg" alt="Kit ganchos blancos 20pcs">
+          <span class="item-title">Ganchos blancos x20</span>
+          <span class="item-extra">Cantidad: 1</span>
+        </a>
+
+        <a class="item" role="listitem" href="#">
+          <img src="img/ejemplo1b.jpg" alt="Set organizadores transparentes">
+          <span class="item-title">Organizadores</span>
+          <span class="item-extra">Cantidad: 1</span>
+        </a>
+        <a class="item" role="listitem" href="#">
+          <img src="img/ejemplo1c.jpg" alt="Accesorios hogar">
+          <span class="item-title">Accesorios hogar</span>
+          <span class="item-extra">Cantidad: 1</span>
+        </a>
+      </div>
+
+      <!-- Columna de acciones -->
+      <div class="order-actions-col">
+        <button class="order-btn Rastrear">Rastrear</button>
+        <button class="order-btn Ver_factura">Ver factura</button>
+        <button class="order-btn Cancelar_pedido">Cancelar pedido</button>
+        <button class="order-btn ghost">Comprar de nuevo</button>
+        <button class="order-btn ghost">Agregar instrucciones</button>      
+        <button class="order-btn ghost">Contactar soporte</button>
+        <button class="order-btn ghost">Dejar reseña</button>
+        
+      </div>
+    </div>
+
+    <footer class="order-footer">
+      <div class="seller-line">
+        Vendido y enviado por <a href="#">EEV STORE</a>
+      </div>
+      <div class="summary-line">
+        <span>2 artículos: <strong>$21.83</strong></span>
+        <span>Fecha del pedido: <strong>8 sep 2025</strong></span>
+        <span>ID de pedido: <strong>ORD-2025-02-29#00000001</strong></span>
+      </div>
+    </footer>
+  </article>
+
+
+</section>
+
+      <!-- =================== /MIS PEDIDOS =================== -->
+    </main>
+  </div>
+
+  <!-- Overlay + Carrito -->
+  <div class="overlay" id="overlay"></div>
+  <div class="cart-modal" id="cart-modal">
+    <div class="cart-header">
+      <h3 class="cart-title">Tu Carrito</h3>
+      <button class="close-cart" id="close-cart" aria-label="Cerrar carrito">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="cart-items">
+      <div class="empty-cart">Tu carrito está vacío</div>
+    </div>
+    <div class="cart-total">
+      <div class="total-row">
+        <strong>Total:</strong>
+        <span id="total-amount">$0.00</span>
+      </div>
+      <div id="checkout-message" class="checkout-message" aria-live="polite"></div>
+      <button class="checkout-btn">Confirmar Compra</button>
+    </div>
+  </div>
+
+   <!-- Scripts -->
+  <script type="module" src="js/orders/utils.js"></script>
+  <script type="module" src="js/orders/cart.js"></script>
+  <script type="module" src="js/orders/products.js"></script>
+  <script type="module" src="js/orders/main.js"></script>
+ <script type="module" src="js/orders/get_data_orders.js"></script>
+  <script src="js/orders/menu.js"></script>
+</body>
+</html>

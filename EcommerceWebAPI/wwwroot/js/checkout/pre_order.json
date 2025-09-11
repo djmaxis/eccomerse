@@ -1,0 +1,37 @@
+﻿{
+  "timestamp": "2025-09-11T11:35:16.919Z",
+  "Direcci\u00F3n de env\u00EDo": {
+    "id": 1,
+    "nombre": "Enrique Escano",
+    "telefono": "8295463303",
+    "calle": "Manuel emilio perdomo #800",
+    "ciudad": "Santo Domingo",
+    "codigoPostal": "10100",
+    "pais": "Republica Dominicana",
+    "esPrincipal": true
+  },
+  "Productos": [
+    {
+      "idCarritoItem": null,
+      "idProducto": 4,
+      "refModelo": "AW-S7",
+      "nombre": "Apple Watch Series 7",
+      "cantidad": 1,
+      "precioUnitario": 225,
+      "imagenUrl": "/img/4.jpg"
+    }
+  ],
+  "M\u00E9todos de pago": null,
+  "Resumen del pedido": {
+    "Total del pedido": 225,
+    "Moneda": "USD"
+  },
+  "Debug": {
+    "clienteId": 2,
+    "guestCartItems": 1,
+    "fromBD": true,
+    "dbCartId": 39,
+    "dbItemsCount": 1,
+    "summary": "clienteId 2  guestCart items: 1"
+  }
+}

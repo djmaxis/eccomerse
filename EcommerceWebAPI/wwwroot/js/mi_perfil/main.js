@@ -78,11 +78,9 @@ logoutBtn?.addEventListener('click', (e) => {
   localStorage.removeItem('correo');
   localStorage.removeItem('clienteId');
   localStorage.removeItem('guestCart');
-
   // 👇👇 **NUEVO**: MUY IMPORTANTE
   localStorage.removeItem('guestCartFromBD');
-
-  window.location.reload();
+  window.location.href = 'index.html';
 });
 
 [loginBtn, loginBtn2].forEach(btn => btn && btn.addEventListener('click', (e) => {

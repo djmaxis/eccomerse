@@ -41,11 +41,17 @@ export function getIniciales(nombre) {
 }
 
 /** Formateo de número */
-export function formatNumber(number, decimals = 0) {
-  return Number(number).toLocaleString('en-US', {
+export function formatNumber(value, decimals = 2) {
+  const v = Number(value ?? 0);
+  return v.toLocaleString('en-US', {
     minimumFractionDigits: decimals,
     maximumFractionDigits: decimals
   });
+}
+
+export function money(value) {
+  // Si quieres mostrar con $: return '$' + formatNumber(value, 2);
+  return formatNumber(value, 2); // ← sin símbolo, ejemplo: 1,000.00
 }
 
 /** Normaliza un producto del backend a un objeto usable en el front */

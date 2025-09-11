@@ -30,6 +30,14 @@ const stockOnlySwitch = document.getElementById('stock-only');
 const checkoutBtn = document.querySelector('.checkout-btn');
 const checkoutMsg = document.getElementById('checkout-message');
 
+if (productsGrid) {
+  initProducts({ productsGrid, searchInput, stockOnlySwitch });
+} else {
+  // Estamos en páginas como checkout.html donde no hay grid de productos
+  // Evitamos el TypeError y seguimos con el flujo normal del checkout
+  console.debug('[products] grid no presente: skip initProducts() en esta página.');
+}
+
 /********************************
  *  HEADER: SESIÓN / NAVBAR     *
  ********************************/
@@ -78,11 +86,9 @@ logoutBtn?.addEventListener('click', (e) => {
   localStorage.removeItem('correo');
   localStorage.removeItem('clienteId');
   localStorage.removeItem('guestCart');
-
   // 👇👇 **NUEVO**: MUY IMPORTANTE
   localStorage.removeItem('guestCartFromBD');
-
-  window.location.reload();
+  window.location.href = 'index.html';
 });
 
 [loginBtn, loginBtn2].forEach(btn => btn && btn.addEventListener('click', (e) => {

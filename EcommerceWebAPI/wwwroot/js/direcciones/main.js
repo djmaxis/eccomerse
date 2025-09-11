@@ -78,11 +78,9 @@ logoutBtn?.addEventListener('click', (e) => {
   localStorage.removeItem('correo');
   localStorage.removeItem('clienteId');
   localStorage.removeItem('guestCart');
-
   // 👇👇 **NUEVO**: MUY IMPORTANTE
   localStorage.removeItem('guestCartFromBD');
-
-  window.location.reload();
+  window.location.href = 'index.html';
 });
 
 [loginBtn, loginBtn2].forEach(btn => btn && btn.addEventListener('click', (e) => {
@@ -134,6 +132,7 @@ ensureClienteIdFromToken();
   }
 })();
 
-
-// Inicializa productos (grid + buscador + switch)
-initProducts({ productsGrid, searchInput, stockOnlySwitch });
+ // Inicializa productos (grid + buscador + switch) SOLO si hay grid en la página
+ if (productsGrid) {
+   initProducts({ productsGrid, searchInput, stockOnlySwitch });
+ }

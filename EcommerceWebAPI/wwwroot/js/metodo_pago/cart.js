@@ -6,6 +6,17 @@ import { formatNumber, isLoggedIn, authHeaders, apiUrl, fetchJsonSafe } from './
 const GUEST_CART_KEY = 'guestCart'; // ya lo tienes
 const GUEST_CART_FROM_BD_KEY = 'guestCartFromBD';
 
+// cart.js (cerca de writeGuestCart / utilidades)
+function clampQtyToStock(item) {
+  const stock = Number(item.stock) || 0;
+  const originalQty = Number(item.qty) || 1;
+  let qty = originalQty;
+
+  if (stock <= 0) qty = 0;
+  else if (originalQty > stock) qty = stock;
+
+  return { ...item, qty, _wasClamped: qty !== originalQty };
+}
 
 function getCartFromBDFlag() {
   return localStorage.getItem(GUEST_CART_FROM_BD_KEY) === '1';
@@ -129,7 +140,6 @@ export function initCart({
       _show('❌ Para guardar y confirmar tu orden, inicia sesión o regístrate.', 'error');
       return;
     }
-    _show('✅ Orden confirmada (demo).', 'success');
   });
 
   renderCartFromStorage();
@@ -140,8 +150,17 @@ export function initCart({
 export function renderCartFromStorage() {
   const { cartItemsContainer, cartCount } = _els;
   const cart = readGuestCart();
+
+  // 👇 normaliza todo antes de render
+  const fixedItems = (cart.items || []).map(clampQtyToStock);
+  const changed = JSON.stringify(fixedItems) !== JSON.stringify(cart.items || []);
+  if (changed) {
+    writeGuestCart({ items: fixedItems });
+  }
+
+  const items = fixedItems; // usa esta variable en todo lo siguiente
   cartItemsContainer.innerHTML = '';
-  if (!cart.items.length) {
+  if (!items.length) {
     cartItemsContainer.innerHTML = '<div class="empty-cart">Tu carrito está vacío</div>';
     if (cartCount) cartCount.textContent = '0';
     updateCartTotals();
@@ -322,12 +341,14 @@ export function showCheckoutMessage(text, type = 'error') {
    =============================== */
 
 /** Mapea DTO del backend a carrito local */
+// cart.js -> reemplaza el map dentro de bdCartToGuest()
 export function bdCartToGuest(cartDto) {
   const items = (cartDto?.items || cartDto?.Items || []).map(x => {
     const idNum = x.productId ?? x.ProductId ?? null;
     const ref = x.refModelo ?? x.RefModelo ?? null;
     const id = idNum != null ? String(idNum) : (ref ? String(ref) : '');
-    return {
+
+    const base = {
       id,
       ref,
       name: x.nombre ?? x.Nombre ?? 'Producto',
@@ -336,9 +357,11 @@ export function bdCartToGuest(cartDto) {
       qty: Number(x.cantidad ?? x.Cantidad ?? 1),
       stock: Number(x.stock ?? x.Stock ?? 0)
     };
+    return clampQtyToStock(base); // 👈 aquí capamos siempre
   });
   return { items };
 }
+
 
 /** Marca items cuyo precio cambió (agrega _priceWas) y devuelve el nuevo carrito */
 function mergeWithPriceUpdateFlag(localCart, mappedFromBD) {
@@ -354,18 +377,28 @@ function mergeWithPriceUpdateFlag(localCart, mappedFromBD) {
 }
 
 /** Sobrescribe el carrito local desde la BD y refresca UI */
+// cart.js -> dentro de hydrateLocalFromBD(cartDto)
 export function hydrateLocalFromBD(cartDto) {
   const mapped = bdCartToGuest(cartDto);
+
+  // si hubo capado, sincroniza BD con las cantidades nuevas
+  const toFixOnServer = mapped.items.filter(i => i._wasClamped && /^\d+$/.test(i.id));
+  if (toFixOnServer.length && isLoggedIn()) {
+    Promise.allSettled(
+      toFixOnServer.map(i => apiSetItemQty(parseInt(i.id, 10), i.qty))
+    ).catch(() => {});
+  }
+
   const current = readGuestCart();
-  // Detecta cambios de precio para mostrar el badge
   const withFlags = mergeWithPriceUpdateFlag(current, mapped);
 
   writeGuestCart(withFlags);
-  setCartFromBDFlag(true);              // 👈 marca que el local proviene de BD
+  setCartFromBDFlag(true);
   renderCartFromStorage();
   updateCartTotals();
   syncCounter();
 }
+
 
 /** GET /api/carrito/abierto (seguro contra 404 sin JSON) */
 export async function apiGetOpenCart() {

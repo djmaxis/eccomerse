@@ -112,6 +112,7 @@ function makeProductCard(p) {
 
 export function renderProducts(list) {
   const { productsGrid } = _els;
+  if (!productsGrid) return;               // <-- blindaje
   productsGrid.innerHTML = '';
   if (!list.length) {
     productsGrid.innerHTML = `<p style="text-align:center;color:#6c757d">No hay productos disponibles.</p>`;
@@ -123,7 +124,8 @@ export function renderProducts(list) {
 }
 
 export function applyFilters() {
-  const { searchInput, stockOnlySwitch } = _els;
+  const { productsGrid, searchInput, stockOnlySwitch } = _els;
+  if (!productsGrid) return;               // <-- blindaje
   const term = (searchInput?.value || '').toLowerCase();
   const showOnlyInStock = !!stockOnlySwitch?.checked;
 
@@ -143,6 +145,7 @@ export function applyFilters() {
 export async function initProducts({ productsGrid, searchInput, stockOnlySwitch }) {
   _els = { productsGrid, searchInput, stockOnlySwitch };
   try {
+    if (!productsGrid) return;               // <-- blindaje
     const arr = await fetchProductsLowStock();
     PRODUCTS_CACHE = (arr || []).map(normalizeProduct).filter(p => p.activo === 1);
 
@@ -153,6 +156,8 @@ export async function initProducts({ productsGrid, searchInput, stockOnlySwitch 
     stockOnlySwitch?.addEventListener('change', applyFilters);
   } catch (err) {
     console.error(err);
-    productsGrid.innerHTML = `<p style="text-align:center;color:#dc3545">No se pudieron cargar los productos.</p>`;
+    if (productsGrid) {
+      productsGrid.innerHTML = `<p style="text-align:center;color:#dc3545">No se pudieron cargar los productos.</p>`;
+    }
   }
 }

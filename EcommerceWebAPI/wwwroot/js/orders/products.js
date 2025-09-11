@@ -112,6 +112,10 @@ function makeProductCard(p) {
 
 export function renderProducts(list) {
   const { productsGrid } = _els;
+  if (!productsGrid) {
+    console.debug('[products] renderProducts(): no productsGrid — skip');
+    return;
+  }
   productsGrid.innerHTML = '';
   if (!list.length) {
     productsGrid.innerHTML = `<p style="text-align:center;color:#6c757d">No hay productos disponibles.</p>`;

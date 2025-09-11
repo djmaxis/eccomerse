@@ -17,8 +17,4 @@
 		<ProjectReference Include="..\Ecommerce.DAL\Ecommerce.DAL.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<Folder Include="wwwroot\" />
-	</ItemGroup>
-
 </Project>

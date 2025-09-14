@@ -151,7 +151,8 @@ En `/js/orders/get_data_orders.json` se incluye una orden simulada para pruebas:
 
 ## 📸 Capturas
 
-*(Agregar screenshots de catálogo, checkout, historial, etc)*
+<img width="2688" height="1366" alt="image" src="https://github.com/user-attachments/assets/bebf50c4-fe15-4c27-bfa7-5d95b2e30f4a" />
+
 
 ---
 

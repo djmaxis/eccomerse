@@ -1,144 +1,160 @@
-# eccomerse
+# 🛒 Ecommerce WebApp (SPA + API REST)
 
-> Proyecto de e‑commerce desarrollado por **djmaxis**
+**Proyecto educativo completo de ecommerce** con funcionalidades modernas tipo carrito de compras, registro de clientes, órdenes y pagos. Esta solución incluye:
 
-Una aplicación modular para comercio electrónico, diseñada con capas separadas: acceso a datos, lógica de negocio y API. Permite manejar productos, usuarios, órdenes, etc.
-
----
-
-## Índice
-
-- [Características](#características)  
-- [Tecnologías](#tecnologías)  
-- [Estructura del proyecto](#estructura-del-proyecto)  
-- [Requisitos](#requisitos)  
-- [Instalación](#instalación)  
-- [Configuración](#configuración)  
-- [Uso / endpoints principales](#uso--endpoints-principales)  
-- [Pruebas](#pruebas)  
-- [Despliegue](#despliegue)  
-- [Contribuciones](#contribuciones)  
-- [Licencia](#licencia)  
-- [Contacto](#contacto)
+- ✅ Frontend SPA (HTML + JS vanilla, sin frameworks)
+- ✅ Backend RESTful con ASP.NET Core Web API
+- ✅ Base de datos relacional (SQLite por defecto)
+- ✅ Lógica modular organizada en componentes reutilizables
+- ✅ Persistencia de sesión via localStorage + JWT
+- ✅ Separación clara entre capa API y vista cliente
 
 ---
 
-## Características
+## 🚀 Funcionalidades
 
-- Gestión de productos (CRUD: crear, leer, actualizar, eliminar)  
-- Gestión de usuarios (registro, login, posiblemente roles)  
-- Gestión de órdenes / carrito de compras  
-- API REST para integración con front-end  
-- Separación de responsabilidades: capa de Acceso a Datos (DAL), Lógica de Negocio (BLL), API Web  
+### 🔐 Autenticación y Registro
+- Registro y login de clientes (JWT)
+- Validación de formularios
+- Registro con login automático
+- Protección contra acceso a zonas sin login
+
+### 👥 Perfil y Métodos de Pago
+- Actualización de datos personales
+- CRUD de métodos de pago (tarjeta, Paypal, etc)
+- API protegida por token de autenticación
+
+### 📦 Productos y Carrito
+- Catálogo de productos dinámico (`/api/productos`)
+- Carrito persistente (localStorage si está offline)
+- Render en tiempo real
+- Ajuste de cantidades, remoción, total en vivo
+
+### 🧾 Órdenes y Checkout
+- Checkout funcional (crear Orden + Factura + Pago)
+- Ajuste de stock automático por venta
+- Seguimiento de estado de pedidos
+- Visualización con máscara `ORD-yyyy-mm-dd#00000001`
 
 ---
 
-## Tecnologías
-
-- Lenguaje: C# (.NET)  
-- Framework: ASP.NET Core Web API  
-- ORM / base de datos: Entity Framework / SQL Server (o similar)  
-- Front-end: JavaScript / HTML / CSS (si hay componente de front-end)  
-- Gestión de dependencias: NuGet para .NET  
-- Herramientas de desarrollo: Visual Studio, Visual Studio Code o IDE equivalente  
-
----
-
-## Estructura del proyecto
+## 🗂️ Estructura del Repositorio
 
 ```
-eccomerse/
-├── Ecommerce.DAL/             # Proyecto de acceso a datos
-├── Ecommerce.BLL/             # Lógica de negocio / servicios
-├── EcommerceWebAPI/           # Aplicación Web API
-├── bk/                        # Backups o versiones antiguas
-├── .editorconfig              
-├── .gitignore                 
-├── Ecommerce.sln              # Solución de Visual Studio
-├── README.md                  
-└── Ecommerce1.0.rar           # Paquete versión 1.0
-```
-
----
-
-## Requisitos
-
-- .NET SDK (ej: .NET 6, .NET 7)  
-- Visual Studio / Visual Studio Code  
-- Base de datos SQL Server u otra compatible  
-- Node.js (si hay front-end JS)  
-- Variables de entorno seguras  
-
----
-
-## Instalación
-
-```bash
-git clone https://github.com/djmaxis/eccomerse.git
-cd eccomerse
-dotnet restore
-dotnet build
-cd EcommerceWebAPI
-dotnet ef database update
-dotnet run --project EcommerceWebAPI
+📁 /wwwroot
+├── 📄 index.html           # Página principal con catálogo
+├── 📄 login.html           # Página de acceso
+├── 📄 registrarse.html     # Registro nuevo cliente
+├── 📄 checkout.html        # Confirmación de orden
+├── 📄 metodo_pago.html     # Módulo de gestión de métodos de pago
+├── 📄 orders.html          # Historial de pedidos del cliente
+├── 📄 mi_perfil.html       # Edición de perfil
+├── 📄 direcciones.html     # Gestión de direcciones
+├── 📄 plantilla.html       # HTML base reutilizable
+└── 📁 js/
+    ├── main.js             # Común a toda la app (login check, carrito)
+    ├── login.js            # Login del usuario
+    ├── registrarse.js      # Registro nuevo cliente
+    ├── products.js         # Render de productos activos
+    ├── cart.js             # Carrito de compras
+    ├── confirmar_pagar.js  # Cierre del checkout
+    ├── metodo_pago.js      # Interfaz de métodos de pago
+    ├── metodo_pago_api.js  # API CRUD métodos de pago
+    ├── update_perfil.js    # Lógica para actualizar perfil
+    ├── direcciones.js      # CRUD de direcciones
+    ├── utils.js            # Funciones auxiliares comunes
+    ├── chatbot.js          # Asistente virtual (con LLM)
+    └── get_data_orders.js  # Carga y procesamiento de órdenes
 ```
 
 ---
 
-## Configuración
+## 📦 API Principal
 
-- `appsettings.json` para cadena de conexión  
-- Variables de entorno para claves y secretos  
-- `launchSettings.json` para puertos y entorno de desarrollo
+La comunicación entre cliente y servidor se realiza con fetch + headers autenticados (`token` y `clienteId`).
 
----
+### Endpoints destacados:
 
-## Uso / Endpoints principales
-
-| Método | Ruta | Descripción |
-|--------|------|-------------|
-| POST   | /api/auth/register | Registro de usuario |
-| POST   | /api/auth/login | Login |
-| GET    | /api/products | Listar productos |
-| POST   | /api/products | Crear producto |
-| ...    | ... | ... |
+- `POST /api/auth/login` → Devuelve token y clienteId
+- `POST /api/clientes` → Registro de nuevo cliente
+- `GET /api/productos?activo=1` → Productos activos
+- `POST /api/checkout/finalizar` → Crea orden + factura + pago
+- `PUT /api/productos/stock-ajuste` → Ajuste de inventario
+- `GET/POST/PUT/DELETE /api/clientes/{id}/metodos-pago` → CRUD
 
 ---
 
-## Pruebas
+## 💬 Asistente Virtual
 
-- Usar xUnit o NUnit  
-- Crear proyecto `Ecommerce.Tests`  
-- Probar lógica de negocio y controladores
+Incluye un `chatbot.js` que usa datos JSON locales para responder preguntas del cliente:
 
----
-
-## Despliegue
-
-```bash
-dotnet publish EcommerceWebAPI -c Release -o ./publish
+```json
+{
+  "ordenes": [
+    {
+      "IdOrden": 1,
+      "mask": "ORD-2025-09-12#00000001",
+      "Estado": "Pagado",
+      "Productos": [
+        { "Nombre": "...", "Precio": 0, "Cantidad": 0 }
+      ]
+    }
+  ]
+}
 ```
 
-- Subir a servidor o contenedor  
-- Configurar base de datos de producción  
-- Variables de entorno seguras
+- Responde pedidos recientes, estado de orden, monto total, productos, etc.
+- Usa animación typing (`setTimeout`) y lenguaje humano
 
 ---
 
-## Contribuciones
+## 📊 Datos de Ejemplo
 
-- Fork y Pull Request bien documentado  
-- Estilo consistente y pruebas incluidas
+En `/js/orders/get_data_orders.json` se incluye una orden simulada para pruebas:
+
+```json
+{
+  "clienteId": 1,
+  "ordenes": [ ... ]
+}
+```
 
 ---
 
-## Licencia
+## 🛠️ Requisitos
 
-MIT License
+- Node.js (opcional para levantar servidor local)
+- Backend en ASP.NET Core corriendo en `/api`
+- Navegador moderno
+- Editor recomendado: VSCode
 
 ---
 
-## Contacto
+## 🧠 Créditos y Reconocimientos
 
-- Autor: djmaxis  
-- Repositorio: https://github.com/djmaxis/eccomerse
+- Proyecto base diseñado por @djmaxis
+- Componentes inspirados en prácticas modernas de desarrollo frontend modular
+- Frontend SPA sin frameworks, ideal para proyectos educativos o introductorios
+
+---
+
+## 🧪 ToDo / Mejoras Futuras
+
+- [ ] Validación de stock en tiempo real al agregar al carrito
+- [ ] Integración con pasarela de pago real (Stripe/Paypal)
+- [ ] Upload de imágenes de producto
+- [ ] Soporte para múltiples direcciones por cliente
+- [ ] Traducción i18n
+- [ ] Administración (dashboard)
+
+---
+
+## 📸 Capturas
+
+*(Agregar screenshots de catálogo, checkout, historial, etc)*
+
+---
+
+## 📄 Licencia
+
+MIT — libre para uso educativo, comercial, personal o empresarial. Dale ⭐ en GitHub si te sirvió.

@@ -132,7 +132,7 @@ En `/js/orders/get_data_orders.json` se incluye una orden simulada para pruebas:
 
 ## 🧠 Créditos y Reconocimientos
 
-- Proyecto base diseñado por @djmaxis
+- Proyecto base diseñado por Enrique Escano, Erick Diaz, Victor Santos
 - Componentes inspirados en prácticas modernas de desarrollo frontend modular
 - Frontend SPA sin frameworks, ideal para proyectos educativos o introductorios
 
@@ -163,4 +163,4 @@ En `/js/orders/get_data_orders.json` se incluye una orden simulada para pruebas:
 
 ## 📄 Licencia
 
-MIT — libre para uso educativo, comercial, personal o empresarial. Dale ⭐ en GitHub si te sirvió.
+MIT — libre para uso educativo, comercial, personal o empresarial.

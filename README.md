@@ -152,8 +152,11 @@ En `/js/orders/get_data_orders.json` se incluye una orden simulada para pruebas:
 ## 📸 Capturas
 
 <img width="1854" height="958" alt="image" src="https://github.com/user-attachments/assets/dde30641-ad14-4eb8-9447-2578e293f9ec" />
-<img width="519" height="691" alt="image" src="https://github.com/user-attachments/assets/1d71c6a9-0329-46b3-b407-63a4683cb0c7" />
-<img width="454" height="757" alt="image" src="https://github.com/user-attachments/assets/3823dc98-2b5c-449f-9757-41da2d2b642c" />
+<img width="454" height="669" alt="image" src="https://github.com/user-attachments/assets/7836a0b9-ca8c-4d0c-b7f7-0ce2ab9f27d4" />
+<img width="435" height="757" alt="image" src="https://github.com/user-attachments/assets/b32ef5ee-2c43-40c1-8b9d-d5d6819c5c9e" />
+
+
+
 
 
 

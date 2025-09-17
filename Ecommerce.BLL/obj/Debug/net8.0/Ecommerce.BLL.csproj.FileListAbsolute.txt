@@ -8,6 +8,7 @@ C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.BLL\obj
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.BLL\obj\Debug\net8.0\Ecommerce.BLL.AssemblyInfoInputs.cache
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.BLL\obj\Debug\net8.0\Ecommerce.BLL.AssemblyInfo.cs
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.BLL\obj\Debug\net8.0\Ecommerce.BLL.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.BLL\obj\Debug\net8.0\Ecommerce.BLL.sourcelink.json
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.BLL\obj\Debug\net8.0\Ecommerc.B8F18BEB.Up2Date
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.BLL\obj\Debug\net8.0\Ecommerce.BLL.dll
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\Ecommerce.BLL\obj\Debug\net8.0\refint\Ecommerce.BLL.dll

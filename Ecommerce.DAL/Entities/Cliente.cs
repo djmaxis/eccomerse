@@ -1,4 +1,4 @@
-﻿namespace Ecommerce.DAL.Entities;
+﻿using Ecommerce.DAL.Entities;
 
 public class Cliente
 {
@@ -9,9 +9,11 @@ public class Cliente
     public DateTime FechaRegistro { get; set; } = DateTime.UtcNow;
     public bool Activo { get; set; } = true;
 
+    // NUEVO:
+    public string Rol { get; set; } = "cliente";
+
     public ICollection<Direccion> Direcciones { get; set; } = new List<Direccion>();
     public ICollection<Carrito> Carritos { get; set; } = new List<Carrito>();
     public ICollection<OrdenCompra> Ordenes { get; set; } = new List<OrdenCompra>();
-
-    public ICollection<ClienteMetodoPago> MetodosPago { get; set; } = new List<ClienteMetodoPago>(); // ← agregado
+    public ICollection<ClienteMetodoPago> MetodosPago { get; set; } = new List<ClienteMetodoPago>();
 }

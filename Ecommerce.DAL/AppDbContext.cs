@@ -21,6 +21,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
     public DbSet<Pago> Pagos => Set<Pago>();
     public DbSet<Factura> Facturas => Set<Factura>();
     public DbSet<FacturaItem> FacturaItems => Set<FacturaItem>();
+    public DbSet<ProdMasVendidos> ProdMasVendidos => Set<ProdMasVendidos>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -222,5 +223,32 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
             e.HasCheckConstraint("CK_FI_Cantidad", "Cantidad > 0");
             e.HasCheckConstraint("CK_FI_Precio", "PrecioUnitario >= 0");
         });
+
+        // ==================== ProdMasVendidos ====================
+        modelBuilder.Entity<ProdMasVendidos>(e =>
+        {
+            e.ToTable("ProdMasVendidos");
+            e.HasKey(x => x.IdPMV);
+
+            e.Property(x => x.Nombre).IsRequired();
+            e.Property(x => x.Cant);
+            e.Property(x => x.FechaProdVenta); // EF Core → SQLite TEXT (ISO 8601)
+
+            e.HasOne(x => x.Producto)
+             .WithMany() // no necesitas navegar desde Producto
+             .HasForeignKey(x => x.IdProducto)
+             .OnDelete(DeleteBehavior.Cascade);
+
+            // UNIQUE (IdProducto, FechaProdVenta)
+            e.HasIndex(x => new { x.IdProducto, x.FechaProdVenta }).IsUnique()
+             .HasDatabaseName("UQ_PMV");
+
+            // CHECK (Cant >= 0)
+            e.ToTable(tb =>
+            {
+                tb.HasCheckConstraint("CK_PMV_Cant", "Cant >= 0");
+            });
+        });
+
     }
 }

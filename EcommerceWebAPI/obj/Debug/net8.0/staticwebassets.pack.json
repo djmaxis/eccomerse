@@ -1,6 +1,46 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\Direcciones.html",
+      "PackagePath": "staticwebassets\\Direcciones.html"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\appsettings.Development.json",
+      "PackagePath": "staticwebassets\\appsettings.Development.json"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\checkout.html",
+      "PackagePath": "staticwebassets\\checkout.html"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\cpanel.html",
+      "PackagePath": "staticwebassets\\cpanel.html"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\cpanel_productos.html",
+      "PackagePath": "staticwebassets\\cpanel_productos.html"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\cpanelshipping.html",
+      "PackagePath": "staticwebassets\\cpanelshipping.html"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\css\\checkout\\checkout.css",
+      "PackagePath": "staticwebassets\\css\\checkout\\checkout.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\css\\cpanel\\cpanel.css",
+      "PackagePath": "staticwebassets\\css\\cpanel\\cpanel.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\css\\cpanel\\cpanel_productos.css",
+      "PackagePath": "staticwebassets\\css\\cpanel\\cpanel_productos.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\css\\cpanel\\cpanel_shipping.css",
+      "PackagePath": "staticwebassets\\css\\cpanel\\cpanel_shipping.css"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\css\\index.css",
       "PackagePath": "staticwebassets\\css\\index.css"
     },
@@ -9,8 +49,36 @@
       "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\css\\mi_perfil\\menu.css",
+      "PackagePath": "staticwebassets\\css\\mi_perfil\\menu.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\css\\mi_perfil\\mi_perfil.css",
+      "PackagePath": "staticwebassets\\css\\mi_perfil\\mi_perfil.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\css\\orders\\cancelar.css",
+      "PackagePath": "staticwebassets\\css\\orders\\cancelar.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\css\\orders\\menu.css",
+      "PackagePath": "staticwebassets\\css\\orders\\menu.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\css\\orders\\orders.css",
+      "PackagePath": "staticwebassets\\css\\orders\\orders.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\css\\proc_pago.css",
+      "PackagePath": "staticwebassets\\css\\proc_pago.css"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\css\\registrarse.css",
       "PackagePath": "staticwebassets\\css\\registrarse.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\htmlAdds\\Proc_pago.html",
+      "PackagePath": "staticwebassets\\htmlAdds\\Proc_pago.html"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\img\\1.jpg",
@@ -31,6 +99,10 @@
     {
       "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\img\\13.jpg",
       "PackagePath": "staticwebassets\\img\\13.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\img\\14.jpg",
+      "PackagePath": "staticwebassets\\img\\14.jpg"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\img\\2.jpg",
@@ -65,16 +137,136 @@
       "PackagePath": "staticwebassets\\img\\9.jpg"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\img\\placeholder.jpg",
+      "PackagePath": "staticwebassets\\img\\placeholder.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\img\\producto.txt",
+      "PackagePath": "staticwebassets\\img\\producto.txt"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\img\\robot.png",
+      "PackagePath": "staticwebassets\\img\\robot.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\img\\template_panel.fw.png",
+      "PackagePath": "staticwebassets\\img\\template_panel.fw.png"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\index.js",
-      "PackagePath": "staticwebassets\\js\\index.js"
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\index_logout.html",
+      "PackagePath": "staticwebassets\\index_logout.html"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\checkout\\cart.js",
+      "PackagePath": "staticwebassets\\js\\checkout\\cart.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\checkout\\confirmar_pagar.js",
+      "PackagePath": "staticwebassets\\js\\checkout\\confirmar_pagar.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\checkout\\main.js",
+      "PackagePath": "staticwebassets\\js\\checkout\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\checkout\\menu.js",
+      "PackagePath": "staticwebassets\\js\\checkout\\menu.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\checkout\\post_put.js",
+      "PackagePath": "staticwebassets\\js\\checkout\\post_put.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\checkout\\pre_order.json",
+      "PackagePath": "staticwebassets\\js\\checkout\\pre_order.json"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\checkout\\proc_pago.js",
+      "PackagePath": "staticwebassets\\js\\checkout\\proc_pago.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\checkout\\products.js",
+      "PackagePath": "staticwebassets\\js\\checkout\\products.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\checkout\\utils.js",
+      "PackagePath": "staticwebassets\\js\\checkout\\utils.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\cpanel\\cpanel.js",
+      "PackagePath": "staticwebassets\\js\\cpanel\\cpanel.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\cpanel\\cpanelMainBkend.js",
+      "PackagePath": "staticwebassets\\js\\cpanel\\cpanelMainBkend.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\cpanel\\cpanelProdutCRUDController.js",
+      "PackagePath": "staticwebassets\\js\\cpanel\\cpanelProdutCRUDController.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\cpanel\\cpanelshipping.js",
+      "PackagePath": "staticwebassets\\js\\cpanel\\cpanelshipping.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\cpanel\\get_data_orders.js",
+      "PackagePath": "staticwebassets\\js\\cpanel\\get_data_orders.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\cpanel\\get_data_orders_cpanel_shipping.js",
+      "PackagePath": "staticwebassets\\js\\cpanel\\get_data_orders_cpanel_shipping.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\cpanel\\get_data_orders_cpanel_shipping.json",
+      "PackagePath": "staticwebassets\\js\\cpanel\\get_data_orders_cpanel_shipping.json"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\direcciones\\cart.js",
+      "PackagePath": "staticwebassets\\js\\direcciones\\cart.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\direcciones\\ciudades.txt",
+      "PackagePath": "staticwebassets\\js\\direcciones\\ciudades.txt"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\direcciones\\direcciones.js",
+      "PackagePath": "staticwebassets\\js\\direcciones\\direcciones.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\direcciones\\main.js",
+      "PackagePath": "staticwebassets\\js\\direcciones\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\direcciones\\menu.js",
+      "PackagePath": "staticwebassets\\js\\direcciones\\menu.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\direcciones\\pais.txt",
+      "PackagePath": "staticwebassets\\js\\direcciones\\pais.txt"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\direcciones\\products.js",
+      "PackagePath": "staticwebassets\\js\\direcciones\\products.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\direcciones\\utils.js",
+      "PackagePath": "staticwebassets\\js\\direcciones\\utils.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\index.js.bk",
+      "PackagePath": "staticwebassets\\js\\index.js.bk"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\index\\cart.js",
       "PackagePath": "staticwebassets\\js\\index\\cart.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\index\\chatbot.js",
+      "PackagePath": "staticwebassets\\js\\index\\chatbot.js"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\index\\main.js",
@@ -93,12 +285,112 @@
       "PackagePath": "staticwebassets\\js\\login.js"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\metodo_pago\\cart.js",
+      "PackagePath": "staticwebassets\\js\\metodo_pago\\cart.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\metodo_pago\\main.js",
+      "PackagePath": "staticwebassets\\js\\metodo_pago\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\metodo_pago\\menu.js",
+      "PackagePath": "staticwebassets\\js\\metodo_pago\\menu.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\metodo_pago\\metodo_pago.js",
+      "PackagePath": "staticwebassets\\js\\metodo_pago\\metodo_pago.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\metodo_pago\\metodo_pago_api.js",
+      "PackagePath": "staticwebassets\\js\\metodo_pago\\metodo_pago_api.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\metodo_pago\\products.js",
+      "PackagePath": "staticwebassets\\js\\metodo_pago\\products.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\metodo_pago\\utils.js",
+      "PackagePath": "staticwebassets\\js\\metodo_pago\\utils.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\mi_perfil\\cart.js",
+      "PackagePath": "staticwebassets\\js\\mi_perfil\\cart.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\mi_perfil\\main.js",
+      "PackagePath": "staticwebassets\\js\\mi_perfil\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\mi_perfil\\menu.js",
+      "PackagePath": "staticwebassets\\js\\mi_perfil\\menu.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\mi_perfil\\products.js",
+      "PackagePath": "staticwebassets\\js\\mi_perfil\\products.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\mi_perfil\\update_perfil.js",
+      "PackagePath": "staticwebassets\\js\\mi_perfil\\update_perfil.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\mi_perfil\\utils.js",
+      "PackagePath": "staticwebassets\\js\\mi_perfil\\utils.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\orders\\cancelar.js",
+      "PackagePath": "staticwebassets\\js\\orders\\cancelar.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\orders\\cancelar_estado_greyeout.js",
+      "PackagePath": "staticwebassets\\js\\orders\\cancelar_estado_greyeout.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\orders\\cart.js",
+      "PackagePath": "staticwebassets\\js\\orders\\cart.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\orders\\get_data_orders.js",
+      "PackagePath": "staticwebassets\\js\\orders\\get_data_orders.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\orders\\get_data_orders.json",
+      "PackagePath": "staticwebassets\\js\\orders\\get_data_orders.json"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\orders\\main.js",
+      "PackagePath": "staticwebassets\\js\\orders\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\orders\\menu.js",
+      "PackagePath": "staticwebassets\\js\\orders\\menu.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\orders\\products.js",
+      "PackagePath": "staticwebassets\\js\\orders\\products.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\orders\\utils.js",
+      "PackagePath": "staticwebassets\\js\\orders\\utils.js"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\js\\registrarse.js",
       "PackagePath": "staticwebassets\\js\\registrarse.js"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\login.html",
       "PackagePath": "staticwebassets\\login.html"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\metodo_pago.html",
+      "PackagePath": "staticwebassets\\metodo_pago.html"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\mi_perfil.html",
+      "PackagePath": "staticwebassets\\mi_perfil.html"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\orders.html",
+      "PackagePath": "staticwebassets\\orders.html"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\UASD\\Monografico\\M2-31-08-2025\\Ecommerce\\EcommerceWebAPI\\wwwroot\\registrarse.html",

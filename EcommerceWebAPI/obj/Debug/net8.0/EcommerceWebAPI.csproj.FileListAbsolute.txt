@@ -1,10 +1,3 @@
-C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\EcommerceWebAPI.csproj.AssemblyReference.cache
-C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\EcommerceWebAPI.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\EcommerceWebAPI.AssemblyInfoInputs.cache
-C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\EcommerceWebAPI.AssemblyInfo.cs
-C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\EcommerceWebAPI.csproj.CoreCompileInputs.cache
-C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\EcommerceWebAPI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\EcommerceWebAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\bin\Debug\net8.0\appsettings.json
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\bin\Debug\net8.0\EcommerceWebAPI.staticwebassets.runtime.json
@@ -14,6 +7,7 @@ C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\b
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\bin\Debug\net8.0\EcommerceWebAPI.runtimeconfig.json
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\bin\Debug\net8.0\EcommerceWebAPI.dll
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\bin\Debug\net8.0\EcommerceWebAPI.pdb
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\bin\Debug\net8.0\Microsoft.Data.Sqlite.dll
@@ -75,6 +69,14 @@ C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\b
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\bin\Debug\net8.0\Ecommerce.DAL.dll
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\bin\Debug\net8.0\Ecommerce.BLL.pdb
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\bin\Debug\net8.0\Ecommerce.DAL.pdb
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\EcommerceWebAPI.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\EcommerceWebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\EcommerceWebAPI.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\EcommerceWebAPI.AssemblyInfo.cs
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\EcommerceWebAPI.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\EcommerceWebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\EcommerceWebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\EcommerceWebAPI.sourcelink.json
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\scopedcss\bundle\EcommerceWebAPI.styles.css
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\staticwebassets.development.json
@@ -85,10 +87,10 @@ C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\o
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.EcommerceWebAPI.props
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.EcommerceWebAPI.props
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\Ecommerc.5C35B4A7.Up2Date
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\EcommerceWebAPI.dll
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\refint\EcommerceWebAPI.dll
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\EcommerceWebAPI.pdb
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\EcommerceWebAPI.genruntimeconfig.cache
 C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\ref\EcommerceWebAPI.dll
-C:\Users\User\Desktop\UASD\Monografico\M2-31-08-2025\Ecommerce\EcommerceWebAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

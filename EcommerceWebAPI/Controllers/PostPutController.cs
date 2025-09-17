@@ -58,7 +58,7 @@ namespace EcommerceWebAPI.Controllers
         {
             [Required] public int IdCliente { get; set; }
             public int? IdDireccionEnvio { get; set; }
-            public string Estado { get; set; } = "Pagado";
+            public string Estado { get; set; } = "Pagada";
             public string? TrackingNumber { get; set; } = "";
             public DateTime FechaCreacion { get; set; } = DateTime.UtcNow;
 
@@ -162,7 +162,7 @@ namespace EcommerceWebAPI.Controllers
                 {
                     IdCliente = req.IdCliente,
                     IdDireccionEnvio = req.IdDireccionEnvio,
-                    Estado = string.IsNullOrWhiteSpace(req.Estado) ? "Pagado" : req.Estado,
+                    Estado = string.IsNullOrWhiteSpace(req.Estado) ? "Pagada" : req.Estado,
                     TrackingNumber = req.TrackingNumber ?? "",
                     FechaCreacion = req.FechaCreacion
                 };
@@ -219,7 +219,7 @@ namespace EcommerceWebAPI.Controllers
                     Monto = (double)req.Total,
                     TransaccionRef = "",
                     FechaCreacion = DateTime.UtcNow,
-                    Estado = "pagado"
+                    Estado = "pagada"
                 };
                 _db.Pagos.Add(pago);
                 await _db.SaveChangesAsync();

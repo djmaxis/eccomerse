@@ -125,6 +125,102 @@ namespace EcommerceWebAPI.Controllers
             };
         }
 
+        // Controllers/GetDataOrderController.cs (añadir debajo de lo existente)
+        [HttpGet("orden/{idOrden:int}")]
+        public async Task<IActionResult> GetOrdenById([FromRoute] int idOrden)
+        {
+            // Reutilizamos la proyección del helper, filtrando por IdOrden
+            var o = await _db.OrdenesCompra
+                .Where(x => x.IdOrden == idOrden)
+                .Include(x => x.Items).ThenInclude(oi => oi.Producto)
+                .Include(x => x.Pagos).ThenInclude(p => p.ClienteMetodoPago)
+                .Include(x => x.Factura)
+                .Include(x => x.DireccionEnvio)
+                .Select(x => new {
+                    x.IdOrden,
+                    x.IdCliente,
+                    x.Estado,
+                    x.TrackingNumber,
+                    x.FechaCreacion,
+                    Direccion = x.DireccionEnvio == null ? null : new
+                    {
+                        x.DireccionEnvio.IdDireccion,
+                        x.DireccionEnvio.IdCliente,
+                        x.DireccionEnvio.Nombre,
+                        x.DireccionEnvio.Calle,
+                        x.DireccionEnvio.Ciudad,
+                        x.DireccionEnvio.Pais,
+                        x.DireccionEnvio.CodigoPostal,
+                        x.DireccionEnvio.Telefono,
+                        x.DireccionEnvio.EsPrincipal
+                    },
+                    Factura = x.Factura == null ? null : new
+                    {
+                        x.Factura.IdFactura,
+                        x.Factura.NumeroFactura,
+                        x.Factura.Total,
+                        x.Factura.FechaEmision
+                    },
+                    Pago = x.Pagos.OrderByDescending(p => p.IdPago).Select(p => new {
+                        p.IdPago,
+                        p.Monto,
+                        p.Estado,
+                        p.Titular,
+                        p.RefEnmascarada,
+                        p.TransaccionRef,
+                        p.FechaCreacion
+                    }).FirstOrDefault(),
+                    MetodoPago = x.Pagos.OrderByDescending(p => p.IdPago).Select(p => p.ClienteMetodoPago).Select(mp => new {
+                        mp.IdClienteMetodoPago,
+                        mp.IdCliente,
+                        mp.Nombre,
+                        mp.Tipo,
+                        mp.NumeroTarjeta,
+                        mp.cvv,
+                        mp.ExpMes,
+                        mp.ExpAnio,
+                        mp.Email,
+                        mp.EsPrincipal
+                    }).FirstOrDefault(),
+                    Items = x.Items.Select(oi => new {
+                        oi.IdOrdenItem,
+                        oi.IdOrden,
+                        oi.IdProducto,
+                        Nombre = oi.Producto != null ? oi.Producto.Nombre : null,
+                        oi.Cantidad,
+                        oi.PrecioUnitario,
+                        Producto = oi.Producto == null ? null : new { oi.Producto.RefModelo, oi.Producto.Image }
+                    }).ToList()
+                })
+                .FirstOrDefaultAsync();
+
+            if (o == null) return NotFound();
+
+            return Ok(new { clienteId = o.IdCliente, ordenes = new[] { o } });
+        }
+
+        // Guarda /wwwroot/js/orders/get_data_orders_cpanel_shipping.json
+        [HttpPost("json-shipping")]
+        public async Task<IActionResult> SaveOrdersJsonShipping([FromBody] object payload)
+        {
+            try
+            {
+                var webroot = _env.WebRootPath ?? Path.Combine(AppContext.BaseDirectory, "wwwroot");
+                var dir = Path.Combine(webroot, "js", "orders");
+                Directory.CreateDirectory(dir);
+
+                var filePath = Path.Combine(dir, "get_data_orders_cpanel_shipping.json");
+                var json = System.Text.Json.JsonSerializer.Serialize(payload, PrettyJson);
+                await System.IO.File.WriteAllTextAsync(filePath, json);
+
+                return Ok(new { saved = true, webPath = "/js/orders/get_data_orders_cpanel_shipping.json", physicalPath = filePath });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"No se pudo guardar get_data_orders_cpanel_shipping.json: {ex.Message}");
+            }
+        }
+
 
         // ---------------------- GETs (rutas equivalentes) ----------------------
 
@@ -170,6 +266,7 @@ namespace EcommerceWebAPI.Controllers
             {
                 return StatusCode(500, $"No se pudo guardar get_data_orders.json: {ex.Message}");
             }
+
         }
     }
 }

@@ -1,0 +1,15 @@
+﻿{
+  "profiles": {
+    "EcommerceWebAPI": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "index.html",
+      "applicationUrl": "http://localhost:5173;https://localhost:7173",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DEEPSEEK_API_KEY": "sk-6c2bec1d0ba34e8daf1bac06d6412f18"
+      }
+    }
+  }
+}

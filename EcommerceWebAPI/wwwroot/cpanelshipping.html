@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EEV Store · Shipping</title>
+  <link rel="stylesheet" href="css/cpanel/cpanel.css">
+  <link rel="stylesheet" href="css/cpanel/cpanel_shipping.css">
+  <style>
+    /* Colores de botones solicitados */
+    .btn-yellow { background:#fff3b0; color:#111; }
+    .btn-yellow:hover { filter: brightness(0.97); }
+    .btn-lightblue { background:#cfe8ff; color:#111; }
+    .btn-lightblue:hover { filter: brightness(0.97); }
+    .btn-orange { background:#ffd1a6; color:#111; }
+    .btn-orange:hover { filter: brightness(0.97); }
+
+    .btn { border:0; border-radius:8px; padding:8px 10px; font-weight:600; cursor:pointer; }
+
+    /* Badges de estatus (por si no cargas el helper desde JS) */
+    .badge { display:inline-block; padding:4px 8px; border-radius:8px; font-size:.85rem; font-weight:700; }
+    .badge-pagada    { background:#B8F2B1; color:#111; }
+    .badge-enviada   { background:#FFDD8A; color:#111; }
+    .badge-completada{ background:#CFCFCF; color:#111; }
+    .badge-cancelada { background:#FF5C5C; color:#fff; }
+
+    /* Modal básico */
+    .modal-backdrop { position: fixed; inset:0; background: rgba(0,0,0,.35); display:none; }
+    .modal { position: fixed; left:50%; top:50%; transform: translate(-50%,-50%); background:#fff; border-radius:12px; width:95%; max-width:500px; box-shadow:0 10px 26px rgba(0,0,0,.2); display:none; }
+    .modal.open + .modal-backdrop, .modal.open { display:block; }
+    .modal-header { padding:14px 16px; border-bottom:1px solid #e5e7eb; font-weight:700; }
+    .modal-body { padding:16px; }
+    .modal-footer { padding:12px 16px; border-top:1px solid #e5e7eb; display:flex; gap:8px; justify-content:flex-end; }
+    .field { margin-bottom:12px; }
+    .field label { display:block; font-weight:600; margin-bottom:6px; }
+    .field input { width:100%; padding:10px 12px; border:1px solid #e5e7eb; border-radius:8px; font: inherit; }
+    .error { color:#ef4444; font-size:.85rem; margin-top:6px; }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="brand"><h1>EEV Store</h1></div>
+    <nav class="nav">
+      <ul>
+        <li><a href="cpanel.html"><span class="emoji">📊</span> Dashboard</a></li>
+        <li><a href="cpanel_productos.html"><span class="emoji">📦</span> Productos</a></li>
+        <li><a href="#"><span class="emoji">📋</span> Órdenes</a></li>
+        <li><a href="#"><span class="emoji">📄</span> Facturas</a></li>
+        <li class="active"><a href="cpanelshipping.html"><span class="emoji">🚚</span> Shipping</a></li>
+        <li><a href="#"><span class="emoji">📈</span> Gráficas</a></li>
+        <li><a href="#"><span class="emoji">🔔</span> Centro Notificaciones</a></li>
+        <li><a href="#"><span class="emoji">⚙️</span> Ajustes</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main -->
+  <div class="main-wrap">
+    <header class="header">
+      <h2>Shipping</h2>
+      <div class="userbox">
+        <div class="user-texts">
+          <p id="userLabel" class="user-name">Usuario</p>
+          <p class="user-role">Administrator</p>
+        </div>
+        <a id="btnLogout" class="btn-logout" href="#">Cerrar Sesión</a>
+      </div>
+    </header>
+
+    <main class="content">
+<!-- Superior: Ordenes Pendientes de envío -->
+<section class="card">
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+    <h3 class="card-title">Órdenes pendientes de envío</h3>
+    <div style="display:flex; gap:8px;">
+      <input id="txtBuscarPendientes" type="text" placeholder="Buscar por No. Orden" style="padding:8px 10px; border:1px solid #e5e7eb; border-radius:8px;">
+      <button class="btn" id="btnBuscarPendientes">Buscar</button>
+    </div>
+  </div>
+  <div class="table-wrap">
+    <table class="table" id="tblPendientes">
+      <thead>
+        <tr>
+          <th>No. Orden</th>
+          <th>Cliente</th>
+          <th>Fecha</th>
+          <th>Status</th>
+          <th style="width:260px;">Acciones</th>
+        </tr>
+      </thead>
+      <tbody><!-- poblado por JS --></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ... al final, antes de cerrar body ... -->
+<script src="js/cpanel/cpanelshipping.js" defer></script>
+<script src="js/orders/get_data_orders_cpanel_shipping.js" defer></script>
+
+      <!-- Inferior: Órdenes Enviadas -->
+      <section class="card" style="margin-top:16px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+          <h3 class="card-title">Órdenes enviadas</h3>
+          <div style="display:flex; gap:8px;">
+            <input id="txtBuscarEnviadas" type="text" placeholder="Buscar por No. Orden" style="padding:8px 10px; border:1px solid #e5e7eb; border-radius:8px;">
+            <button class="btn" id="btnBuscarEnviadas">Buscar</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="table" id="tblEnviadas">
+            <thead>
+              <tr>
+                <th>No. Orden</th>
+                <th>Cliente</th>
+                <th>Fecha</th>
+                <th>Status</th>
+                <th>Tracking</th>
+                <th style="width:200px;">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Ejemplo: Status='Enviada' (se reemplaza con JS) -->
+              <tr>
+                <td>ORD-2025-09-14#00000002</td>
+                <td>cliente@correo.com</td>
+                <td>14/09/2025</td>
+                <td><span class="badge badge-enviada">Enviada</span></td>
+                <td>1Z999AA10123456784</td>
+                <td>
+                  <button class="btn btn-orange" data-action="upd-trk" data-id="2" data-no="ORD-2025-09-14#00000002" data-trk="1Z999AA10123456784">Actualizar Tracking</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal Añadir Tracking -->
+  <div class="modal" id="modalAddTrk" aria-hidden="true">
+    <div class="modal-header">Añadir tracking</div>
+    <div class="modal-body">
+      <div class="field">
+        <label>No. Orden</label>
+        <input id="add_noOrden" type="text" readonly>
+      </div>
+      <div class="field">
+        <label>Tracking *</label>
+        <input id="add_tracking" type="text" placeholder="Ej.: 1Z... / 9400... / etc.">
+        <div id="add_err" class="error"></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" id="btnAddCancel">Cancelar</button>
+      <button class="btn btn-yellow" id="btnAddSave">Agregar</button>
+    </div>
+  </div>
+  <div class="modal-backdrop" id="bdAddTrk"></div>
+
+  <!-- Modal Actualizar Tracking -->
+  <div class="modal" id="modalUpdTrk" aria-hidden="true">
+    <div class="modal-header">Actualizar tracking</div>
+    <div class="modal-body">
+      <div class="field">
+        <label>No. Orden</label>
+        <input id="upd_noOrden" type="text" readonly>
+      </div>
+      <div class="field">
+        <label>Tracking *</label>
+        <input id="upd_tracking" type="text">
+        <div id="upd_err" class="error"></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" id="btnUpdCancel">Cancelar</button>
+      <button class="btn btn-orange" id="btnUpdSave">Actualizar</button>
+    </div>
+  </div>
+  <div class="modal-backdrop" id="bdUpdTrk"></div>
+
+
+
+<!-- Desactiva render para esta página -->
+<script>window.ORDERS_SILENT = true;</script>
+
+<script>window.ORDERS_SILENT = true;</script>
+<script src="js/cpanel/get_data_orders.js" defer></script>
+<script src="js/cpanel/get_data_orders_cpanel_shipping.js" defer></script>
+<script src="js/cpanel/cpanelshipping.js" defer></script>
+
+</body>
+</html>

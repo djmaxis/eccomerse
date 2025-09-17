@@ -1,0 +1,43 @@
+/* wwwroot/css/cancelar.css */
+
+/* Estado visual para órdenes canceladas */
+.order-card.order--cancelled {
+  position: relative;
+  filter: grayscale(1);
+  opacity: var(--cancel-opacity, 0.55);
+  transition: opacity .25s ease, filter .25s ease;
+}
+
+/* Rótulo centrado "Orden Cancelada" */
+.order-card .order-cancelled-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  font-weight: 800;
+  font-size: clamp(18px, 4vw, 28px);
+  color: rgba(0,0,0,0.65);
+  text-transform: uppercase;
+}
+
+/* Badge de estado */
+.badge-dot.status.cancelada::before {
+  background: #CFCFCF;
+}
+.badge-dot.status.cancelada {
+  background: #CFCFCF;
+  color: #333;
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
+/* (Por si deseas mapear colores que mencionaste)
+   Pagado:    #B8F2B1
+   Enviada:   #FFDD8A
+   Completada:#CFCFCF
+   Cancelada: #CFCFCF (mantenemos gris)
+*/
+.badge-dot.status.pagada { background: #B8F2B1; }
+.badge-dot.status.enviada { background: #FFDD8A; }
+.badge-dot.status.completada { background: #CFCFCF; }

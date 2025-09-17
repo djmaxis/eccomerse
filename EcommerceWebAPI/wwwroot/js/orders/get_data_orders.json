@@ -1,1188 +1,302 @@
 {
-  "clienteId": 2,
+  "clienteId": 1,
   "ordenes": [
     {
-      "IdOrden": 29,
-      "IdCliente": 2,
-      "Estado": "Pagado",
+      "IdOrden": 6,
+      "IdOrderMask": "ORD-2025-09-17#00000006",
+      "IdCliente": 1,
+      "Estado": "Cancelada",
       "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T11:35:16.942",
+      "FechaCreacion": "2025-09-17T01:13:16.437",
       "Productos": [
         {
-          "IdOrden": 29,
-          "IdProducto": 4,
-          "Nombre": "Apple Watch Series 7",
-          "Cantidad": 1,
-          "PrecioUnitario": 225
-        }
-      ],
-      "Pago": {
-        "IdOrden": 29,
-        "Monto": 225,
-        "Estado": "pagado"
-      },
-      "Factura": {
-        "IdOrden": 29,
-        "NumeroFactura": "FAC-EEV-00026"
-      },
-      "Direccion": {
-        "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
-        "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
-      },
-      "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
-        "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
-      }
-    },
-    {
-      "IdOrden": 28,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T11:34:34.075",
-      "Productos": [
-        {
-          "IdOrden": 28,
+          "IdOrden": 6,
           "IdProducto": 5,
           "Nombre": "AirPods Pro",
           "Cantidad": 1,
-          "PrecioUnitario": 800
+          "PrecioUnitario": 1000
         }
       ],
       "Pago": {
-        "IdOrden": 28,
-        "Monto": 800,
-        "Estado": "pagado"
+        "IdOrden": 6,
+        "Monto": 1000,
+        "Estado": "Cancelada"
       },
       "Factura": {
-        "IdOrden": 28,
-        "NumeroFactura": "FAC-EEV-00025"
-      },
-      "Direccion": {
-        "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
-        "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
-      },
-      "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
-        "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
-      }
-    },
-    {
-      "IdOrden": 27,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T11:31:35.308",
-      "Productos": [
-        {
-          "IdOrden": 27,
-          "IdProducto": 5,
-          "Nombre": "AirPods Pro",
-          "Cantidad": 1,
-          "PrecioUnitario": 800
-        }
-      ],
-      "Pago": {
-        "IdOrden": 27,
-        "Monto": 800,
-        "Estado": "pagado"
-      },
-      "Factura": {
-        "IdOrden": 27,
-        "NumeroFactura": "FAC-EEV-00024"
-      },
-      "Direccion": {
-        "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
-        "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
-      },
-      "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
-        "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
-      }
-    },
-    {
-      "IdOrden": 26,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T11:30:34.615",
-      "Productos": [
-        {
-          "IdOrden": 26,
-          "IdProducto": 12,
-          "Nombre": "Altavoz Bluetooth Port\u00E1til",
-          "Cantidad": 1,
-          "PrecioUnitario": 400
-        }
-      ],
-      "Pago": {
-        "IdOrden": 26,
-        "Monto": 400,
-        "Estado": "pagado"
-      },
-      "Factura": {
-        "IdOrden": 26,
-        "NumeroFactura": "FAC-EEV-00023"
-      },
-      "Direccion": {
-        "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
-        "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
-      },
-      "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
-        "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
-      }
-    },
-    {
-      "IdOrden": 25,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T11:27:45.163",
-      "Productos": [
-        {
-          "IdOrden": 25,
-          "IdProducto": 4,
-          "Nombre": "Apple Watch Series 7",
-          "Cantidad": 1,
-          "PrecioUnitario": 225
-        }
-      ],
-      "Pago": {
-        "IdOrden": 25,
-        "Monto": 225,
-        "Estado": "pagado"
-      },
-      "Factura": {
-        "IdOrden": 25,
-        "NumeroFactura": "FAC-EEV-00022"
-      },
-      "Direccion": {
-        "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
-        "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
-      },
-      "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
-        "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
-      }
-    },
-    {
-      "IdOrden": 24,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T11:21:31.614",
-      "Productos": [
-        {
-          "IdOrden": 24,
-          "IdProducto": 4,
-          "Nombre": "Apple Watch Series 7",
-          "Cantidad": 1,
-          "PrecioUnitario": 225
-        }
-      ],
-      "Pago": {
-        "IdOrden": 24,
-        "Monto": 225,
-        "Estado": "pagado"
-      },
-      "Factura": {
-        "IdOrden": 24,
-        "NumeroFactura": "FAC-EEV-00021"
-      },
-      "Direccion": {
-        "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
-        "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
-      },
-      "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
-        "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
-      }
-    },
-    {
-      "IdOrden": 23,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T11:20:59.732",
-      "Productos": [
-        {
-          "IdOrden": 23,
-          "IdProducto": 12,
-          "Nombre": "Altavoz Bluetooth Port\u00E1til",
-          "Cantidad": 1,
-          "PrecioUnitario": 400
-        }
-      ],
-      "Pago": {
-        "IdOrden": 23,
-        "Monto": 400,
-        "Estado": "pagado"
-      },
-      "Factura": {
-        "IdOrden": 23,
-        "NumeroFactura": "FAC-EEV-00020"
-      },
-      "Direccion": {
-        "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
-        "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
-      },
-      "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
-        "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
-      }
-    },
-    {
-      "IdOrden": 22,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T11:19:50.408",
-      "Productos": [
-        {
-          "IdOrden": 22,
-          "IdProducto": 4,
-          "Nombre": "Apple Watch Series 7",
-          "Cantidad": 1,
-          "PrecioUnitario": 225
-        }
-      ],
-      "Pago": {
-        "IdOrden": 22,
-        "Monto": 225,
-        "Estado": "pagado"
-      },
-      "Factura": {
-        "IdOrden": 22,
-        "NumeroFactura": "FAC-EEV-00019"
-      },
-      "Direccion": {
-        "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
-        "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
-      },
-      "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
-        "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
-      }
-    },
-    {
-      "IdOrden": 21,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-12T11:13:29.698",
-      "Productos": [
-        {
-          "IdOrden": 21,
-          "IdProducto": 5,
-          "Nombre": "AirPods Pro",
-          "Cantidad": 1,
-          "PrecioUnitario": 800
-        }
-      ],
-      "Pago": {
-        "IdOrden": 21,
-        "Monto": 800,
-        "Estado": "pagado"
-      },
-      "Factura": {
-        "IdOrden": 21,
-        "NumeroFactura": "FAC-EEV-00018"
-      },
-      "Direccion": {
-        "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
-        "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
-      },
-      "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
-        "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
-      }
-    },
-    {
-      "IdOrden": 20,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T11:12:34.981",
-      "Productos": [
-        {
-          "IdOrden": 20,
-          "IdProducto": 13,
-          "Nombre": "Tablet 7 2025",
-          "Cantidad": 1,
-          "PrecioUnitario": 150
-        }
-      ],
-      "Pago": {
-        "IdOrden": 20,
-        "Monto": 150,
-        "Estado": "pagado"
-      },
-      "Factura": {
-        "IdOrden": 20,
-        "NumeroFactura": "FAC-EEV-00017"
-      },
-      "Direccion": {
-        "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
-        "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
-      },
-      "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
-        "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
-      }
-    },
-    {
-      "IdOrden": 19,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T03:51:21.94",
-      "Productos": [
-        {
-          "IdOrden": 19,
-          "IdProducto": 12,
-          "Nombre": "Altavoz Bluetooth Port\u00E1til",
-          "Cantidad": 1,
-          "PrecioUnitario": 400
-        }
-      ],
-      "Pago": {
-        "IdOrden": 19,
-        "Monto": 400,
-        "Estado": "pagado"
-      },
-      "Factura": {
-        "IdOrden": 19,
-        "NumeroFactura": "FAC-EEV-00016"
-      },
-      "Direccion": {
-        "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
-        "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
-      },
-      "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
-        "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
-      }
-    },
-    {
-      "IdOrden": 18,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T03:51:05.028",
-      "Productos": [
-        {
-          "IdOrden": 18,
-          "IdProducto": 5,
-          "Nombre": "AirPods Pro",
-          "Cantidad": 1,
-          "PrecioUnitario": 800
-        }
-      ],
-      "Pago": {
-        "IdOrden": 18,
-        "Monto": 800,
-        "Estado": "pagado"
-      },
-      "Factura": {
-        "IdOrden": 18,
-        "NumeroFactura": "FAC-EEV-00015"
-      },
-      "Direccion": {
-        "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
-        "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
-      },
-      "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
-        "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
-      }
-    },
-    {
-      "IdOrden": 17,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T03:41:03.531",
-      "Productos": [
-        {
-          "IdOrden": 17,
-          "IdProducto": 9,
-          "Nombre": "Funda para iPhone 13",
-          "Cantidad": 1,
-          "PrecioUnitario": 15
-        }
-      ],
-      "Pago": {
-        "IdOrden": 17,
-        "Monto": 15,
-        "Estado": "pagado"
-      },
-      "Factura": {
-        "IdOrden": 17,
-        "NumeroFactura": "FAC-EEV-00014"
-      },
-      "Direccion": {
-        "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
-        "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
-      },
-      "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
-        "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
-      }
-    },
-    {
-      "IdOrden": 16,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T03:39:50.558",
-      "Productos": [
-        {
-          "IdOrden": 16,
-          "IdProducto": 12,
-          "Nombre": "Altavoz Bluetooth Port\u00E1til",
-          "Cantidad": 1,
-          "PrecioUnitario": 400
-        }
-      ],
-      "Pago": {
-        "IdOrden": 16,
-        "Monto": 400,
-        "Estado": "pagado"
-      },
-      "Factura": {
-        "IdOrden": 16,
-        "NumeroFactura": "FAC-EEV-00013"
-      },
-      "Direccion": {
-        "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
-        "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
-      },
-      "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
-        "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
-      }
-    },
-    {
-      "IdOrden": 15,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T03:39:12.862",
-      "Productos": [
-        {
-          "IdOrden": 15,
-          "IdProducto": 9,
-          "Nombre": "Funda para iPhone 13",
-          "Cantidad": 1,
-          "PrecioUnitario": 15
-        }
-      ],
-      "Pago": {
-        "IdOrden": 15,
-        "Monto": 15,
-        "Estado": "pagado"
-      },
-      "Factura": {
-        "IdOrden": 15,
-        "NumeroFactura": "FAC-EEV-00012"
-      },
-      "Direccion": {
-        "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
-        "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
-      },
-      "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
-        "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
-      }
-    },
-    {
-      "IdOrden": 14,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T03:37:56.414",
-      "Productos": [
-        {
-          "IdOrden": 14,
-          "IdProducto": 3,
-          "Nombre": "iPad Air 2022",
-          "Cantidad": 1,
-          "PrecioUnitario": 379
-        }
-      ],
-      "Pago": {
-        "IdOrden": 14,
-        "Monto": 379,
-        "Estado": "pagado"
-      },
-      "Factura": {
-        "IdOrden": 14,
-        "NumeroFactura": "FAC-EEV-00011"
-      },
-      "Direccion": {
-        "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
-        "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
-      },
-      "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
-        "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
-      }
-    },
-    {
-      "IdOrden": 13,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T03:34:48.47",
-      "Productos": [
-        {
-          "IdOrden": 13,
-          "IdProducto": 9,
-          "Nombre": "Funda para iPhone 13",
-          "Cantidad": 1,
-          "PrecioUnitario": 15
-        }
-      ],
-      "Pago": {
-        "IdOrden": 13,
-        "Monto": 15,
-        "Estado": "pagado"
-      },
-      "Factura": {
-        "IdOrden": 13,
-        "NumeroFactura": "FAC-EEV-00010"
-      },
-      "Direccion": {
-        "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
-        "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
-      },
-      "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
-        "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
-      }
-    },
-    {
-      "IdOrden": 12,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T03:34:04.572",
-      "Productos": [
-        {
-          "IdOrden": 12,
-          "IdProducto": 11,
-          "Nombre": "Disco Duro Externo 1TB",
-          "Cantidad": 1,
-          "PrecioUnitario": 500
-        }
-      ],
-      "Pago": {
-        "IdOrden": 12,
-        "Monto": 500,
-        "Estado": "pagado"
-      },
-      "Factura": {
-        "IdOrden": 12,
-        "NumeroFactura": "FAC-EEV-00009"
-      },
-      "Direccion": {
-        "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
-        "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
-      },
-      "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
-        "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
-      }
-    },
-    {
-      "IdOrden": 11,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T03:33:04.897",
-      "Productos": [
-        {
-          "IdOrden": 11,
-          "IdProducto": 6,
-          "Nombre": "GoPro Hero 10",
-          "Cantidad": 1,
-          "PrecioUnitario": 349
-        }
-      ],
-      "Pago": {
-        "IdOrden": 11,
-        "Monto": 349,
-        "Estado": "pagado"
-      },
-      "Factura": {
-        "IdOrden": 11,
-        "NumeroFactura": "FAC-EEV-00008"
-      },
-      "Direccion": {
-        "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
-        "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
-      },
-      "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
-        "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
-      }
-    },
-    {
-      "IdOrden": 10,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T03:32:42.985",
-      "Productos": [
-        {
-          "IdOrden": 10,
-          "IdProducto": 12,
-          "Nombre": "Altavoz Bluetooth Port\u00E1til",
-          "Cantidad": 1,
-          "PrecioUnitario": 400
-        }
-      ],
-      "Pago": {
-        "IdOrden": 10,
-        "Monto": 400,
-        "Estado": "pagado"
-      },
-      "Factura": {
-        "IdOrden": 10,
-        "NumeroFactura": "FAC-EEV-00007"
-      },
-      "Direccion": {
-        "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
-        "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
-      },
-      "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
-        "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
-      }
-    },
-    {
-      "IdOrden": 9,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T03:30:21.506",
-      "Productos": [
-        {
-          "IdOrden": 9,
-          "IdProducto": 2,
-          "Nombre": "MacBook Pro 13\u0022",
-          "Cantidad": 1,
-          "PrecioUnitario": 899
-        }
-      ],
-      "Pago": {
-        "IdOrden": 9,
-        "Monto": 899,
-        "Estado": "pagado"
-      },
-      "Factura": {
-        "IdOrden": 9,
+        "IdOrden": 6,
         "NumeroFactura": "FAC-EEV-00006"
       },
       "Direccion": {
         "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
+        "Calle": "aaaa",
+        "Ciudad": "Guayub\u00EDn",
         "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
+        "CodigoPostal": "2323",
+        "Telefono": "2323"
       },
       "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
+        "IdClienteMetodoPago": 1,
+        "IdCliente": 1,
+        "Nombre": "aaaaa",
         "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
+        "Email": "aaa@aaa.com"
       }
     },
     {
-      "IdOrden": 8,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T03:26:56.201",
+      "IdOrden": 5,
+      "IdOrderMask": "ORD-2025-09-16#00000005",
+      "IdCliente": 1,
+      "Estado": "Enviada",
+      "TrackingNumber": "1Z564465Z564D654E",
+      "FechaCreacion": "2025-09-16T23:06:59.467",
       "Productos": [
         {
-          "IdOrden": 8,
-          "IdProducto": 5,
-          "Nombre": "AirPods Pro",
-          "Cantidad": 1,
-          "PrecioUnitario": 800
-        }
-      ],
-      "Pago": {
-        "IdOrden": 8,
-        "Monto": 800,
-        "Estado": "pagado"
-      },
-      "Factura": {
-        "IdOrden": 8,
-        "NumeroFactura": "FAC-EEV-00005"
-      },
-      "Direccion": {
-        "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
-        "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
-      },
-      "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
-        "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
-      }
-    },
-    {
-      "IdOrden": 7,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T03:24:52.892",
-      "Productos": [
-        {
-          "IdOrden": 7,
-          "IdProducto": 4,
-          "Nombre": "Apple Watch Series 7",
-          "Cantidad": 1,
-          "PrecioUnitario": 225
-        }
-      ],
-      "Pago": {
-        "IdOrden": 7,
-        "Monto": 225,
-        "Estado": "pagado"
-      },
-      "Factura": {
-        "IdOrden": 7,
-        "NumeroFactura": "FAC-EEV-00004"
-      },
-      "Direccion": {
-        "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
-        "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
-      },
-      "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
-        "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
-      }
-    },
-    {
-      "IdOrden": 6,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T03:23:57.807",
-      "Productos": [
-        {
-          "IdOrden": 6,
-          "IdProducto": 1,
-          "Nombre": "iPhone 11 128GB",
-          "Cantidad": 1,
-          "PrecioUnitario": 499
-        },
-        {
-          "IdOrden": 6,
+          "IdOrden": 5,
           "IdProducto": 2,
           "Nombre": "MacBook Pro 13\u0022",
           "Cantidad": 1,
           "PrecioUnitario": 899
         },
         {
-          "IdOrden": 6,
-          "IdProducto": 3,
-          "Nombre": "iPad Air 2022",
-          "Cantidad": 1,
-          "PrecioUnitario": 379
-        },
-        {
-          "IdOrden": 6,
-          "IdProducto": 4,
-          "Nombre": "Apple Watch Series 7",
-          "Cantidad": 1,
-          "PrecioUnitario": 225
-        },
-        {
-          "IdOrden": 6,
+          "IdOrden": 5,
           "IdProducto": 5,
           "Nombre": "AirPods Pro",
           "Cantidad": 1,
-          "PrecioUnitario": 800
+          "PrecioUnitario": 1000
         },
         {
-          "IdOrden": 6,
-          "IdProducto": 7,
-          "Nombre": "Cargador USB-C 20W",
+          "IdOrden": 5,
+          "IdProducto": 6,
+          "Nombre": "GoPro Hero 10",
           "Cantidad": 1,
-          "PrecioUnitario": 20
+          "PrecioUnitario": 349
         },
         {
-          "IdOrden": 6,
-          "IdProducto": 8,
-          "Nombre": "Soporte para Laptop",
-          "Cantidad": 1,
-          "PrecioUnitario": 30
-        },
-        {
-          "IdOrden": 6,
-          "IdProducto": 9,
-          "Nombre": "Funda para iPhone 13",
-          "Cantidad": 1,
-          "PrecioUnitario": 15
-        },
-        {
-          "IdOrden": 6,
-          "IdProducto": 10,
-          "Nombre": "Mouse Inal\u00E1mbrico",
-          "Cantidad": 1,
-          "PrecioUnitario": 250
-        },
-        {
-          "IdOrden": 6,
-          "IdProducto": 11,
-          "Nombre": "Disco Duro Externo 1TB",
-          "Cantidad": 1,
-          "PrecioUnitario": 500
-        },
-        {
-          "IdOrden": 6,
-          "IdProducto": 12,
-          "Nombre": "Altavoz Bluetooth Port\u00E1til",
-          "Cantidad": 1,
-          "PrecioUnitario": 400
-        },
-        {
-          "IdOrden": 6,
+          "IdOrden": 5,
           "IdProducto": 13,
           "Nombre": "Tablet 7 2025",
           "Cantidad": 1,
           "PrecioUnitario": 150
-        }
-      ],
-      "Pago": {
-        "IdOrden": 6,
-        "Monto": 4167,
-        "Estado": "pagado"
-      },
-      "Factura": {
-        "IdOrden": 6,
-        "NumeroFactura": "FAC-EEV-00003"
-      },
-      "Direccion": {
-        "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
-        "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
-      },
-      "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
-        "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
-      }
-    },
-    {
-      "IdOrden": 5,
-      "IdCliente": 2,
-      "Estado": "Pagado",
-      "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T03:22:06.44",
-      "Productos": [
+        },
         {
           "IdOrden": 5,
-          "IdProducto": 12,
-          "Nombre": "Altavoz Bluetooth Port\u00E1til",
-          "Cantidad": 10,
-          "PrecioUnitario": 400
+          "IdProducto": 16,
+          "Nombre": "Proyector con WiFi y Bluetooth 1080p",
+          "Cantidad": 1,
+          "PrecioUnitario": 750
         }
       ],
       "Pago": {
         "IdOrden": 5,
-        "Monto": 4000,
-        "Estado": "pagado"
+        "Monto": 3148,
+        "Estado": "pagada"
       },
       "Factura": {
         "IdOrden": 5,
-        "NumeroFactura": "FAC-EEV-00002"
+        "NumeroFactura": "FAC-EEV-00005"
       },
       "Direccion": {
         "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
+        "Calle": "aaaa",
+        "Ciudad": "Guayub\u00EDn",
         "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
+        "CodigoPostal": "2323",
+        "Telefono": "2323"
       },
       "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
+        "IdClienteMetodoPago": 1,
+        "IdCliente": 1,
+        "Nombre": "aaaaa",
         "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
+        "Email": "aaa@aaa.com"
       }
     },
     {
       "IdOrden": 4,
-      "IdCliente": 2,
-      "Estado": "Pagado",
+      "IdOrderMask": "ORD-2025-09-16#00000004",
+      "IdCliente": 1,
+      "Estado": "Cancelada",
       "TrackingNumber": "",
-      "FechaCreacion": "2025-09-11T03:15:20.409",
+      "FechaCreacion": "2025-09-16T17:15:15.499",
       "Productos": [
         {
           "IdOrden": 4,
-          "IdProducto": 1,
-          "Nombre": "iPhone 11 128GB",
+          "IdProducto": 5,
+          "Nombre": "AirPods Pro",
           "Cantidad": 1,
-          "PrecioUnitario": 499
-        },
+          "PrecioUnitario": 1000
+        }
+      ],
+      "Pago": {
+        "IdOrden": 4,
+        "Monto": 1000,
+        "Estado": "Cancelada"
+      },
+      "Factura": {
+        "IdOrden": 4,
+        "NumeroFactura": "FAC-EEV-00004"
+      },
+      "Direccion": {
+        "IdDireccion": 1,
+        "Calle": "aaaa",
+        "Ciudad": "Guayub\u00EDn",
+        "Pais": "Republica Dominicana",
+        "CodigoPostal": "2323",
+        "Telefono": "2323"
+      },
+      "MetodoPago": {
+        "IdClienteMetodoPago": 1,
+        "IdCliente": 1,
+        "Nombre": "aaaaa",
+        "Tipo": "paypal",
+        "Email": "aaa@aaa.com"
+      }
+    },
+    {
+      "IdOrden": 3,
+      "IdOrderMask": "ORD-2025-09-16#00000003",
+      "IdCliente": 1,
+      "Estado": "Enviada",
+      "TrackingNumber": "94558632484987423",
+      "FechaCreacion": "2025-09-16T14:28:55.962",
+      "Productos": [
         {
-          "IdOrden": 4,
+          "IdOrden": 3,
+          "IdProducto": 2,
+          "Nombre": "MacBook Pro 13\u0022",
+          "Cantidad": 2,
+          "PrecioUnitario": 899
+        }
+      ],
+      "Pago": {
+        "IdOrden": 3,
+        "Monto": 1798,
+        "Estado": "pagada"
+      },
+      "Factura": {
+        "IdOrden": 3,
+        "NumeroFactura": "FAC-EEV-00003"
+      },
+      "Direccion": {
+        "IdDireccion": 1,
+        "Calle": "aaaa",
+        "Ciudad": "Guayub\u00EDn",
+        "Pais": "Republica Dominicana",
+        "CodigoPostal": "2323",
+        "Telefono": "2323"
+      },
+      "MetodoPago": {
+        "IdClienteMetodoPago": 1,
+        "IdCliente": 1,
+        "Nombre": "aaaaa",
+        "Tipo": "paypal",
+        "Email": "aaa@aaa.com"
+      }
+    },
+    {
+      "IdOrden": 2,
+      "IdOrderMask": "ORD-2025-09-16#00000002",
+      "IdCliente": 1,
+      "Estado": "Cancelada",
+      "TrackingNumber": "",
+      "FechaCreacion": "2025-09-16T14:28:18.532",
+      "Productos": [
+        {
+          "IdOrden": 2,
+          "IdProducto": 2,
+          "Nombre": "MacBook Pro 13\u0022",
+          "Cantidad": 1,
+          "PrecioUnitario": 899
+        }
+      ],
+      "Pago": {
+        "IdOrden": 2,
+        "Monto": 899,
+        "Estado": "Cancelada"
+      },
+      "Factura": {
+        "IdOrden": 2,
+        "NumeroFactura": "FAC-EEV-00002"
+      },
+      "Direccion": {
+        "IdDireccion": 1,
+        "Calle": "aaaa",
+        "Ciudad": "Guayub\u00EDn",
+        "Pais": "Republica Dominicana",
+        "CodigoPostal": "2323",
+        "Telefono": "2323"
+      },
+      "MetodoPago": {
+        "IdClienteMetodoPago": 1,
+        "IdCliente": 1,
+        "Nombre": "aaaaa",
+        "Tipo": "paypal",
+        "Email": "aaa@aaa.com"
+      }
+    },
+    {
+      "IdOrden": 1,
+      "IdOrderMask": "ORD-2025-09-16#00000001",
+      "IdCliente": 1,
+      "Estado": "Pagada",
+      "TrackingNumber": "",
+      "FechaCreacion": "2025-09-16T14:19:15.498",
+      "Productos": [
+        {
+          "IdOrden": 1,
           "IdProducto": 4,
           "Nombre": "Apple Watch Series 7",
           "Cantidad": 1,
           "PrecioUnitario": 225
         },
         {
-          "IdOrden": 4,
-          "IdProducto": 10,
-          "Nombre": "Mouse Inal\u00E1mbrico",
+          "IdOrden": 1,
+          "IdProducto": 9,
+          "Nombre": "Funda para iPhone 13",
           "Cantidad": 1,
-          "PrecioUnitario": 250
+          "PrecioUnitario": 15
         }
       ],
       "Pago": {
-        "IdOrden": 4,
-        "Monto": 974,
-        "Estado": "pagado"
+        "IdOrden": 1,
+        "Monto": 240,
+        "Estado": "pagada"
       },
       "Factura": {
-        "IdOrden": 4,
+        "IdOrden": 1,
         "NumeroFactura": "FAC-EEV-00001"
       },
       "Direccion": {
         "IdDireccion": 1,
-        "Calle": "Manuel emilio perdomo #800",
-        "Ciudad": "Santo Domingo",
+        "Calle": "aaaa",
+        "Ciudad": "Guayub\u00EDn",
         "Pais": "Republica Dominicana",
-        "CodigoPostal": "10100",
-        "Telefono": "8295463303"
+        "CodigoPostal": "2323",
+        "Telefono": "2323"
       },
       "MetodoPago": {
-        "IdClienteMetodoPago": 2,
-        "IdCliente": 2,
-        "Nombre": "djmaxis@gmail.com",
+        "IdClienteMetodoPago": 1,
+        "IdCliente": 1,
+        "Nombre": "aaaaa",
         "Tipo": "paypal",
-        "NumeroTarjeta": null,
-        "cvv": null,
-        "Email": "djmaxis@gmail.com"
+        "Email": "aaa@aaa.com"
       }
     }
-  ]
+  ],
+  "index": {
+    "byAnyId": {
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "ord-2025-09-17#00000006": 6,
+      "ord-2025-09-16#00000005": 5,
+      "ord-2025-09-16#00000004": 4,
+      "ord-2025-09-16#00000003": 3,
+      "ord-2025-09-16#00000002": 2,
+      "ord-2025-09-16#00000001": 1
+    }
+  }
 }

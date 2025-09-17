@@ -1,0 +1,117 @@
+/* ===== Toolbar de productos ===== */
+.toolbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.searchbox{
+  display:flex;
+  align-items:center;
+  gap: 8px;
+}
+
+.searchbox input[type="search"]{
+  width: 260px;
+  max-width: 60vw;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+}
+.searchbox input[type="search"]:focus{
+  border-color:#60a5fa;
+  box-shadow: 0 0 0 3px rgba(96,165,250,.2);
+}
+
+/* ===== Botones ===== */
+.btn{
+  display:inline-block;
+  background:#e5e7eb;
+  color:#111827;
+  border: 1px solid #e5e7eb;
+  padding: 9px 14px;
+  border-radius: 10px;
+  font-weight:600;
+  cursor:pointer;
+  transition: background .15s ease, transform .05s ease, color .15s ease;
+}
+.btn:hover{ background:#d1d5db; }
+.btn:active{ transform: translateY(1px); }
+
+.btn-primary{
+  background:#2563eb;     /* azul */
+  color:#fff;
+  border-color:#2563eb;
+}
+.btn-primary:hover{ background:#1d4ed8; }
+
+/* Acciones de tabla (editar/eliminar) – si las agregas luego */
+.table .action-btn{
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight:700;
+  border: 1px solid var(--border);
+  background:#fff;
+  cursor:pointer;
+}
+.table .action-btn + .action-btn{ margin-left: 6px; }
+.table .action-edit{ color:#1d4ed8; border-color:#bfdbfe; }
+.table .action-del{ color:#b91c1c; border-color:#fecaca; }
+
+/* ===== Modal (versión simple y robusta) ===== */
+.modal-backdrop{
+  display:none;
+  position: fixed; inset:0;
+  background: rgba(0,0,0,.35);
+  z-index: 80;
+}
+.modal-backdrop.open{ display:block; }
+
+.modal{
+  display:none;
+  position: fixed; inset:0;
+  z-index: 90;
+  align-items:center; justify-content:center;
+}
+.modal.open{ display:flex; }
+
+.modal-content{
+  width: min(760px, 92vw);
+  background: #414b58;
+  border-radius: 12px;
+  box-shadow: 0 14px 38px rgba(0,0,0,.25);
+  overflow: hidden;
+}
+.modal-header{ display:flex; align-items:center; justify-content:space-between;
+  padding: 12px 16px; border-bottom:1px solid #e5e7eb; }
+.modal-close{ background: transparent; border:none; font-size: 22px; cursor:pointer; }
+.modal-body{ padding: 16px; }
+.modal-footer{ padding: 12px 16px; border-top:1px solid #e5e7eb; text-align:right; }
+
+/* Form grid */
+.form-grid{ display:grid; gap:12px; grid-template-columns: 1fr 1fr; }
+.form-grid .col-2{ grid-column: span 2; }
+.form-grid label{ display:flex; flex-direction:column; gap:6px; }
+.form-grid input, .form-grid textarea{
+  padding:10px 12px; border:1px solid #467ae2; border-radius:10px; font-size:14px;
+}
+.form-grid input:focus, .form-grid textarea:focus{
+  outline:none; border-color:#60a5fa; box-shadow: 0 0 0 3px rgba(96,165,250,.2);
+}
+.field-error{ color:#b91c1c; height:14px; font-size:12px; }
+
+/* === Colores de texto en el modal === */
+.modal-content { background: #2e70cc; }               /* fondo más oscuro (opcional) */
+.modal-header h3, .modal-close { color: #f9fafb; }    /* título y X */
+.modal-body label > span { color: #e5e7eb; }          /* etiquetas (Nombre, Precio, etc.) */
+.modal-body .field-error { color: #f87171; }          /* errores */
+.modal-body input, .modal-body textarea {
+  color:#111827; background:#f9fafb; border-color:#e5e7eb;
+}
+.modal-footer .btn-primary { background:#ffffff; border-color:#2563eb; color:#467ae2; }
+

@@ -1,37 +1,37 @@
 ﻿{
-  "timestamp": "2025-09-11T11:35:16.919Z",
+  "timestamp": "2025-09-17T01:13:16.419Z",
   "Direcci\u00F3n de env\u00EDo": {
     "id": 1,
-    "nombre": "Enrique Escano",
-    "telefono": "8295463303",
-    "calle": "Manuel emilio perdomo #800",
-    "ciudad": "Santo Domingo",
-    "codigoPostal": "10100",
+    "nombre": "aaaaa",
+    "telefono": "2323",
+    "calle": "aaaa",
+    "ciudad": "Guayub\u00EDn",
+    "codigoPostal": "2323",
     "pais": "Republica Dominicana",
-    "esPrincipal": true
+    "esPrincipal": false
   },
   "Productos": [
     {
       "idCarritoItem": null,
-      "idProducto": 4,
-      "refModelo": "AW-S7",
-      "nombre": "Apple Watch Series 7",
+      "idProducto": 5,
+      "refModelo": "AIRPODSPRO",
+      "nombre": "AirPods Pro",
       "cantidad": 1,
-      "precioUnitario": 225,
-      "imagenUrl": "/img/4.jpg"
+      "precioUnitario": 1000,
+      "imagenUrl": "img/5.jpg"
     }
   ],
   "M\u00E9todos de pago": null,
   "Resumen del pedido": {
-    "Total del pedido": 225,
+    "Total del pedido": 1000,
     "Moneda": "USD"
   },
   "Debug": {
-    "clienteId": 2,
+    "clienteId": 1,
     "guestCartItems": 1,
     "fromBD": true,
-    "dbCartId": 39,
+    "dbCartId": 7,
     "dbItemsCount": 1,
-    "summary": "clienteId 2  guestCart items: 1"
+    "summary": "clienteId 1  guestCart items: 1"
   }
 }

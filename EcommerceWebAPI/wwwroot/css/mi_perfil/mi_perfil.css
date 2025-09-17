@@ -680,4 +680,78 @@ input:checked + .slider:before {
   vertical-align: middle;
 }
 
+/* ===== Full-page & Drawer responsive para Mi Perfil ===== */
+html, body { height: 100%; }
 
+.profile-layout{
+  min-height: calc(100vh - 110px);
+}
+
+.open-sidebar-btn{
+  display: none;
+  margin: -4px 0 16px;
+  padding: 10px 12px;
+  border: 1px solid var(--gray-300);
+  background: var(--white);
+  border-radius: 10px;
+  font-weight: 600;
+  gap: 8px;
+}
+.open-sidebar-btn i{ margin-right: 6px; }
+
+.sidebar-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+  z-index: 998;
+}
+
+@media (max-width: 992px){
+  .open-sidebar-btn{ display: inline-flex; align-items:center; }
+
+  #profile-sidebar{
+    position: fixed;
+    top: 70px;
+    left: 0;
+    height: calc(100vh - 70px);
+    max-height: calc(100vh - 70px);
+    width: min(86vw, 360px);
+    transform: translateX(-102%);
+    transition: transform .25s ease;
+    z-index: 999;
+  }
+  #profile-sidebar.drawer-open{
+    transform: translateX(0);
+  }
+  .profile-layout{ gap: 12px; }
+}
+
+@media (min-width: 993px){
+  #profile-sidebar{
+    position: sticky;
+    top: 90px;
+    height: calc(100vh - 120px);
+    max-height: calc(100vh - 120px);
+    overflow: auto;
+  }
+}
+
+/* --- Métodos de pago --- */
+#lista-metodos{
+  max-width: 980px;
+  margin: 10px auto 0;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(0,0,0,.02);
+}
+#lista-metodos .mp-card{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
+  padding:16px 18px;background:#fff;
+}
+#lista-metodos .mp-card + .mp-card{ border-top:1px solid rgba(0,0,0,.06) }
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:700;vertical-align:middle}
+.badge.success{background:#16a34a;color:#fff}
+
+/* Modal más arriba (si usas el mismo backdrop) */
+.mp-modal-backdrop{align-items:flex-start;padding-top:6vh}

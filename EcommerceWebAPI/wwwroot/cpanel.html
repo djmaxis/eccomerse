@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EEV Store · Dashboard</title>
+  <link rel="stylesheet" href="css/cpanel/cpanel.css">
+</head>
+<body>
+
+  <!-- Sidebar fija en desktop, superior en móvil -->
+  <aside id="sidebar" class="sidebar">
+    <div class="brand">
+      <h1>EEV Store</h1>
+    </div>
+
+    <nav class="nav">
+      <ul>
+        <li class="active"><a href="#"><span class="emoji">📊</span> Dashboard</a></li>
+        <li><a href="cpanel_productos.html"><span class="emoji">📦</span> Productos</a></li>
+        <li><a href="#"><span class="emoji">📋</span> Órdenes</a></li>
+        <li><a href="#"><span class="emoji">📄</span> Facturas</a></li>
+        <li><a href="cpanelshipping.html"><span class="emoji">🚚</span> Shipping</a></li>
+        <li><a href="#"><span class="emoji">📈</span> Gráficas</a></li>
+        <li><a href="#"><span class="emoji">🔔</span> Centro Notificaciones</a></li>
+        <li><a href="#"><span class="emoji">⚙️</span> Ajustes</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Contenido principal -->
+  <div class="main-wrap">
+    <!-- Header -->
+    <header class="header">
+      <h2>Dashboard</h2>
+
+      <div class="userbox">
+        <div class="user-texts">
+          <!-- Solo nombre; si luego quieres hacerlo dinámico, rellena este span con JS -->
+          <p id="userLabel" class="user-name">Enrique Escano</p>
+          <p class="user-role">Administrator</p>
+        </div>
+
+        <!-- Sin JS: usa href directo. Si luego añades JS, cambia a <button id="btnLogout"> -->
+        <a id="btnLogout" class="btn-logout" href="#">Cerrar Sesión</a>
+
+      </div>
+    </header>
+
+    <!-- Contenido -->
+    <main class="content">
+      <!-- Tarjetas de métricas -->
+      <section class="stats">
+        <article class="stat-card" style="background:#22c55e;">
+          <div class="stat-head">
+            <h3>Usuarios registrados</h3>
+            <span class="emoji">📋</span>
+          </div>
+          <div class="stat-value"></div>
+          <p class="stat-desc">Usuarios activos en el sistema</p>
+        </article>
+
+        <article class="stat-card" style="background:#f97316;">
+          <div class="stat-head">
+            <h3>Órdenes Pagadas / Enviadas</h3>
+            <span class="emoji">📦</span>
+          </div>
+          <div class="stat-value"></div>
+          <p class="stat-desc">Órdenes completadas</p>
+        </article>
+
+        <article class="stat-card" style="background:#ef6b57;">
+          <div class="stat-head">
+            <h3>Órdenes Canceladas</h3>
+            <span class="emoji">❌</span>
+          </div>
+          <div class="stat-value"></div>
+          <p class="stat-desc">Órdenes canceladas por usuarios</p>
+        </article>
+      </section>
+
+      <!-- Tablas -->
+      <section class="grid">
+        <!-- Estatus de órdenes -->
+        <div class="card">
+          <h3 class="card-title">Estatus de órdenes</h3>
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>No. Orden</th>
+                  <th>Cliente</th>
+                  <th>Fecha</th>
+                  <th>Status</th>
+                  <th>%</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ord-2025-09-15#00000001</td>
+                  <td>kescano@gmail.com</td>
+                  <td>28/02/2025</td>
+                  <td><span class="badge badge-danger">Cancelada</span></td>
+                  <td><span class="tag">-</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Usuarios recurrentes -->
+        <div class="card">
+          <h3 class="card-title">Usuarios Recurrentes</h3>
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Usuario</th>
+                  <th>Cant Órdenes</th>
+                  <th>Total Gastado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>kescano@gmail.com</td>
+                  <td>5</td>
+                  <td>$15,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <script src="js/cpanel/cpanel.js" defer></script>
+  <script src="/js/cpanel/cpanelMainBkend.js" defer></script>
+</body>
+</html>

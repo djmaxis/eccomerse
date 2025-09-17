@@ -44,7 +44,7 @@
     return {
       IdCliente: Number(debug.clienteId ?? localStorage.getItem('clienteId') ?? 0),
       IdDireccionEnvio: dir?.id ?? null,
-      Estado: 'Pagado',
+      Estado: 'Pagada',
       TrackingNumber: '',
       FechaCreacion: new Date().toISOString(),
       Items: (preOrder?.Productos || []).map(x => ({
@@ -146,7 +146,7 @@ async function run(preOrder) {
   setTimeout(() => {
     console.log('🚀 [post_put] EJECUTANDO REDIRECT a ../orders.html');  // Log temporal
     window.location.href = '../orders.html';  // ← CAMBIO: Path correcto para tu estructura
-  }, 5000);  // Mantén el retraso para ver el mensaje
+  }, 1000);  // Mantén el retraso para ver el mensaje
 }
   window.postPut = { run };
 })();

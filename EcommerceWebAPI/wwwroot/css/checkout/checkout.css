@@ -1,0 +1,250 @@
+/* ====== GRID PRINCIPAL: izquierda / derecha ====== */
+
+.checkout-left .card{
+  width: 100%;          /* ocupa toda la columna */
+  max-width: 100%;      /* sin límites */
+  box-sizing: border-box;
+}
+
+.checkout-grid{
+  width: 100%;
+  max-width: var(--ck-maxw);
+  display: grid;
+  grid-template-columns: var(--ck-left) var(--ck-right);
+  gap: var(--ck-gap);
+  align-items: flex-start;
+  margin-top: var(--ck-mt);
+  margin-left: var(--ck-ml, 0);   /* ← NUEVO: habilita empuje horizontal */
+}
+
+/* ====== Tarjetas limpias ====== */
+.card{
+  background:#fff;
+  border:1px solid var(--gray-200);
+  border-radius:12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.06);
+  padding:16px;
+}
+.card h2{ margin:0 0 12px; font-size:1.05rem; font-weight:800; color:#111827; }
+.muted{ color:#6b7280; }
+.pill{ display:inline-block; background:rgba(13,110,253,.09); color:var(--primary); font-weight:700; padding:4px 10px; border-radius:999px; }
+
+/* ====== Dirección ====== */
+.card-header{ display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
+.icon-btn{ border:none; background:transparent; font-size:1rem; color:#6b7280; cursor:pointer; }
+.icon-btn:hover{ color:#111827; }
+.shipping-line{ margin:4px 0; }
+
+/* ====== Productos: scroll horizontal minimalista ====== */
+.products-scroll{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  padding-bottom:6px;
+}
+.products-scroll::-webkit-scrollbar{ height:8px; }
+.products-scroll::-webkit-scrollbar-thumb{ background:#e5e7eb; border-radius:999px; }
+
+.product-mini{
+  flex: 0 0 220px;              /* ancho de cada tarjeta en el carrusel */
+  display:flex;
+  gap:10px;
+  border:1px solid var(--gray-200);
+  border-radius:10px;
+  padding:10px;
+  background:#fff;
+}
+.pm-thumb{
+  width:78px; height:78px;      /* miniatura pequeña */
+  object-fit:cover;
+  border-radius:8px;
+  background:#f3f4f6;
+}
+.pm-info{ flex:1; min-width:0; }
+.pm-title{ font-weight:700; margin-bottom:4px; font-size:.95rem; }
+.pm-meta{ display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+.price{ color:var(--primary); font-weight:800; }
+.old-price{ color:#9ca3af; text-decoration:line-through; }
+.badge.gray{ display:inline-block; background:#e5e7eb; color:#374151; font-weight:800; padding:2px 8px; border-radius:999px; font-size:.72rem; }
+
+/* ====== Métodos de pago ====== */
+.paymethods{ display:flex; flex-direction:column; gap:10px; }
+.pmethod{
+  display:flex; align-items:center; gap:10px;
+  padding:10px; border:1px solid var(--gray-200); border-radius:10px; cursor:pointer;
+}
+.pmethod input{ margin-right:8px; }
+.pmethod-ui{ display:flex; align-items:center; gap:10px; width:100%; }
+.pmethod-logo{ height:18px; }
+.cards-logos img{ height:16px; margin-left:6px; }
+
+/* ====== Resumen ====== */
+.summary-card .summary-row,
+.summary-card .summary-total{
+  display:flex; justify-content:space-between; margin:8px 0;
+}
+.summary-card .summary-total{
+  padding-top:8px; border-top:1px solid var(--gray-200);
+  font-size:1.05rem; font-weight:800;
+}
+.summary-card .terms{ font-size:.9rem; margin:12px 0 10px; }
+.summary-card .terms a{ color:var(--primary); text-decoration:none; }
+.summary-card .terms a:hover{ text-decoration:underline; }
+
+.lowstock-note{
+  display:block; margin-top:6px; font-size:.85rem; font-weight:700; opacity:.85;
+}
+
+/*------------------------------------------------------*/
+
+/* ===== POSICIONADOR: mueve TODO el módulo ===== */
+.checkout-positioner{
+  display:flex;
+  align-items: var(--ck-v, center);
+  justify-content: var(--ck-h, center);
+  min-height: calc(100vh - 120px);
+  padding: var(--ck-pad, 0);
+}
+/* presets de posición */
+.pos-top-left    { --ck-v:flex-start; --ck-h:flex-start; }
+.pos-top-center  { --ck-v:flex-start; --ck-h:center; }
+.pos-top-right   { --ck-v:flex-start; --ck-h:flex-end; }
+.pos-center      { --ck-v:center;     --ck-h:center; }
+.pos-bottom-left { --ck-v:flex-end;   --ck-h:flex-start; }
+.pos-bottom-center{--ck-v:flex-end;   --ck-h:center; }
+.pos-bottom-right{ --ck-v:flex-end;   --ck-h:flex-end; }
+
+/* ===== GRID PRINCIPAL: izquierda / derecha ===== */
+:root{
+  --ck-maxw: 1200px;
+  --ck-left: minmax(0,1fr);
+  --ck-right: 360px;
+  --ck-gap: 16px;   /* <— usa positivos */
+  --ck-mt: 12px;
+}
+
+/* Reglas UNIFICADAS (borra las duplicadas anteriores) */
+.checkout-grid{
+  width: 100%;
+  max-width: var(--ck-maxw);
+  display: grid;
+  grid-template-columns: var(--ck-left) var(--ck-right);
+  gap: var(--ck-gap);
+  align-items: flex-start;
+  margin-top: var(--ck-mt);
+}
+@media (max-width: 992px){
+  .checkout-grid{ grid-template-columns: 1fr; } /* <— no 2fr */
+}
+
+/* Opcional: sticky del resumen */
+.checkout-grid[data-sticky="md"] .checkout-right{
+  position: sticky; top: 90px;
+}
+
+/* Utilidades rápidas */
+.ck-wide     { --ck-maxw: 1400px; }
+.ck-extra    { --ck-maxw: 1600px; }  /* nueva opción */
+.ck-narrow   { --ck-maxw: 1000px; }
+.ck-cols-70  { --ck-left:7fr;  --ck-right:7fr; }
+.ck-right-480{ --ck-right:300px; }
+.ck-gap-32 { --ck-gap:10px; }
+
+/* Subir/bajar el módulo (usa var que hereda) */
+.mt-0   { --ck-mt: 0px; }
+/* Vertical (subir/bajar) usando --ck-mt */
+.lift-8  { --ck-mt:-8px;  }
+.lift-12 { --ck-mt:-12px; }
+.lift-16 { --ck-mt:-16px; }
+.lift-20 { --ck-mt:-20px; }
+.lift-24 { --ck-mt:-24px; }
+.lift-28 { --ck-mt:-28px; }
+.lift-32 { --ck-mt:-32px; }
+.lift-40 { --ck-mt:-40px; }
+
+/* Horizontal (izquierda/derecha) usando --ck-ml */
+.nudge-left-8   { --ck-ml:-8px;  }
+.nudge-left-12  { --ck-ml:-12px; }
+.nudge-left-16  { --ck-ml:-16px; }
+.nudge-left-20  { --ck-ml:-20px; }
+.nudge-left-24  { --ck-ml:-24px; }
+.nudge-left-28  { --ck-ml:-28px; }
+.nudge-left-32  { --ck-ml:-32px; }
+.nudge-left-40  { --ck-ml:-40px; }
+
+/* por si quieres empujar a la derecha en algún caso */
+.nudge-right-8  { --ck-ml:8px;  }
+.nudge-right-16 { --ck-ml:16px; }
+.nudge-right-24 { --ck-ml:24px; }
+
+
+/* === Modal genérico (checkout) === */
+.modal-backdrop{
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.45);
+  display: none; /* se muestra con [hidden] quitado */
+  align-items: center; justify-content: center;
+  z-index: 1100;
+}
+.modal-backdrop:not([hidden]){ display:flex; }
+
+.modal{
+  width: min(640px, 94vw);
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 22px 60px rgba(0,0,0,.24);
+  overflow: hidden;
+  transform: translateY(8px);
+  animation: modal-in .18s ease-out both;
+}
+@keyframes modal-in{
+  from { opacity: 0; transform: translateY(16px) scale(.98); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+.modal-header{
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+.modal-header h3{ margin:0; font-size: 1.05rem; }
+.modal-header .close-modal{
+  border: 0; background: transparent; cursor: pointer;
+  font-size: 22px; line-height: 1; padding: 4px 6px; color:#6b7280;
+}
+.modal-body{ padding: 14px 16px; max-height: 65vh; overflow:auto; }
+.modal-footer{
+  padding: 12px 16px; border-top:1px solid #e5e7eb;
+  display:flex; justify-content:flex-end; gap:8px;
+}
+
+.btn{ padding:10px 14px; border-radius:10px; border:0; cursor:pointer; font-weight:600; }
+.btn.primary{ background:#0d6efd; color:#fff; }
+.btn.ghost{ background:#eef2f7; color:#111827; }
+
+/* === Lista de direcciones en el modal === */
+#addresses-list .addr-option{
+  display:flex; gap: 10px; align-items:flex-start;
+}
+#addresses-list input[type="radio"]{
+  margin-top: 5px; accent-color:#0d6efd;
+}
+#addresses-list .addr-text{
+  display:flex; flex-direction:column; gap:4px;
+}
+#addresses-list .addr-text .pill{
+  display:inline-block; padding:2px 8px; border-radius:999px;
+  background:#f3f4f6; color:#374151; font-size:.75rem; font-weight:600;
+}
+
+/* Reutilizables del bloque de “Dirección de envío” */
+.shipping-line{ display:flex; align-items:center; gap:10px; }
+.pill.brand{
+  background:#eef2ff; color:#3730a3;
+  font-weight:700; font-size:.8rem; padding:3px 8px; border-radius:999px;
+}
+.muted{ color:#6b7280; }
+.icon-btn{
+  border:0; background:transparent; cursor:pointer; color:#6b7280;
+  font-size:18px;
+}
+.icon-btn:hover{ color:#111827; }

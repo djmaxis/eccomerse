@@ -12,8 +12,8 @@
   <!-- CSS base existentes -->
   <link rel="stylesheet" href="css/orders/orders.css" />
   <link rel="stylesheet" href="css/orders/menu.css" />
-  <!-- CSS NUEVO: solo lo específico de Mis Pedidos -->
-  <link rel="stylesheet" href="css/orders/mispedidos.css" />
+  <link rel="stylesheet" href="css/orders/cancelar.css" />
+  <link rel="stylesheet" href="css/cancelar.css" />
 </head>
 <body>
   <!-- Navbar -->
@@ -203,7 +203,7 @@
 
     <!-- Meta línea superior -->
     <div class="order-meta">
-      <span class="badge-dot status in-transit">En tránsito</span>
+      <span class="badge-dot status in-transit"></span>
       <span class="meta-sep">|</span>
       <span>Centro de almacenes SDQ</span>
       <span class="meta-dot"></span>
@@ -223,27 +223,6 @@
         <a class="item" role="listitem" href="#">
           <img src="img/ejemplo1a.jpg" alt="Kit ganchos blancos 20pcs">
           <span class="item-title">Ganchos blancos x20</span>
-          <span class="item-extra">Cantidad: 1</span>
-        </a>
-                <a class="item" role="listitem" href="#">
-          <img src="img/ejemplo1a.jpg" alt="Kit ganchos blancos 20pcs">
-          <span class="item-title">Ganchos blancos x20</span>
-          <span class="item-extra">Cantidad: 1</span>
-        </a>
-                <a class="item" role="listitem" href="#">
-          <img src="img/ejemplo1a.jpg" alt="Kit ganchos blancos 20pcs">
-          <span class="item-title">Ganchos blancos x20</span>
-          <span class="item-extra">Cantidad: 1</span>
-        </a>
-
-        <a class="item" role="listitem" href="#">
-          <img src="img/ejemplo1b.jpg" alt="Set organizadores transparentes">
-          <span class="item-title">Organizadores</span>
-          <span class="item-extra">Cantidad: 1</span>
-        </a>
-        <a class="item" role="listitem" href="#">
-          <img src="img/ejemplo1c.jpg" alt="Accesorios hogar">
-          <span class="item-title">Accesorios hogar</span>
           <span class="item-extra">Cantidad: 1</span>
         </a>
       </div>
@@ -302,12 +281,21 @@
     </div>
   </div>
 
-   <!-- Scripts -->
+  <!-- Scripts -->
+
+  <!-- Núcleo / utilidades (ESM) -->
   <script type="module" src="js/orders/utils.js"></script>
-  <script type="module" src="js/orders/cart.js"></script>
   <script type="module" src="js/orders/products.js"></script>
+  <script type="module" src="js/orders/cart.js"></script>
   <script type="module" src="js/orders/main.js"></script>
- <script type="module" src="js/orders/get_data_orders.js"></script>
-  <script src="js/orders/menu.js"></script>
+
+  <!-- Carga y render de órdenes (emite 'orders:loaded') -->
+  <script type="module" src="js/orders/get_data_orders.js"></script>
+
+  <!-- Scripts no-modulares que dependen del DOM ya renderizado -->
+  <script src="js/orders/menu.js" defer></script>
+  <script src="js/orders/cancelar_estado_greyeout.js" defer></script>
+  <script src="js/orders/cancelar.js" defer></script>
+  <script src="js/index/chatbot.js" defer></script>
 </body>
 </html>

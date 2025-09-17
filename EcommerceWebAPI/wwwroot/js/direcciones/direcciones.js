@@ -1,5 +1,30 @@
 // js/mi_perfil/direcciones.js
+  const PAISES = ["Republica Dominicana"]; // único país del catálogo
+  const CIUDADES = [
+    "Bajos de Hainas","Baní","Barahona","Bayaguana","Boca Chica","Bonao","Constanza","Cotuí","Dajabón",
+    "Distrito Nacional","El Seibo","Esperanza","Gaspar Hernández","Guayubín","Hato Mayor","Higuey","Jarabacoa",
+    "La Mata","La Romana","La Vega","Las Matas de Farfán","Los Alcarrizos","Mao","Moca","Monte Cristi","Monte Plata",
+    "Nagua","Neiba","Pedro Brand","Puerto Plata","Puñal","Salcedo","Samaná","San Antonio de Guerra","San Cristóbal",
+    "San Francisco de Macorís","San Ignacio de Sabanate","San José de las Matas","San José de Ocoa","San Juan",
+    "San Pedro de Macorís","Santiago de los Caballeros","Santo Domingo Este","Santo Domingo Norte","Santo Domingo Oeste",
+    "Sosúa","Tamboril","Tenares","Villa Altagracia","Villa Bisonó","Villa González","Villa Hermosa","Villa Riva","Yamasá"
+  ];
+
+// js/mi_perfil/direcciones.js
 (function(){
+  // ====== Catálogos embebidos (desde pais.txt y ciudades.txt) ======
+  // OJO: Todo se mantiene en este mismo archivo como pediste.
+  const PAISES = ["Republica Dominicana"]; // único país del catálogo
+  const CIUDADES = [
+    "Bajos de Hainas","Baní","Barahona","Bayaguana","Boca Chica","Bonao","Constanza","Cotuí","Dajabón",
+    "Distrito Nacional","El Seibo","Esperanza","Gaspar Hernández","Guayubín","Hato Mayor","Higuey","Jarabacoa",
+    "La Mata","La Romana","La Vega","Las Matas de Farfán","Los Alcarrizos","Mao","Moca","Monte Cristi","Monte Plata",
+    "Nagua","Neiba","Pedro Brand","Puerto Plata","Puñal","Salcedo","Samaná","San Antonio de Guerra","San Cristóbal",
+    "San Francisco de Macorís","San Ignacio de Sabanate","San José de las Matas","San José de Ocoa","San Juan",
+    "San Pedro de Macorís","Santiago de los Caballeros","Santo Domingo Este","Santo Domingo Norte","Santo Domingo Oeste",
+    "Sosúa","Tamboril","Tenares","Villa Altagracia","Villa Bisonó","Villa González","Villa Hermosa","Villa Riva","Yamasá"
+  ];
+
   // ===== util: clienteId =====
   function getStoredId(){
     const raw = localStorage.getItem('clienteId') || localStorage.getItem('idCliente');
@@ -47,8 +72,8 @@
   .dir-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .dir-grid .full{grid-column:1 / -1}
   .dir-field label{display:block;font-weight:600;margin-bottom:6px;color:#374151}
-  .dir-field input[type="text"], .dir-field input[type="tel"]{width:100%;padding:10px 12px;border:1px solid #d1d5db;border-radius:8px;outline:none}
-  .dir-field input:focus{border-color:#0d6efd;box-shadow:0 0 0 3px rgba(13,110,253,.15)}
+  .dir-field input[type="text"], .dir-field input[type="tel"], .dir-field select{width:100%;padding:10px 12px;border:1px solid #d1d5db;border-radius:8px;outline:none;background:#fff}
+  .dir-field input:focus, .dir-field select:focus{border-color:#0d6efd;box-shadow:0 0 0 3px rgba(13,110,253,.15)}
   .dir-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}
   .dir-btn{padding:10px 14px;border:none;border-radius:8px;cursor:pointer;font-weight:700}
   .dir-btn.primary{background:#0d6efd;color:#fff}
@@ -66,7 +91,7 @@
     if (t) h['Authorization'] = `Bearer ${t}`;
     return h;
   };
-  const composeLine = d => `${d.Calle || d.calle}, ${d.Ciudad || d.ciudad}, ${d.Pais || d.pais}${d.CodigoPostal ? ' '+d.CodigoPostal : ''}`;
+  const composeLine = d => `${d.Calle || d.calle}, ${d.Ciudad || d.ciudad}, ${d.Pais || d.pais}${(d.CodigoPostal||d.codigoPostal) ? ' '+(d.CodigoPostal||d.codigoPostal) : ''}`;
 
   function render(list){
     if (!ul) return;
@@ -124,6 +149,24 @@
     if (!r.ok) throw new Error(await r.text().catch(()=> 'Error al eliminar'));
   }
 
+  // ===== util selects =====
+  function fillSelect(selectEl, items, selectedValue){
+    if (!selectEl) return;
+    selectEl.innerHTML = '';
+    // placeholder
+    const ph = document.createElement('option');
+    ph.value = ''; ph.textContent = '-- Selecciona --';
+    selectEl.appendChild(ph);
+    items.forEach(v=>{
+      const opt = document.createElement('option');
+      opt.value = v; opt.textContent = v;
+      if (selectedValue && String(selectedValue).trim().toLowerCase() === v.toLowerCase()){
+        opt.selected = true;
+      }
+      selectEl.appendChild(opt);
+    });
+  }
+
   // ===== Modal =====
   function openModal(mode, data){
     const isEdit = mode === 'edit';
@@ -147,11 +190,11 @@
             </div>
             <div class="dir-field">
               <label>País</label>
-              <input type="text" id="dir-pais" value="${(data?.Pais ?? data?.pais) ?? ''}">
+              <select id="dir-pais"></select>
             </div>
             <div class="dir-field">
               <label>Ciudad</label>
-              <input type="text" id="dir-ciudad" value="${(data?.Ciudad ?? data?.ciudad) ?? ''}">
+              <select id="dir-ciudad"></select>
             </div>
             <div class="dir-field">
               <label>Código postal</label>
@@ -178,6 +221,10 @@
 
     const $ = (sel)=> wrap.querySelector(sel);
     const close = ()=> wrap.remove();
+
+    // Inicializar selects con catálogos embebidos
+    fillSelect($('#dir-pais'), PAISES, (data?.Pais ?? data?.pais) || 'Republica Dominicana');
+    fillSelect($('#dir-ciudad'), CIUDADES, (data?.Ciudad ?? data?.ciudad) || '');
 
     $('#dir-cancel').addEventListener('click', close);
     wrap.addEventListener('click', (e)=> { if (e.target === wrap) close(); });

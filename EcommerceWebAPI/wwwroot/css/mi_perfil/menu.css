@@ -1,0 +1,222 @@
+/* ====== MENU (sidebar + drawer) ====== */
+/* Paleta local */
+:root{
+  --m-bg:#ffffff;
+  --m-text:#222;
+  --m-muted:#6b7280;
+  --m-line:#e5e7eb;
+  --m-hover:#f3f4f6;
+  --m-accent:#0d6efd;
+  --m-shadow:0 10px 20px rgba(0,0,0,.06);
+  --m-radius:12px;
+}
+
+/* ====== FIX: offset para que la primera sección no quede bajo la navbar ====== */
+.profile-layout{
+  /* La navbar es fija; damos aire extra arriba */
+  margin-top: 124px; /* ajustable si tu navbar cambia de alto */
+}
+#profile-content{
+  /* Un colchón adicional para el contenido */
+  padding-top: 12px;
+}
+
+/* ====== Sidebar pegado a la izquierda (desktop) ====== */
+@media (min-width: 993px){
+  #profile-sidebar{
+    position: fixed;
+    left: 0;
+    top: 90px; /* debajo de la navbar fija */
+    width: 280px;
+    height: calc(100vh - 120px);
+    overflow: auto;
+    background: var(--m-bg);
+    border: 1px solid var(--m-line);
+    border-radius: var(--m-radius);
+    box-shadow: var(--m-shadow);
+    z-index: 900;
+  }
+  /* Empujamos el contenido a la derecha del sidebar */
+  #profile-content{
+    margin-left: 304px; /* 280 + 24 de gap visual */
+  }
+}
+
+/* ====== Drawer en móvil ====== */
+@media (max-width: 992px){
+  #profile-sidebar{
+    position: fixed;
+    left: 0;
+    top: 70px;
+    width: min(86vw, 360px);
+    height: calc(100vh - 70px);
+    max-height: calc(100vh - 70px);
+    background: var(--m-bg);
+    border-right: 1px solid var(--m-line);
+    box-shadow: var(--m-shadow);
+    transform: translateX(-102%);
+    transition: transform .25s ease;
+    z-index: 999;
+  }
+  #profile-sidebar.drawer-open{ transform: translateX(0); }
+
+  .open-sidebar-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: -4px 0 16px;
+    padding: 10px 12px;
+    background: var(--m-bg);
+    border: 1px solid var(--m-line);
+    border-radius: 10px;
+    font-weight: 600;
+    color: var(--m-text);
+  }
+}
+
+/* Overlay del drawer (móvil) */
+.sidebar-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+  z-index: 998;
+}
+.sidebar-overlay[hidden]{ display: none; }
+
+/* ====== Estética del nav del sidebar ====== */
+.sidebar-nav{ display: block; }
+.sidebar-header{
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--m-line);
+}
+.sidebar-header h2{
+  font-size: 1rem; margin: 0; font-weight: 700; color: var(--m-text);
+}
+#sidebar-collapse{
+  border: none; background: transparent; font-size: 1.1rem; cursor: pointer; color: var(--m-muted);
+}
+
+.sidebar-group{ border-bottom:1px solid var(--m-line); }
+.sidebar-toggle{
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 14px 16px;
+  font-weight: 600;
+  color: var(--m-text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.sidebar-toggle .caret{
+  margin-left: auto;
+  transition: transform .25s ease;
+}
+.sidebar-toggle[aria-expanded="false"] .caret{ transform: rotate(-90deg); }
+
+.sidebar-list{
+  list-style: none;
+  margin: 0;
+  padding: 0 10px 14px 38px;
+}
+.sidebar-list li a{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 8px;
+  color: var(--m-text);
+  text-decoration: none;
+  font-size: .95rem;
+  transition: background .2s ease, color .2s ease, transform .1s ease;
+}
+.sidebar-list li a:hover{
+  background: var(--m-hover);
+  color: var(--m-accent);
+  transform: translateX(2px);
+}
+
+/* Oculta listas colapsadas con atributo hidden */
+.sidebar-list[hidden]{ display: none !important; }
+
+/* Colapso visual general (no forza cada grupo) */
+#profile-sidebar.collapsed .sidebar-toggle .caret{ transform: rotate(-90deg); }
+
+/* ====== CONTENIDO DEL PERFIL ====== */
+/* Cada sección como tarjeta */
+.perfil-section{
+  display: flex;              /* para usar align-self en hijos */
+  flex-direction: column;
+  margin: 0 16px 32px;        /* aire lateral y entre secciones */
+  padding: 20px;
+  border: 1px solid var(--m-line);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,.05);
+}
+.perfil-section h2{
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* Formulario simple */
+.form-group{ margin-bottom: 12px; display:flex; flex-direction:column; }
+.form-group label{ font-weight:600; margin-bottom:6px; color:#374151; }
+.form-group input{
+  padding:10px 12px; border:1px solid #d1d5db; border-radius:8px;
+  background:#fff; outline:none;
+}
+.form-group input:focus{
+  border-color: var(--m-accent);
+  box-shadow: 0 0 0 3px rgba(13,110,253,.15);
+}
+
+/* ====== Botones: alineados a la derecha ====== */
+.btn-primary{
+  align-self: flex-start; /* clave: izquierda */
+  padding:10px 16px;border:none;border-radius:8px;
+  background:var(--m-accent);color:#fff;font-weight:700;cursor:pointer;
+  transition:background .2s ease,transform .1s ease;
+}
+.btn-primary:hover{background:#0b5ed7;transform:translateY(-1px);}
+
+/* Listas (Direcciones / Métodos) */
+.lista-items{ margin-top:14px; }
+.lista-items h3{ font-size:1rem; margin-bottom:8px; color:#374151; }
+.lista-items ul{ list-style:none; padding:0; margin:0; }
+.lista-items li{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:8px;
+  padding:10px 12px;
+  background:#f9fafb;
+  border:1px solid var(--m-line);
+  border-radius:8px;
+}
+/* Empuja los botones del ítem a la derecha y los mantiene juntos */
+.lista-items li button:first-of-type{ margin-left:auto; }
+.lista-items li button + button{ margin-left:6px; }
+
+/* Botones secundarios en ítems */
+.lista-items button{
+  padding:6px 10px;
+  border:none;
+  border-radius:6px;
+  background:#6c757d;
+  color:#fff;
+  font-size:.85rem;
+  cursor:pointer;
+  transition: opacity .15s ease;
+}
+.lista-items button:hover{ opacity:.9; }
+
+/* Responsive: aire lateral del contenido en móvil */
+@media (max-width: 768px){
+  .perfil-section{ margin: 0 8px 24px; }
+}

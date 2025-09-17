@@ -1,0 +1,17 @@
+/* Fix stacking de modales */
+.modal-backdrop { position: fixed; inset:0; background: rgba(0,0,0,.35); display:none; z-index: 999; }
+.modal { position: fixed; left:50%; top:50%; transform: translate(-50%,-50%); background:#fff; border-radius:12px; width:95%; max-width:500px; box-shadow:0 10px 26px rgba(0,0,0,.2); display:none; z-index: 1000; }
+
+/* Mantén la regla que los muestra cuando el modal abre */
+.modal.open + .modal-backdrop, .modal.open { display:block; }
+
+
+/* Acciones en una sola línea */
+.row-actions{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+.row-actions .btn{ display:inline-flex; }

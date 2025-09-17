@@ -52,16 +52,17 @@ function openMetodoPagoModal(mode, data = null, onSave) {
     <div class="mp-modal" role="dialog" aria-modal="true">
       <header>${mode === 'add' ? 'Agregar método de pago' : 'Editar método de pago'}</header>
       <div class="body">
+                <div class="mp-field full">
+            <label for="mp-metodo">Método</label>
+            <select id="mp-metodo">${optionsHtml(
+              data ? (String((data.Tipo ?? data.tipo) || '').toLowerCase() === 'paypal' ? 2 : 1) : 1
+            )}</select>
         <div class="mp-grid">
           <div class="mp-field full">
             <label for="mp-alias">Alias</label>
             <input id="mp-alias" type="text" placeholder="Mi tarjeta / Mi PayPal" value="${data?.Nombre ?? data?.nombre ?? ''}">
           </div>
-          <div class="mp-field full">
-            <label for="mp-metodo">Método</label>
-            <select id="mp-metodo">${optionsHtml(
-              data ? (String((data.Tipo ?? data.tipo) || '').toLowerCase() === 'paypal' ? 2 : 1) : 1
-            )}</select>
+
           </div>
 
           <div class="mp-field full" id="mp-paypal-box" style="display:none">

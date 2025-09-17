@@ -112,10 +112,25 @@
 </div>
   </div>
 
+<script>
+  window.ORDERS_SILENT = true;
+  (async () => {
+    try {
+      await fetch('/api/orders/json', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ clienteId: null, ordenes: [] }) // ← vacía el archivo
+      });
+    } catch (e) { console.warn('[orders boot] No se pudo limpiar el JSON:', e); }
+  })();
+</script>
+
   <!-- Script -->
   <script type="module" src="js/index/utils.js"></script>
   <script type="module" src="js/index/cart.js"></script>
   <script type="module" src="js/index/products.js"></script>
   <script type="module" src="js/index/main.js"></script>
+  <script src="js/orders/get_data_orders.js" defer></script>
+  <script src="js/index/chatbot.js" defer></script>
 </body>
 </html>

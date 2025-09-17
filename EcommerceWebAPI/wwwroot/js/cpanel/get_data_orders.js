@@ -234,58 +234,85 @@ function normalizePayload(raw) {
 (function(){
   let modalRoot = null;
 
-  function ensureModalRoot() {
-    if (modalRoot) return modalRoot;
-    modalRoot = document.createElement('div');
-    modalRoot.id = 'order-details-modal';
-    modalRoot.style.position = 'fixed';
-    modalRoot.style.inset = '0';
-    modalRoot.style.display = 'none';
-    modalRoot.style.alignItems = 'center';
-    modalRoot.style.justifyContent = 'center';
-    modalRoot.style.zIndex = '10000';
+function ensureModalRoot() {
+  // Reutiliza si ya fue creado en esta sesión
+  if (modalRoot) return modalRoot;
 
-    const overlay = document.createElement('div');
-    overlay.style.position = 'absolute';
-    overlay.style.inset = '0';
-    overlay.style.background = 'rgba(0,0,0,.45)';
-    overlay.addEventListener('click', closeModal);
-
-    const panel = document.createElement('div');
-    panel.style.position = 'relative';
-    panel.style.maxWidth = '780px';
-    panel.style.width = '92%';
-    panel.style.maxHeight = '85vh';
-    panel.style.overflow = 'auto';
-    panel.style.background = '#fff';
-    panel.style.borderRadius = '16px';
-    panel.style.boxShadow = '0 20px 40px rgba(0,0,0,.2)';
-    panel.style.padding = '20px 22px';
-
-    const closeBtn = document.createElement('button');
-    closeBtn.type = 'button';
-    closeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-    closeBtn.style.position = 'absolute';
-    closeBtn.style.top = '10px';
-    closeBtn.style.right = '12px';
-    closeBtn.style.fontSize = '20px';
-    closeBtn.style.border = 'none';
-    closeBtn.style.background = 'transparent';
-    closeBtn.style.cursor = 'pointer';
-    closeBtn.addEventListener('click', closeModal);
-
-    const content = document.createElement('div');
-    content.className = 'order-modal-content';
-    content.style.display = 'grid';
-    content.style.gap = '14px';
-
-    panel.appendChild(closeBtn);
-    panel.appendChild(content);
-    modalRoot.appendChild(overlay);
-    modalRoot.appendChild(panel);
-    document.body.appendChild(modalRoot);
-    return modalRoot;
+  // Reutiliza si ya existe en el DOM (evita duplicados si el script se carga 2 veces)
+  const existing = document.getElementById('order-details-modal');
+  if (existing) { 
+    modalRoot = existing; 
+    return modalRoot; 
   }
+
+  // Crear raíz del modal
+  modalRoot = document.createElement('div');
+  modalRoot.id = 'order-details-modal';
+  Object.assign(modalRoot.style, {
+    position: 'fixed',
+    inset: '0',
+    display: 'none',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: '10000'
+  });
+
+  // Capa oscura
+  const overlay = document.createElement('div');
+  Object.assign(overlay.style, {
+    position: 'absolute',
+    inset: '0',
+    background: 'rgba(0,0,0,.45)'
+  });
+  overlay.addEventListener('click', closeModal);
+
+  // Panel del modal
+  const panel = document.createElement('div');
+  Object.assign(panel.style, {
+    position: 'relative',
+    maxWidth: '780px',
+    width: '92%',
+    maxHeight: '85vh',
+    overflow: 'auto',
+    background: '#fff',
+    borderRadius: '16px',
+    boxShadow: '0 20px 40px rgba(0,0,0,.2)',
+    padding: '20px 22px'
+  });
+
+  // Botón cerrar
+  const closeBtn = document.createElement('button');
+  closeBtn.type = 'button';
+  closeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+  Object.assign(closeBtn.style, {
+    position: 'absolute',
+    top: '10px',
+    right: '12px',
+    fontSize: '20px',
+    border: 'none',
+    background: 'transparent',
+    cursor: 'pointer'
+  });
+  closeBtn.addEventListener('click', closeModal);
+
+  // Contenedor de contenido
+  const content = document.createElement('div');
+  content.className = 'order-modal-content';
+  Object.assign(content.style, {
+    display: 'grid',
+    gap: '14px'
+  });
+
+  // Armar DOM
+  panel.appendChild(closeBtn);
+  panel.appendChild(content);
+  modalRoot.appendChild(overlay);
+  modalRoot.appendChild(panel);
+  document.body.appendChild(modalRoot);
+
+  return modalRoot;
+}
+
 
   function pillGrey(text) {
     const span = document.createElement('span');
@@ -400,11 +427,15 @@ function normalizePayload(raw) {
   }
 
   // Abre el modal con toda la info
-  window.openOrderDetailsModal = async function(order, enrichFn) {
+let __renderingOrderModal = false;
+
+window.openOrderDetailsModal = async function(order, enrichFn) {
+  if (__renderingOrderModal) return;         // <- evita doble apertura
+  __renderingOrderModal = true;
+  try {
     const root = ensureModalRoot();
     const content = root.querySelector('.order-modal-content');
     content.innerHTML = '';
-
     // Header: Fecha + ID
     const header = document.createElement('div');
     header.style.display = 'flex';
@@ -474,7 +505,11 @@ function normalizePayload(raw) {
     content.appendChild(lineLabelValue('Total del pedido', money(monto), { blue: true }));
 
     root.style.display = 'flex';
-  };
+  } finally {
+    // pequeño “debounce” para doble click muy rápido
+    setTimeout(() => { __renderingOrderModal = false; }, 250);
+  }
+};
 })();
 
 
@@ -653,24 +688,16 @@ async function renderOrders(json) {
     section.appendChild(card);
 
     // (2) Click -> Modal con todos los datos
-const link = card.querySelector('.order-link');
-const btnFactura = card.querySelector('.order-btn.Ver_factura');
-
-// mismo handler para ambos
-const openDetails = async (ev) => {
-  ev.preventDefault();
-  // Asegurarnos que en el modal también haya imágenes
-  const enriched = await enrichProductosWithImages(o.Productos || []);
-  const orderForModal = { ...o, Productos: enriched };
-  window.openOrderDetailsModal(orderForModal, enrichProductosWithImages);
-};
-
-if (link) {
-  link.addEventListener('click', openDetails);
-}
-if (btnFactura) {
-  btnFactura.addEventListener('click', openDetails);
-}
+    const link = card.querySelector('.order-link');
+    if (link) {
+      link.addEventListener('click', async (ev) => {
+        ev.preventDefault();
+        // Asegurarnos que en el modal también haya imágenes
+        const enriched = await enrichProductosWithImages(o.Productos || []);
+        const orderForModal = { ...o, Productos: enriched };
+        window.openOrderDetailsModal(orderForModal, enrichProductosWithImages);
+      });
+    }
   }
 }
 
@@ -728,111 +755,6 @@ await saveJsonToServer(json).catch(() => {});
 if (!window.ORDERS_SILENT) {
   await renderOrders(json);
 }
-
-/* ====== Hidratar IdOrden para cancelar (índice + data-* en DOM) ====== */
-(function hydrateOrderIdsForCancel() {
-  try {
-    // 1) Construir índice global: byAnyId
-    window.ORDERS_INDEX = window.ORDERS_INDEX || {};
-    const byAnyId = window.ORDERS_INDEX.byAnyId = window.ORDERS_INDEX.byAnyId || {};
-
-    const ordenes = Array.isArray(json?.ordenes) ? json.ordenes : [];
-    for (const o of ordenes) {
-      const id = o?.IdOrden;
-      const mask = (o?.NumeroOrden || '').toString().trim();
-      if (id != null) {
-        byAnyId[String(id).toLowerCase()] = id;      // "42" -> 42
-      }
-      if (mask) {
-        byAnyId[mask.toLowerCase()] = id;            // "ord-2025-..#00000042" -> 42
-      }
-    }
-
-    // 2) Decorar el DOM: colocar data-idorden en .order-id y en .order-card
-    document.querySelectorAll('.order-card .order-id').forEach(el => {
-      let id = el.dataset.idorden ? parseInt(el.dataset.idorden, 10) : null;
-      if (id == null || Number.isNaN(id)) {
-        const txt = (el.textContent || '').trim();
-        const key = txt.toLowerCase();
-        if (byAnyId[key]) id = byAnyId[key];
-      }
-      if (id == null || Number.isNaN(id)) {
-        const txt = (el.textContent || '').trim();
-        const m = /#(\d+)$/.exec(txt);
-        if (m) id = parseInt(m[1], 10);
-      }
-      if (id != null && !Number.isNaN(id)) {
-        el.dataset.idorden = String(id);
-        const card = el.closest('.order-card');
-        if (card && !card.dataset.idorden) {
-          card.dataset.idorden = String(id);
-        }
-      }
-    });
-  } catch (e) {
-    console.warn('hydrateOrderIdsForCancel error:', e);
-  }
-})();
-/* ====== /Hidratar IdOrden ====== */
-/* ====== Aplicar greyout e inactivar botones a TODAS las canceladas ====== */
-(function applyCancelledUIAll() {
-  try {
-    // Mapa de estados por Id para apoyar la detección
-    const estadoById = new Map();
-    (Array.isArray(json?.ordenes) ? json.ordenes : []).forEach(o => {
-      estadoById.set(o.IdOrden, String(o.Estado || '').toLowerCase());
-    });
-
-    // Helpers
-    const isCancelledCard = (card) => {
-      // 1) Por badge en el DOM
-      const badge = card.querySelector('.order-meta .badge-dot.status');
-      const badgeText = (badge?.textContent || '').trim().toLowerCase();
-      if (badge?.classList.contains('cancelada') || badgeText === 'cancelada') return true;
-
-      // 2) Por estado desde JSON usando IdOrden
-      let id = card.dataset.idorden ? parseInt(card.dataset.idorden, 10) : null;
-      if (!id || Number.isNaN(id)) {
-        const txt = (card.querySelector('.order-id')?.textContent || '').trim();
-        const m = /#(\d+)$/.exec(txt);
-        if (m) id = parseInt(m[1], 10);
-      }
-      if (id && estadoById.get(id) === 'cancelada') return true;
-
-      return false;
-    };
-
-    const disableOrderButtons = (cardEl) => {
-      cardEl.querySelectorAll('.order-actions-col .order-btn').forEach(b => {
-        b.disabled = true;
-        b.classList.add('is-disabled');
-        b.setAttribute('aria-disabled', 'true');
-        b.style.pointerEvents = 'none';
-        b.style.opacity = '0.6';
-        b.style.filter = 'grayscale(0.3)';
-        b.style.cursor = 'not-allowed';
-      });
-    };
-
-    // Recorre todas las cards y aplica
-    document.querySelectorAll('.order-card').forEach(card => {
-      if (isCancelledCard(card)) {
-        // Usa el helper global para greyout (ya cargado por cancelar_estado_greyeout.js)
-        if (typeof window.setOrderCancelledUI === 'function') {
-          window.setOrderCancelledUI(card, true, 'Orden Cancelada', 0.6);
-        } else {
-          // Fallback mínimo si por algo no está disponible
-          card.classList.add('order--cancelled');
-          card.style.setProperty('--cancel-opacity', '0.6');
-        }
-        disableOrderButtons(card);
-      }
-    });
-  } catch (e) {
-    console.warn('applyCancelledUIAll error:', e);
-  }
-})();
-/* ====== /Aplicar greyout e inactivar ====== */
 
 // emite evento para quien lo necesite (chatbot, etc.) ya limpio
 document.dispatchEvent(new CustomEvent('orders:loaded', { detail: json }));

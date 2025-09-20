@@ -42,6 +42,7 @@ namespace EcommerceWebAPI.Controllers
                     o.Estado,
                     o.TrackingNumber,
                     o.FechaCreacion,
+                    o.CostoTotal,
 
                     // ===== Dirección de envío (completa)
                     Direccion = o.DireccionEnvio == null ? null : new
@@ -142,6 +143,7 @@ namespace EcommerceWebAPI.Controllers
                     x.Estado,
                     x.TrackingNumber,
                     x.FechaCreacion,
+                    x.CostoTotal,
                     Direccion = x.DireccionEnvio == null ? null : new
                     {
                         x.DireccionEnvio.IdDireccion,

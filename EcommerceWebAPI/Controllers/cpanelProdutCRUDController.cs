@@ -44,6 +44,7 @@ namespace Ecommerce.API.Controllers
             public string? RefModelo { get; set; }
             public string Nombre { get; set; } = "";
             public string? Descripcion { get; set; }
+            public double Costo { get; set; }
             public double Precio { get; set; }
             public int Stock { get; set; }
             public int Activo { get; set; }  // 1/0
@@ -56,6 +57,7 @@ namespace Ecommerce.API.Controllers
             public string? RefModelo { get; set; }
             public string Nombre { get; set; } = "";
             public string? Descripcion { get; set; }
+            public double Costo { get; set; }
             public double Precio { get; set; }
             public int Stock { get; set; }
             public string? Image { get; set; }
@@ -114,6 +116,7 @@ namespace Ecommerce.API.Controllers
                 RefModelo = GetStr("RefModelo"),
                 Nombre = GetStr("Nombre") ?? "",
                 Descripcion = GetStr("Descripcion"),
+                Costo = GetDbl("Costo"),
                 Precio = GetDbl("Precio"),
                 Stock = GetInt("Stock"),
                 Activo = GetInt("Activo"),
@@ -143,6 +146,7 @@ namespace Ecommerce.API.Controllers
 
                 // Armamos el SELECT solo con columnas existentes
                 var selCols = new List<string> { "IdProducto", "Nombre", "Precio", "Stock", "Activo" };
+                if (cols.Contains("Costo")) selCols.Add("Costo");
                 if (cols.Contains("RefModelo")) selCols.Add("RefModelo");
                 if (cols.Contains("Descripcion")) selCols.Add("Descripcion");
                 if (cols.Contains("FechaCreacion")) selCols.Add("FechaCreacion");
@@ -229,6 +233,7 @@ namespace Ecommerce.API.Controllers
                 // Campos siempre presentes
                 var colList = new List<string> { "Nombre", "Precio", "Stock", "Activo" };
                 var valList = new List<string> { "@Nombre", "@Precio", "@Stock", "@Activo" };
+                if (cols.Contains("Costo")) { colList.Add("Costo"); valList.Add("@Costo"); }
 
                 // Opcionales si existen en la tabla
                 if (cols.Contains("RefModelo")) { colList.Add("RefModelo"); valList.Add("@RefModelo"); }
@@ -249,6 +254,7 @@ SELECT last_insert_rowid();";
                 // Parámetros
                 cmd.Parameters.AddWithValue("@Nombre", dto.Nombre.Trim());
                 cmd.Parameters.AddWithValue("@Precio", dto.Precio);
+                if (cols.Contains("Costo")) cmd.Parameters.AddWithValue("@Costo", dto.Costo);
                 cmd.Parameters.AddWithValue("@Stock", dto.Stock);
                 cmd.Parameters.AddWithValue("@Activo", dto.Activo ?? 1);
                 if (cols.Contains("RefModelo")) cmd.Parameters.AddWithValue("@RefModelo", (object?)dto.RefModelo ?? DBNull.Value);
@@ -286,7 +292,9 @@ SELECT last_insert_rowid();";
 
                 var sets = new List<string>{
                     "Nombre=@Nombre", "Precio=@Precio", "Stock=@Stock", "Activo=@Activo"
+                
                 };
+                if (cols.Contains("Costo")) sets.Add("Costo=@Costo");
                 if (cols.Contains("RefModelo")) sets.Add("RefModelo=@RefModelo");
                 if (cols.Contains("Descripcion")) sets.Add("Descripcion=@Descripcion");
                 if (cols.Contains("image")) sets.Add("image=@Image");
@@ -299,6 +307,7 @@ SELECT last_insert_rowid();";
                 cmd.Parameters.AddWithValue("@Id", id);
                 cmd.Parameters.AddWithValue("@Nombre", dto.Nombre.Trim());
                 cmd.Parameters.AddWithValue("@Precio", dto.Precio);
+                if (cols.Contains("Costo")) cmd.Parameters.AddWithValue("@Costo", dto.Costo);
                 cmd.Parameters.AddWithValue("@Stock", dto.Stock);
                 cmd.Parameters.AddWithValue("@Activo", dto.Activo ?? 1);
                 if (cols.Contains("RefModelo")) cmd.Parameters.AddWithValue("@RefModelo", (object?)dto.RefModelo ?? DBNull.Value);

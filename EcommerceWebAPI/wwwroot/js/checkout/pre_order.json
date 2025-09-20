@@ -1,12 +1,12 @@
 ﻿{
-  "timestamp": "2025-09-17T01:13:16.419Z",
+  "timestamp": "2025-09-20T01:28:21.276Z",
   "Direcci\u00F3n de env\u00EDo": {
-    "id": 1,
-    "nombre": "aaaaa",
-    "telefono": "2323",
-    "calle": "aaaa",
-    "ciudad": "Guayub\u00EDn",
-    "codigoPostal": "2323",
+    "id": 3,
+    "nombre": "Santos Victor",
+    "telefono": "8092215869",
+    "calle": "Calle primera, casa #10",
+    "ciudad": "Neiba",
+    "codigoPostal": "10548",
     "pais": "Republica Dominicana",
     "esPrincipal": false
   },
@@ -17,21 +17,21 @@
       "refModelo": "AIRPODSPRO",
       "nombre": "AirPods Pro",
       "cantidad": 1,
-      "precioUnitario": 1000,
+      "precioUnitario": 8500,
       "imagenUrl": "img/5.jpg"
     }
   ],
   "M\u00E9todos de pago": null,
   "Resumen del pedido": {
-    "Total del pedido": 1000,
+    "Total del pedido": 8500,
     "Moneda": "USD"
   },
   "Debug": {
-    "clienteId": 1,
+    "clienteId": 3,
     "guestCartItems": 1,
     "fromBD": true,
-    "dbCartId": 7,
+    "dbCartId": 4,
     "dbItemsCount": 1,
-    "summary": "clienteId 1  guestCart items: 1"
+    "summary": "clienteId 3  guestCart items: 1"
   }
 }

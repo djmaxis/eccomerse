@@ -49,6 +49,7 @@ function paintTable(items) {
     const ref = p.RefModelo ?? p.refModelo ?? '';
     const nom = p.Nombre ?? p.nombre ?? '';
     const des = p.Descripcion ?? p.descripcion ?? '';
+    const cos = p.Costo ?? p.costo ?? 0;
     const pre = p.Precio ?? p.precio ?? 0;
     const sto = p.Stock ?? p.stock ?? 0;
     const act = (p.Activo ?? p.activo) == 1;
@@ -60,11 +61,18 @@ function paintTable(items) {
       <td>${ref}</td>
       <td>${nom}</td>
       <td>${des}</td>
+      <td>${fmtMoney(cos)}</td>
       <td>${fmtMoney(pre)}</td>
       <td>${sto}</td>
       <td>${act ? 'Sí' : 'No'}</td>
       <td>
-        <button class="action-btn action-edit btn-warning" data-id="${id ?? ''}" data-image="${img}">Edit</button>
+                 <button class="action-btn action-edit btn-warning"
+                 data-id="${id ?? ''}"
+                 data-image="${img}"
+                 data-costo="${cos}"
+                 data-precio="${pre}">
+           Edit
+         </button>
         ${ act
           ? `<button class="action-btn action-toggle btn-secondary" data-id="${id ?? ''}" data-act="off">Inact.</button>`
           : `<button class="action-btn action-toggle btn-success"   data-id="${id ?? ''}" data-act="on">Acti.</button>`
@@ -92,6 +100,7 @@ function openModal(mode, data=null) {
   qs('#mRefModelo').value   = data?.RefModelo   ?? data?.refModelo   ?? '';
   qs('#mNombre').value      = data?.Nombre      ?? data?.nombre      ?? '';
   qs('#mDescripcion').value = data?.Descripcion ?? data?.descripcion ?? '';
+  qs('#mCosto').value       = (data?.Costo ?? data?.costo ?? '').toString();
   qs('#mPrecio').value      = (data?.Precio ?? data?.precio ?? '').toString();
   qs('#mStock').value       = (data?.Stock  ?? data?.stock  ?? '').toString();
   qs('#mImage').value       = normImagePath(data?.Image ?? data?.image ?? ''); // <-- aquí
@@ -115,11 +124,13 @@ function setupModal() {
     const RefModelo   = (qs('#mRefModelo')?.value ?? '').trim();
     const Nombre      = (qs('#mNombre')?.value ?? '').trim();
     const Descripcion = (qs('#mDescripcion')?.value ?? '').trim();
+    const CostoRaw   = (qs('#mCosto')?.value ?? '').trim();
     const PrecioRaw   = (qs('#mPrecio')?.value ?? '').trim();
     const StockRaw    = (qs('#mStock')?.value ?? '').trim();
     let   Image       = (qs('#mImage')?.value ?? '').trim();
 
     // ===== parseo numérico =====
+    const Costo  = Number((CostoRaw || '').replace(',', '.'));
     const Precio = Number((PrecioRaw || '').replace(',', '.'));
     const Stock  = parseInt(StockRaw || '', 10);
 
@@ -133,9 +144,11 @@ function setupModal() {
     setErr('#errDescripcion', req(Descripcion) ? '' : (ok = false, 'Requerido'));
 
     // numéricos obligatorios: NO vacíos y >= 0
+    const hasCosto  = (CostoRaw  !== '') && !Number.isNaN(Costo)  && Costo  >= 0;
     const hasPrecio = (PrecioRaw !== '') && !Number.isNaN(Precio) && Precio >= 0;
     const hasStock  = (StockRaw  !== '') && Number.isInteger(Stock) && Stock >= 0;
 
+    setErr('#errCosto',  hasCosto  ? '' : (ok = false, 'Requerido (≥ 0)'));
     setErr('#errPrecio', hasPrecio ? '' : (ok = false, 'Requerido (≥ 0)'));
     setErr('#errStock',  hasStock  ? '' : (ok = false, 'Requerido (≥ 0)'));
 
@@ -151,7 +164,7 @@ function setupModal() {
       }
     }
 
-    const payload = { RefModelo, Nombre, Descripcion, Precio, Stock, Image: Image || null };
+    const payload = { RefModelo, Nombre, Descripcion, Costo, Precio, Stock, Image: Image || null };
 
     try {
       const resp = (mode === 'add') ? await API.add(payload) : await API.edit(id, payload);
@@ -194,7 +207,8 @@ if (btn.classList.contains('action-edit')) {
     RefModelo: cells[1]?.textContent?.trim() ?? '',
     Nombre: cells[2]?.textContent?.trim() ?? '',
     Descripcion: cells[3]?.textContent?.trim() ?? '',
-    Precio: parseFloat((cells[4]?.textContent || '').replace(/[^\d.,-]/g,'').replace(/\./g,'').replace(',', '.')) || 0,
+    Costo: parseFloat(btn.dataset.costo ?? '0') || 0,
+    Precio: parseFloat(btn.dataset.precio ?? '0') || 0,
     Stock: parseInt(cells[5]?.textContent,10) || 0,
     Image: btn.dataset.image || '' // <-- ahora cargamos imagen
   };

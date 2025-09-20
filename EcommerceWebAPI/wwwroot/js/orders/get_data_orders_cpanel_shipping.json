@@ -1,0 +1,89 @@
+{
+  "clienteId": 2,
+  "ordenes": [
+    {
+      "idOrden": 1,
+      "idCliente": 2,
+      "estado": "Enviada",
+      "trackingNumber": "Z1546SDG4635DR",
+      "fechaCreacion": "2025-09-19T23:23:05.03",
+      "costoTotal": 1500,
+      "direccion": {
+        "idDireccion": 2,
+        "idCliente": 2,
+        "nombre": "Mi madre",
+        "calle": "Mutualismo antigua 10 #370",
+        "ciudad": "Distrito Nacional",
+        "pais": "Republica Dominicana",
+        "codigoPostal": "10587",
+        "telefono": "8096814905",
+        "esPrincipal": true
+      },
+      "factura": {
+        "idFactura": 1,
+        "numeroFactura": "FAC-EEV-00001",
+        "total": 3250,
+        "fechaEmision": "2025-09-19T23:23:05.03"
+      },
+      "pago": {
+        "idPago": 1,
+        "monto": 3250,
+        "estado": "pagada",
+        "titular": null,
+        "refEnmascarada": null,
+        "transaccionRef": "",
+        "fechaCreacion": "2025-09-19T23:23:05.2021107"
+      },
+      "metodoPago": {
+        "idClienteMetodoPago": 2,
+        "idCliente": 2,
+        "nombre": "Empresarial",
+        "tipo": "paypal",
+        "numeroTarjeta": null,
+        "cvv": null,
+        "expMes": null,
+        "expAnio": null,
+        "email": "ediaz@gmail.com",
+        "esPrincipal": true
+      },
+      "items": [
+        {
+          "idOrdenItem": 1,
+          "idOrden": 1,
+          "idProducto": 9,
+          "nombre": "Funda para iPhone 13",
+          "cantidad": 1,
+          "precioUnitario": 600,
+          "producto": {
+            "refModelo": "IPH-CASE",
+            "image": "img/9.jpg"
+          }
+        },
+        {
+          "idOrdenItem": 2,
+          "idOrden": 1,
+          "idProducto": 10,
+          "nombre": "Mouse Inalambrico",
+          "cantidad": 1,
+          "precioUnitario": 850,
+          "producto": {
+            "refModelo": "WL-MOUSE",
+            "image": "img/10.jpg"
+          }
+        },
+        {
+          "idOrdenItem": 3,
+          "idOrden": 1,
+          "idProducto": 11,
+          "nombre": "Disco Duro Externo 1TB",
+          "cantidad": 1,
+          "precioUnitario": 1800,
+          "producto": {
+            "refModelo": "EXT-HDD1TB",
+            "image": "img/11.jpg"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -20,6 +20,7 @@ function makeProductCard(p) {
   const name = p.name ?? p.Nombre ?? '';
   const ref  = p.ref  ?? p.RefModelo ?? p.IdProducto ?? '';
   const price = Number(p.price ?? p.Precio ?? 0);
+  const oldPrice = Number.isFinite(p.oldPrice) ? Number(p.oldPrice) : NaN;
   const stock = Number(p.stock ?? p.Stock ?? 0);
   const imgSrc = p.image ?? p.Image ?? 'img/placeholder.jpg';
   const description = p.description ?? p.Descripcion ?? '';
@@ -35,7 +36,17 @@ function makeProductCard(p) {
     <div class="product-info">
       <h3 class="product-name">${name}</h3>
       <p class="product-ref">Ref: ${ref}</p>
-      <p class="product-price">$${formatNumber(price, 2)}</p>
+      <p class="product-price" style="position:relative;">
+       $${formatNumber(price, 2)}
+       ${
+         (Number.isFinite(oldPrice) && oldPrice > price)
+           ? `<span class="product-price-old"
+                    style="float:right;color:#6c757d;font-size:.9em;text-decoration:line-through;">
+                $${formatNumber(oldPrice, 2)}
+              </span>`
+           : ''
+       }
+     </p>
       <p class="product-description">${description}</p>
       <button class="add-to-cart-btn">
         <i class="fas fa-plus"></i> Agregar al carrito

@@ -161,7 +161,7 @@ async function onCancelClick(ev) {
     applyGreyOut(card, 'Orden Cancelada', 0.6);
     disableOrderButtons(card);
 
-    toast('Orden cancelada correctamente.');
+    toast('Orden cancelada correctamente, se emitira un reembolso de 6 a 10 dias.');
 
     // 4) Refrescar la página para que todas las órdenes "Cancelada" también queden greyed-out
     //    (get_data_orders.js aplicará el greyout y la inactivación al cargar)

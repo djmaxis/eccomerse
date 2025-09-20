@@ -83,7 +83,9 @@ function normalizePayload(raw) {
     const idOrden = get(o, 'IdOrden', 'idOrden');
     const fechaCreacion = get(o, 'FechaCreacion', 'fechaCreacion');
     const idOrderMask = fmtOrderId(idOrden, fechaCreacion); // ← máscara
-
+const costoTotal =
+  get(o, 'CostoTotal', 'costoTotal') ??
+  (get(o, 'OrdenCompra', 'ordenCompra') ? get(get(o, 'OrdenCompra', 'ordenCompra'), 'CostoTotal', 'costoTotal') : undefined);
     const itemsSrc = get(o, 'Items', 'items');
     const items = Array.isArray(itemsSrc) ? itemsSrc.map(it => ({
       IdOrden: get(it, 'IdOrden', 'idOrden'),
@@ -135,14 +137,24 @@ function normalizePayload(raw) {
       })(),
       Email: get(mpSrc, 'Email', 'email')
     } : null;
+   // Cliente directo si el payload lo trae:
+   const cliSrc = get(o, 'Cliente','cliente');
+   const clientePlano =
+     (cliSrc && (get(cliSrc,'Correo','correo') || get(cliSrc,'Nombre','nombre'))) ||
+     (metodoPago?.Email) || '';
+
+
 
     return {
       IdOrden: idOrden,
       IdOrderMask: idOrderMask,   // ← máscara disponible en JSON
       IdCliente: get(o, 'IdCliente', 'idCliente'),
+      Cliente: clientePlano,               // ← escribirlo en el JSON
       Estado: get(o, 'Estado', 'estado'),
       TrackingNumber: get(o, 'TrackingNumber', 'trackingNumber') || '',
       FechaCreacion: fechaCreacion,
+        // NUEVO:
+  CostoTotal: costoTotal,
       Productos: items,
       Pago: pago,
       Factura: factura,

@@ -228,3 +228,23 @@ body{
   font-size: .85rem;
   font-weight: 600;
 }
+
+/* Forzar el modal por encima de cualquier card/lista del cpanel */
+#order-details-modal,
+#shipping-details-modal,
+#shipping-details-modal .overlay {
+  position: fixed !important;
+  z-index: 10050 !important;  /* por encima de 10000 */
+}
+
+#shipping-details-modal .dialog,
+#order-details-modal .dialog {
+  z-index: 10060 !important;
+}
+
+/* Evita que estilos globales de otra página afecten la tuya */
+body.ordenes-page .overlay:not(#shipping-details-modal .overlay) {
+  /* neutraliza overlays genéricos de otros módulos */
+  pointer-events: none;
+  background: transparent;
+}

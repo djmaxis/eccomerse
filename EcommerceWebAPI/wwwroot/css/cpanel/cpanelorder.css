@@ -1,0 +1,123 @@
+/* ===== cpanelorder.css (aislado para Órdenes del CPanel) ===== */
+:root{
+  --bg-body:#f7f7fb; --white:#fff; --txt:#111827; --txt-muted:#6b7280; --txt-dark:#0f172a;
+  --border:#e5e7eb; --shadow:0 8px 22px rgba(0,0,0,.12);
+  --sidebar-w:16rem;
+  --badge-pagada:#B8F2B1; --badge-enviada:#FFDD8A; --badge-completada:#CFCFCF; --badge-cancelada:#FF5C5C;
+}
+
+.ordenes-page{
+  background:var(--bg-body); color:var(--txt);
+  font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+}
+.ordenes-page .main-wrap{ margin-left:var(--sidebar-w); min-height:100vh; display:flex; flex-direction:column; }
+.ordenes-page .header{
+  position:sticky; top:0; z-index:10; background:var(--white);
+  border-bottom:1px solid var(--border); padding:14px 20px; display:flex; align-items:center; justify-content:space-between;
+}
+.ordenes-page .header h2{ margin:0; font-size:22px; color:var(--txt-dark); }
+.ordenes-page .userbox{ display:flex; align-items:center; gap:12px; }
+.ordenes-page .user-texts{ text-align:right; }
+.ordenes-page .user-name{ margin:0; font-weight:600; color:var(--txt); font-size:14px; }
+.ordenes-page .user-role{ margin:0; font-size:12px; color:var(--txt-muted); }
+.ordenes-page .btn-logout{ display:inline-block; background:#ef4444; color:#fff; text-decoration:none; padding:8px 12px; border-radius:8px; font-weight:600; }
+
+.ordenes-page .content{ padding:20px; }
+
+/* Stats */
+.ordenes-page .stats{
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-bottom:20px;
+}
+.ordenes-page .stat-card{ color:#fff; border-radius:12px; box-shadow:var(--shadow); padding:18px; }
+.ordenes-page .stat-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
+.ordenes-page .stat-head h3{ margin:0; font-size:16px; }
+.ordenes-page .stat-value{ font-size:30px; font-weight:800; }
+.ordenes-page .stat-desc{ margin:6px 0 0; opacity:.9; }
+
+/* Cards + Tabla */
+.ordenes-page .card{ background:var(--white); border-radius:12px; box-shadow:var(--shadow); padding:16px; }
+.ordenes-page .card-title{ margin:0 0 12px; font-size:18px; color:var(--txt-dark); }
+
+.ordenes-page .table-wrap{ overflow:auto; }
+.ordenes-page .table{ width:100%; border-collapse:collapse; font-size:14px; }
+.ordenes-page .table thead th{
+  text-align:left; padding:10px 8px; border-bottom:1px solid var(--border); color:var(--txt);
+}
+.ordenes-page .table tbody td{
+  padding:12px 8px; border-bottom:1px solid var(--border); color:var(--txt);
+}
+.ordenes-page .table tbody tr:last-child td{ border-bottom:none; }
+
+/* Filtros + Botones */
+.ordenes-page .filters{ display:flex; gap:8px; flex-wrap:wrap; align-items:end; }
+.ordenes-page .filters .field{ display:flex; flex-direction:column; gap:6px; }
+.ordenes-page .filters input,
+.ordenes-page .filters select{
+  padding:10px 12px; border:1px solid var(--border); border-radius:8px; font:inherit; background:#fff;
+}
+.ordenes-page .btn{ border:0; border-radius:8px; padding:10px 12px; font-weight:600; cursor:pointer; }
+.ordenes-page .btn-primary{ background:#cfe8ff; color:#111; }
+.ordenes-page .btn-outline{ background:#fff; color:#111; border:1px solid var(--border); }
+.ordenes-page .row-actions{ display:flex; align-items:center; gap:8px; white-space:nowrap; }
+
+/* Badges */
+.ordenes-page .badge{ display:inline-block; padding:4px 8px; border-radius:8px; font-size:.85rem; font-weight:700; }
+.ordenes-page .badge-pagada{ background:var(--badge-pagada); color:#111; }
+.ordenes-page .badge-enviada{ background:var(--badge-enviada); color:#111; }
+.ordenes-page .badge-completada{ background:var(--badge-completada); color:#111; }
+.ordenes-page .badge-cancelada{ background:var(--badge-cancelada); color:#fff; }
+
+/* Modal de Detalle */
+.ordenes-page #order-details-modal{
+  position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:10000;
+}
+.ordenes-page #order-details-modal .overlay{
+  position:absolute; inset:0; background:rgba(0,0,0,.45);
+}
+.ordenes-page #order-details-modal .dialog{
+  position:relative; background:#fff; border-radius:14px; box-shadow:var(--shadow);
+  max-width:920px; width:92vw; max-height:86vh; overflow:auto; padding:18px 18px 10px;
+}
+.ordenes-page #order-details-modal .dialog header{
+  display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--border); padding-bottom:10px; margin-bottom:10px;
+}
+.ordenes-page #order-details-modal .dialog header h3{ margin:0; font-size:18px; }
+.ordenes-page #order-details-modal .dialog .close{
+  border:0; background:#111827; color:#fff; border-radius:8px; padding:6px 10px; cursor:pointer; font-weight:700;
+}
+.ordenes-page #order-details-modal .section{ margin:14px 0; }
+.ordenes-page #order-details-modal .grid{
+  display:grid; grid-template-columns:1fr 1fr; gap:14px;
+}
+.ordenes-page #order-details-modal .product{
+  display:grid; grid-template-columns:72px 1fr; gap:10px; align-items:center; border-bottom:1px solid var(--border); padding:8px 0;
+}
+.ordenes-page #order-details-modal img{ width:72px; height:72px; object-fit:cover; border-radius:10px; background:#f3f4f6; }
+
+/* Responsive */
+@media (max-width:1023.98px){
+  .ordenes-page .main-wrap{ margin-left:0; }
+  .ordenes-page .stats{ grid-template-columns:1fr; }
+  .ordenes-page #order-details-modal .grid{ grid-template-columns:1fr; }
+}
+
+/* ---- Órdenes: reusar look de Shipping pero sin bloquear la página ---- */
+/* (Shipping define .modal y .modal-backdrop: copiamos el estilo base y afinamos) */
+
+.ordenes-page .modal-backdrop{
+  /* que no oscurezca ni bloquee la página detrás */
+  background: transparent !important;
+  pointer-events: none !important;
+}
+
+.ordenes-page .modal{
+  /* tamaño como shipping, pero centrado amplio para detalles */
+  width: 95%;
+  max-width: 780px;
+}
+
+/* tipografía de cuerpo del detalle */
+.ordenes-page .modal-body{
+  display: grid;
+  gap: 12px;
+}

@@ -1,9 +1,43 @@
-﻿// wwwroot/js/orders/get_data_orders.js
+﻿// wwwroot/js/cpanel/get_data_orders.js
 (function () {
   // ===================== Helpers de formato =====================
   function pad8(n) {
     return String(n ?? '').padStart(8, '0');
   }
+
+  // ===== Cache y fetch de Cliente por IdCliente =====
+  const clienteCache = new Map();
+  async function fetchClienteById(id) {
+    if (!id) return null;
+    if (clienteCache.has(id)) return clienteCache.get(id);
+    const r = await fetchAnyJson(`/api/clientes/${encodeURIComponent(id)}`, { headers: getAuthHeaders(false), cache: 'no-store' });
+    if (!r.ok || !r.data) { clienteCache.set(id, null); return null; }
+    const cli = r.data;
+    const out = { IdCliente: cli.IdCliente ?? cli.idCliente, Nombre: cli.Nombre ?? cli.nombre, Correo: cli.Correo ?? cli.correo };
+    clienteCache.set(id, out);
+    return out;
+  }
+
+  async function enrichClientes(out) {
+    try {
+      const ids = [...new Set((out?.ordenes || []).map(o => o.IdCliente).filter(Boolean))];
+      // Pide todos en paralelo (con caché)
+      await Promise.all(ids.map(id => fetchClienteById(id).catch(() => null)));
+      // Escribe Cliente = Correo (o Nombre si no hay Correo)
+      for (const ord of out.ordenes) {
+        const meta = ord.IdCliente ? clienteCache.get(ord.IdCliente) : null;
+        if (meta && (meta.Correo || meta.Nombre)) {
+          ord.Cliente = meta.Correo || meta.Nombre;
+        } else if (!ord.Cliente) {
+          // Fallbacks extra por si la API no responde
+          ord.Cliente = ord?.MetodoPago?.Email || localStorage.getItem('correo') || '';
+        }
+      }
+    } catch (_) { /* no-blocking */ }
+    return out;
+  }
+
+
 
   function fmtOrderId(idOrden, fechaIso) {
     // fechaIso viene como "2025-09-11T02:16:33.042" -> usamos la parte de fecha YYYY-MM-DD
@@ -85,6 +119,23 @@ function normalizePayload(raw) {
     const idOrderMask = fmtOrderId(idOrden, fechaCreacion); // ← máscara
 
     const itemsSrc = get(o, 'Items', 'items');
+
+    // --- CostoTotal robusto ---
+    const costoFromProp =
+      get(o, 'CostoTotal', 'costoTotal') ??
+      (get(o, 'OrdenCompra', 'ordenCompra')
+        ? get(get(o, 'OrdenCompra', 'ordenCompra'), 'CostoTotal', 'costoTotal')
+        : undefined);
+    const costoFromItems = Array.isArray(itemsSrc)
+      ? itemsSrc.reduce((acc, it) => {
+          const cu = Number(get(it, 'CostoUnitario', 'costoUnitario', 'Costo', 'costo')) || 0;
+          const q  = Number(get(it, 'Cantidad', 'cantidad')) || 0;
+          return acc + (cu * q);
+        }, 0)
+      : undefined;
+    const costoTotal = (costoFromProp !== undefined && costoFromProp !== null)
+      ? Number(costoFromProp) || 0
+      : (costoFromItems !== undefined ? Number(costoFromItems) || 0 : 0);
     const items = Array.isArray(itemsSrc) ? itemsSrc.map(it => ({
       IdOrden: get(it, 'IdOrden', 'idOrden'),
       IdProducto: get(it, 'IdProducto', 'idProducto'),
@@ -143,6 +194,7 @@ function normalizePayload(raw) {
       Estado: get(o, 'Estado', 'estado'),
       TrackingNumber: get(o, 'TrackingNumber', 'trackingNumber') || '',
       FechaCreacion: fechaCreacion,
+      CostoTotal: costoTotal,           // ← **queda en el JSON**
       Productos: items,
       Pago: pago,
       Factura: factura,
@@ -745,8 +797,9 @@ async function renderOrders(json) {
       return;
     }
 
-const raw = normalizePayload(r.data);
-const json = pruneNullsDeep(raw); // ← limpia nulls
+ const raw  = normalizePayload(r.data);
+ await enrichClientes(raw);            // ← añade Cliente = Correo con IdCliente
+ const json = pruneNullsDeep(raw);
 
 // guarda el espejo JSON SIEMPRE (ya sin nulls)
 await saveJsonToServer(json).catch(() => {});

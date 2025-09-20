@@ -53,6 +53,7 @@ export function normalizeProduct(p) {
   const nombre = p.Nombre ?? p.nombre ?? p.Name ?? p.name ?? '';
   const descripcion = p.Descripcion ?? p.descripcion ?? p.description ?? '';
   const precio = Number(p.Precio ?? p.precio ?? p.Price ?? p.price ?? 0);
+  const precioOld = Number(p.PrecioOld ?? p.precioOld ?? p.oldPrice ?? p.OldPrice ?? NaN);
   const stock = Number(p.Stock ?? p.stock ?? 0);
   const activoRaw = p.Activo ?? p.activo;
   const activo = Number(
@@ -65,7 +66,7 @@ export function normalizeProduct(p) {
   const image = p.image ?? p.Image ?? p.imagen ?? p.urlImagen ?? 'img/placeholder.jpg';
   const id = Number(p.IdProducto ?? p.id ?? 0);
 
-  return { id, ref, name: nombre, description: descripcion, price: precio, stock, activo, image };
+  return { id, ref, name: nombre, description: descripcion, price: precio, oldPrice: precioOld, stock, activo, image };
 }
 
 /**

@@ -45,9 +45,8 @@
       <ul>
         <li><a href="cpanel.html"><span class="emoji">📊</span> Dashboard</a></li>
         <li><a href="cpanel_productos.html"><span class="emoji">📦</span> Productos</a></li>
-        <li><a href="#"><span class="emoji">📋</span> Órdenes</a></li>
-        <li><a href="#"><span class="emoji">📄</span> Facturas</a></li>
-        <li class="active"><a href="cpanelshipping.html"><span class="emoji">🚚</span> Shipping</a></li>
+        <li><a href="cpanelordenes.html"><span class="emoji">📋</span> Órdenes</a></li>
+        <li class="active"><a href="#"><span class="emoji">🚚</span> Shipping</a></li>
         <li><a href="#"><span class="emoji">📈</span> Gráficas</a></li>
         <li><a href="#"><span class="emoji">🔔</span> Centro Notificaciones</a></li>
         <li><a href="#"><span class="emoji">⚙️</span> Ajustes</a></li>
@@ -85,7 +84,7 @@
           <th>No. Orden</th>
           <th>Cliente</th>
           <th>Fecha</th>
-          <th>Status</th>
+          <th>Estatus</th>
           <th style="width:260px;">Acciones</th>
         </tr>
       </thead>
@@ -114,23 +113,13 @@
                 <th>No. Orden</th>
                 <th>Cliente</th>
                 <th>Fecha</th>
-                <th>Status</th>
+                <th>Estatus</th>
                 <th>Tracking</th>
                 <th style="width:200px;">Acciones</th>
               </tr>
             </thead>
             <tbody>
-              <!-- Ejemplo: Status='Enviada' (se reemplaza con JS) -->
-              <tr>
-                <td>ORD-2025-09-14#00000002</td>
-                <td>cliente@correo.com</td>
-                <td>14/09/2025</td>
-                <td><span class="badge badge-enviada">Enviada</span></td>
-                <td>1Z999AA10123456784</td>
-                <td>
-                  <button class="btn btn-orange" data-action="upd-trk" data-id="2" data-no="ORD-2025-09-14#00000002" data-trk="1Z999AA10123456784">Actualizar Tracking</button>
-                </td>
-              </tr>
+
             </tbody>
           </table>
         </div>

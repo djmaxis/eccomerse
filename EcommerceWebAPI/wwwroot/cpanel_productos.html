@@ -20,8 +20,7 @@
       <ul>
         <li><a href="cpanel.html"><span class="emoji">📊</span> Dashboard</a></li>
         <li class="active"><a href="#"><span class="emoji">📦</span> Productos</a></li>
-        <li><a href="#"><span class="emoji">📋</span> Órdenes</a></li>
-        <li><a href="#"><span class="emoji">📄</span> Facturas</a></li>
+        <li><a href="cpanelordenes.html"><span class="emoji">📋</span> Órdenes</a></li>
         <li><a href="cpanelshipping.html"><span class="emoji">🚚</span> Shipping</a></li>
         <li><a href="#"><span class="emoji">📈</span> Gráficas</a></li>
         <li><a href="#"><span class="emoji">🔔</span> Centro Notificaciones</a></li>
@@ -69,6 +68,7 @@
                 <th>RefModelo</th>
                 <th>Nombre</th>
                 <th>Descripción</th>
+                <th>Costo Unit.</th>
                 <th>Precio</th>
                 <th>Stock</th>
                 <th>Activo</th>
@@ -112,7 +112,11 @@
   <textarea id="mDescripcion"></textarea>
   <small id="errDescripcion" class="field-error"></small>
 </label>
-
+<label>
+  <span>Costo Unit.</span>
+  <input id="mCosto" type="number" step="0.01" />
+  <small id="errCosto" class="field-error"></small>
+</label>
 <label>
   <span>Precio</span>
   <input id="mPrecio" type="number" />

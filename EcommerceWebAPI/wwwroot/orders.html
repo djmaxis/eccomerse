@@ -193,67 +193,15 @@
 <h2 class="mp-title">Mis Pedidos</h2>
 
 <section class="perfil-section">
+  <!-- Contenedor vacío; el JS insertará las cards -->
+  <div id="orders-container" aria-live="polite"></div>
 
-  <!-- ========== Pedido 1 ========== -->
-  <article class="order-card order--compact">
-    <header class="order-header">
-      <div class="order-id">ORD-2025-02-29#00000001</div>
-      <a class="order-link" href="#">Ver detalles del pedido <i class="fa-solid fa-chevron-right"></i></a>
-    </header>
-
-    <!-- Meta línea superior -->
-    <div class="order-meta">
-      <span class="badge-dot status in-transit"></span>
-      <span class="meta-sep">|</span>
-      <span>Centro de almacenes SDQ</span>
-      <span class="meta-dot"></span>
-    </div>
-
-    <!-- Línea de entrega + garantía -->
-    <div class="delivery-row">
-      <div class="delivery-text">
-        <strong class="delivery-title">Entrega: 3-7 días hábiles</strong>
-      </div>
-      <span class="warranty-chip">30 dias garantia / devoluciones</span>
-    </div>
-
-    <!-- Tira de artículos (3) con scroll horizontal -->
-    <div class="order-article">
-      <div class="items-strip" role="list">
-        <a class="item" role="listitem" href="#">
-          <img src="img/ejemplo1a.jpg" alt="Kit ganchos blancos 20pcs">
-          <span class="item-title">Ganchos blancos x20</span>
-          <span class="item-extra">Cantidad: 1</span>
-        </a>
-      </div>
-
-      <!-- Columna de acciones -->
-      <div class="order-actions-col">
-        <button class="order-btn Rastrear">Rastrear</button>
-        <button class="order-btn Ver_factura">Ver factura</button>
-        <button class="order-btn Cancelar_pedido">Cancelar pedido</button>
-        <button class="order-btn ghost">Comprar de nuevo</button>
-        <button class="order-btn ghost">Agregar instrucciones</button>      
-        <button class="order-btn ghost">Contactar soporte</button>
-        <button class="order-btn ghost">Dejar reseña</button>
-        
-      </div>
-    </div>
-
-    <footer class="order-footer">
-      <div class="seller-line">
-        Vendido y enviado por <a href="#">EEV STORE</a>
-      </div>
-      <div class="summary-line">
-        <span>2 artículos: <strong>$21.83</strong></span>
-        <span>Fecha del pedido: <strong>8 sep 2025</strong></span>
-        <span>ID de pedido: <strong>ORD-2025-02-29#00000001</strong></span>
-      </div>
-    </footer>
-  </article>
-
-
+  <!-- Mensaje de vacío opcional (oculto hasta saber si hay datos) -->
+  <p id="orders-empty" style="display:none;margin:1rem 0;">
+    Aún no tienes pedidos.
+  </p>
 </section>
+
 
       <!-- =================== /MIS PEDIDOS =================== -->
     </main>

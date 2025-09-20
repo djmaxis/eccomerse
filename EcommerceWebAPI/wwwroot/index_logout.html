@@ -1,22 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clear Storage and Redirect</title>
-    <script>
-        // Clear localStorage, sessionStorage, and cookies
-        localStorage.clear();
-        sessionStorage.clear();
-        document.cookie.split(";").forEach(cookie => {
-            document.cookie = cookie.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date(0).toUTCString() + ";path=/");
-        });
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .spinner-overlay {
+      position: fixed;
+      inset: 0; /* top, right, bottom, left */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255,255,255,0.9);
+      z-index: 9999;
+    }
 
-        // Immediately redirect to index.html
-        window.location.replace("index.html");
-    </script>
+    .spinner {
+      border: 6px solid #f3f3f3; /* fondo */
+      border-top: 6px solid #22c55e; /* color primario */
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .spinner-overlay p {
+      margin-top: 15px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
-    <!-- Page will redirect immediately, no content needed -->
+  <!-- Spinner visible mientras limpia y redirige -->
+  <div class="spinner-overlay">
+    <div class="spinner"></div>
+    <p></p>
+  </div>
+
+  <script>
+    // Limpiar almacenamiento y cookies
+    localStorage.clear();
+    sessionStorage.clear();
+    document.cookie.split(";").forEach(cookie => {
+      document.cookie = cookie
+        .replace(/^ +/, "")
+        .replace(/=.*/, `=;expires=${new Date(0).toUTCString()};path=/`);
+    });
+
+    // Pequeña pausa para mostrar spinner antes de redirigir
+    setTimeout(() => {
+      window.location.replace("index.html");
+    }, 1000);
+  </script>
 </body>
 </html>
